@@ -1,0 +1,23 @@
+<div class="main" *ngIf="showMain">
+    <h2>Click on the below buttons to view the desktop templates</h2>
+
+    <div class="btn-wrapper">
+        <button (click)="showTemplate('EDT')">Employee dashboard template</button>
+        <button (click)="showTemplate('ET')">Email template</button>
+    </div>
+
+    <h4>Note: These are desktop templates</h4>
+
+</div>
+<div class="wrapper" *ngIf="employeeDashboardTemplate">
+    <app-nav-bar></app-nav-bar>
+    <div class="content">
+        <app-header></app-header>
+        <app-dashboard></app-dashboard>
+    </div>
+</div>
+
+<div *ngIf="emailTemplate">
+    <app-email-template></app-email-template>
+</div>
+

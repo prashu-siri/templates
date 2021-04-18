@@ -1,0 +1,81 @@
+<div class="email-template">
+    <div class="header">
+        <div>
+            <button class="button">New message</button>
+        </div>
+        <div class="actions">
+            <div class="search">
+                <app-svg-icon [svgIconId]="'search'"></app-svg-icon>
+                <input placeholder="Search"
+                       type="text"/>
+            </div>
+            <div class="sort">
+                <label for="sort">Sort by</label>
+                <div class="menu-container" id="sort">
+                    <button class="btn btn-menu"
+                            id="button-menu"
+                            (click)="toggleMenu('button-menu')">
+                        <span class="menu-option">Newest first</span>
+                        <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
+                        <ul class="menu">
+                            <li *ngFor="let sortOption of sortOptions">
+                                <a href="#" (click)="selectOption(sortOption.value)">
+                                    {{sortOption.value}}
+                                </a>
+                            </li>
+                        </ul>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <span class="title">John doe</span>
+            <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="image" id="large_img" class=" come_in">
+            <div class="menu-container">
+                    <button class="btn btn-menu"
+                            id="btn-menu"
+                            (click)="toggleMenu('btn-menu')">
+                        <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
+                        <ul class="menu">
+                            <li>
+                                <a href="#">Log out</a>
+                            </li>
+                        </ul>
+                    </button>
+
+                </div>
+        </div>
+    </div>
+    <div class="mail-content">
+        <div class="side-bar">
+            <div>
+                <ul>
+                    <li *ngFor="let option of primaryOptions">
+                        <a href="#" (click)="activate(option)" [ngClass]="option.active? 'active': null">{{ option.value }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="labels">
+                <label for="labels">Labels</label>
+                <ul id="labels">
+                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Client</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Friends</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Help & Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mails">
+            <app-emails></app-emails>
+        </div>
+        <div class="mail-body">
+            <app-email-content class="email-content-container"></app-email-content>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,234 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  padding        : 0;
+  margin         : 0;
+  font-family    : 'Open Sans', sans-serif;
+  font-size      : 14px;
+  letter-spacing : 0.5px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding : 0;
+  margin  : 0;
+}
+
+h4 {
+  padding : 1rem 0.5rem;
+}
+
+.wrapper {
+  display : flex;
+}
+
+.content {
+  display        : flex;
+  flex-direction : column;
+  padding        : 1rem 0 1rem 2rem;
+  width          : 100%;
+}
+
+.icon svg {
+  height : 24px;
+  width  : 24px;
+  fill   : black;
+}
+
+.icon.icon-nav svg {
+  height       : 18px;
+  width        : 18px;
+  fill         : white;
+  margin-right : 12px;
+  margin-top   : 5px;
+}
+
+.progress svg {
+  width  : 100px;
+  height : 100px;
+}
+
+ul {
+  list-style : none;
+  padding    : 0;
+}
+
+/**Button**/
+.btn {
+  border         : none;
+  border-radius  : 3px;
+  outline        : none;
+  width          : auto;
+  padding        : 12px;
+  letter-spacing : 0.5px;
+  color          : #FFFFFF;
+  cursor         : pointer;
+  text-transform : uppercase;
+  margin         : 24px auto;
+  transition     : transform 0.2s ease;
+  font-weight    : 500;
+  display        : flex;
+}
+
+.btn:active {
+  transform : scale(0.95);
+}
+
+.btn-primary {
+  background : #2F2F7E;
+}
+
+.btn-regular {
+  height : 40px;
+}
+
+.btn-small {
+  height : 30px;
+}
+
+.btn-large {
+  height : 50px;
+}
+
+.sub-title {
+  opacity : 0.5;
+}
+
+.progress-bar {
+  width            : 100%;
+  background-color : #DDD;
+  border-radius    : 5px;
+}
+
+.bar {
+  width         : 1%;
+  height        : 8px;
+  border-radius : 5px;
+  margin        : 18px 0;
+}
+
+#individual {
+  width : 100%;
+}
+
+.menu-option {
+  padding-right : 24px;
+}
+
+.btn-menu {
+  background     : transparent;
+  border         : 1px solid rgba(0, 0, 0, 0.25);
+  border-radius  : 3px;
+  position       : relative;
+  padding        : 6px 12px;
+  cursor         : pointer;
+  display        : flex;
+  align-items    : center;
+  letter-spacing : 0.7px;
+  font-family    : sans-serif;
+  max-width      : 150px;
+  color          : black;
+  margin         : 0;
+}
+
+.menu {
+  position      : absolute;
+  top           : 30px;
+  left          : 0;
+  width         : 150px;
+  list-style    : none;
+  margin        : 12px 0;
+  padding       : 0;
+  background    : white;
+  box-shadow    : 0 0 5px rgba(0, 0, 0, 0.25);
+  border-radius : 5px;
+}
+
+.menu a {
+  text-decoration : none;
+  padding         : 12px;
+  display         : block;
+  text-align      : left;
+  color           : black;
+  font-family     : sans-serif;
+  letter-spacing  : 0.7px;
+}
+
+.menu a:hover {
+  background : rgb(225, 240, 252);
+}
+
+.btn-menu .menu {
+  display : none;
+}
+
+.btn-menu.open .menu {
+  display : block;
+}
+
+svg {
+  height       : 24px;
+  width        : 24px;
+  fill         : grey;
+  margin-right : 12px;
+}
+
+button svg {
+  height : 24px;
+  width  : 24px;
+}
+
+.search svg, .side-bar svg {
+  height       : 12px;
+  width        : 12px;
+  fill         : #191919;
+  margin-right : 6px;
+}
+
+.title-container svg {
+  height : 24px;
+  width  : 24px;
+  fill   : #6F6194;
+}
+
+.sort svg {
+  fill : #6F6194;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width : thin;
+  scrollbar-color : #D7E1FF #5C5C5C;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width : 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background : #E7E7EF;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color : #E7E7EF;
+  border-radius    : 20px;
+  border           : 3px solid #D7E1FF;
+}
+
+@media (max-width : 500px) {
+  nav {
+    display : none;
+  }
+}
+
+@media (max-width : 768px) {
+  .first-row {
+    flex-direction : column;
+  }
+
+  .second-row {
+    flex-direction : column;
+    margin-right   : 24px;
+  }
+}

@@ -1,0 +1,28 @@
+nav {
+  width: 14rem;
+  background: #07073A;
+  color: white;
+  height: 100%;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem 0 1rem 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+nav ul li.active {
+  background: linear-gradient(45deg, #2F2F7E, #0C305B38);
+}
+nav .badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 20px;
+  padding: 0 6px;
+  margin-left: 12px;
+}
+
+/*# sourceMappingURL=nav-bar.component.css.map */

@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+.email-template {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.email-template .header {
+  width: 100%;
+  display: flex;
+}
+.email-template .header .button {
+  background: linear-gradient(45deg, #657AFF, #713C80);
+  border: none;
+  height: 40px;
+  padding: 24px 48px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  line-height: 1px;
+  cursor: pointer;
+}
+.email-template .header .actions {
+  width: 30%;
+  height: 40px;
+  padding: 4px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #E7E7EF;
+}
+.email-template .header .actions .search input {
+  border: none;
+  height: 24px;
+  border-radius: 3px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  background: transparent;
+  color: #6F6194;
+}
+.email-template .header .actions .search input::placeholder {
+  opacity: 0.75;
+  font-size: 14px;
+  color: #191919;
+}
+.email-template .header .actions .search input:focus {
+  outline: none;
+}
+.email-template .header .actions .sort {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.email-template .header .actions .sort label {
+  color: #191919;
+  margin-right: 12px;
+  opacity: 0.5;
+  font-size: 14px;
+}
+.email-template .header .actions .sort .menu-container .btn.btn-menu {
+  border: none;
+  padding: 0;
+  line-height: 1px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  justify-content: space-between;
+  width: 200px;
+}
+.email-template .header .actions .sort .menu a {
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+.email-template .header .actions .sort .menu-option {
+  padding: 0;
+  margin-right: 16px;
+  font-size: 15px;
+  color: #6F6194;
+}
+.email-template .btn {
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+.email-template .title-container {
+  height: 40px;
+  padding: 4px 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  background: #E7E7EF;
+  color: white;
+}
+.email-template .title-container img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.email-template .title-container .title {
+  margin-right: 12px;
+  color: #6F6194;
+}
+.email-template .title-container .menu {
+  right: 0;
+  left: unset;
+}
+.email-template .title-container .btn-menu {
+  border: none;
+}
+.email-template .mail-content {
+  display: flex;
+}
+.email-template .side-bar {
+  background: #E7E7EF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 190px;
+}
+.email-template .side-bar ul {
+  padding: 0;
+  margin: 0;
+}
+.email-template .side-bar ul a {
+  padding: 12px 12px 12px 18px;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  color: #6F6194;
+}
+.email-template .side-bar ul a.active {
+  font-weight: 700;
+  font-size: 16px;
+  color: #657AFF;
+}
+.email-template .side-bar .labels label {
+  opacity: 0.5;
+  margin-bottom: 12px;
+  display: inline-block;
+  margin-left: 18px;
+}
+.email-template .mails {
+  width: 30%;
+}
+.email-template .mail-body {
+  flex: 1;
+}
+
+/*# sourceMappingURL=email-template.component.css.map */

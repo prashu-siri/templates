@@ -1,0 +1,85 @@
+.emails {
+  height: 100vh;
+  display: flex;
+  font-size: 16px;
+}
+.emails .emails-wrapper {
+  overflow: scroll;
+}
+.emails ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.emails ul li {
+  background: #EEEEEE85;
+  border-right: 1px solid #DFDFDF;
+}
+.emails ul li.active {
+  background: white;
+  border-left: 3px solid #657AFF;
+}
+.emails ul a {
+  display: inline-block;
+  padding: 24px 18px;
+  text-decoration: none;
+  color: #4C4C4C;
+  border-bottom: 1px solid #D4D4D4;
+}
+.emails ul a .email-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.emails ul a .email-panel > div {
+  padding: 0 12px;
+}
+.emails ul a .email-panel .initials {
+  width: 48px;
+  height: 48px;
+  background: #C3E1FD;
+  text-transform: uppercase;
+  border-radius: 50%;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  line-height: 47px;
+}
+.emails ul a .email-panel .sender-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.emails ul a .email-panel .sender-details div {
+  display: flex;
+}
+.emails ul a .email-panel .sender {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  margin-left: 24px;
+}
+.emails ul a .email-panel .sender span:last-child {
+  font-size: 12px;
+  opacity: 0.7;
+}
+.emails ul a .email-panel h4 {
+  margin-bottom: 5px;
+  padding: 0;
+}
+.emails ul a .email-panel .summary {
+  opacity: 0.8;
+}
+.emails .email-content-container {
+  width: 100%;
+}
+.emails .profile-pic img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=emails.component.css.map */

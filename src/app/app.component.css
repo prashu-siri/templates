@@ -1,0 +1,17 @@
+.main {
+  margin: 48px;
+}
+.main h2 {
+  margin-bottom: 48px;
+}
+.main button {
+  padding: 12px;
+  border-radius: 3px;
+  border: none;
+  background: #2F2F7E;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=app.component.css.map */

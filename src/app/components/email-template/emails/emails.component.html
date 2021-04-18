@@ -1,0 +1,38 @@
+<div class="emails">
+    <div class="emails-wrapper">
+        <ul>
+            <li *ngFor="let email of emails; let i = index"
+                [ngClass]="{'active' : tab==i}">
+                <a (click)="activateTab(i, $event)"
+                   href="#">
+                    <div class="email-panel">
+                        <div class="sender-details">
+                            <div>
+                                <span *ngIf="email.profile != ''"
+                                      class="profile-pic">
+                                <img [src]="email.profile"
+                                     alt="Larry Lin">
+                            </span> <span *ngIf="email.profile == ''"
+                                          class="initials">{{email.initials}}</span>
+                                <div class="sender">
+                                    <span>{{email.sender}}</span> <span>{{email.duration}}</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <app-svg-icon *ngIf="email.hasAttachments" [svgIconId]="'clip'"></app-svg-icon>
+                            </div>
+
+                        </div>
+                        <div class="email-details">
+                            <h4>{{email.subject}}</h4>
+                            <p class="summary">
+                                {{ email.summary }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+[{
+  "id": 1,
+  "sender": "Gal Shir",
+  "duration": "25 min ago",
+  "subject": "SaaS Design Rework",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,tempore!",
+  "profile": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+  "initials": "GS",
+  "hasAttachments": false
+},{
+  "id": 2,
+  "sender": "Kenny Coil",
+  "duration": "30 min ago",
+  "subject": "Mobile app & landing page",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,tempore!",
+  "profile": "https://randomuser.me/api/portraits/men/35.jpg",
+  "initials": "KC",
+  "hasAttachments": true
+},{
+  "id": 3,
+  "sender": "Zhenya Rynzhuk",
+  "duration": "3 day ago",
+  "subject": "SaaS Design Rework",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,tempore!",
+  "profile": "https://randomuser.me/api/portraits/women/68.jpg",
+  "initials": "ZR",
+  "hasAttachments": false
+},{
+  "id": 4,
+  "sender": "Fireart Studio",
+  "duration": "5 day ago",
+  "subject": "Mobile/web designer",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,tempore!",
+  "profile": "",
+  "initials": "FS",
+  "hasAttachments": false
+},{
+  "id": 5,
+  "sender": "Alex Kunchevsky",
+  "duration": "1 week ago",
+  "subject": "Job Opportunity",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,tempore!",
+  "profile": "https://uifaces.co/our-content/donated/eYVoSxV5.jpg",
+  "initials": "AK",
+  "hasAttachments": true
+},{
+  "id": 6,
+  "sender": "Fireart Studio",
+  "duration": "2 weeks ago",
+  "subject": "Mobile/web designer",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,tempore!",
+  "profile": "",
+  "initials": "AK",
+  "hasAttachments": false
+}]
