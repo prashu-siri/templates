@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Transactions } from "../../interface/transactions";
-import { ModalComponent } from "../../modal/modal.component";
+import { ModalComponent } from "../common/modal/modal.component";
 
 @Component({
   selector: 'app-banking-dashboard',
