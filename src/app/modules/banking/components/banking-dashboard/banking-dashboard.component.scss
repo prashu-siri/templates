@@ -57,6 +57,12 @@ p {
       border-bottom : 3px solid #E6E6E67D;
     }
 
+    th {
+      span {
+        display: flex;
+      }
+    }
+
     td {
       & span.credit {
         color : green;
