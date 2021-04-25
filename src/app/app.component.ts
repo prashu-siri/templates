@@ -10,6 +10,7 @@ export class AppComponent {
   showMain = true;
   employeeDashboardTemplate = false;
   emailTemplate = false;
+  bankingTemplate = false;
 
   showTemplate(name: string) {
     this.employeeDashboardTemplate = false;
@@ -19,6 +20,8 @@ export class AppComponent {
       this.employeeDashboardTemplate = true;
     } else if (name.toUpperCase() === 'ET') {
       this.emailTemplate = true;
+    } else if (name.toUpperCase() === 'BT' ) {
+      this.bankingTemplate = true;
     }
 
     this.showMain = false;

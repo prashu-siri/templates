@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
 body {
   padding        : 0;
@@ -150,7 +151,6 @@ ul {
   display         : block;
   text-align      : left;
   color           : black;
-  font-family     : sans-serif;
   letter-spacing  : 0.7px;
 }
 
@@ -193,6 +193,19 @@ button svg {
 
 .sort svg {
   fill : #6F6194;
+}
+
+.banking {
+  svg {
+    height: 18px;
+    width: 18px;
+    display: grid;
+    align-self: center;
+  }
+
+  .notification svg {
+    margin-right: 0;
+  }
 }
 
 /* Works on Firefox */

@@ -13,6 +13,7 @@ import { EmailTemplateComponent } from './components/email-template/email-templa
 import { EmailsComponent } from './components/email-template/emails/emails.component';
 import { HttpClientModule } from "@angular/common/http";
 import { EmailContentComponent } from './components/email-template/email-content/email-content.component';
+import { BankingModule } from "./modules/banking/banking.module";
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { EmailContentComponent } from './components/email-template/email-content
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        BankingModule,
         NgCircleProgressModule.forRoot({
             radius: 100,
             outerStrokeWidth: 15,
@@ -45,10 +47,13 @@ import { EmailContentComponent } from './components/email-template/email-content
             outerStrokeGradient: false,
             backgroundColor: 'transparent',
             backgroundStroke: 'transparent',
-            space: -15,
+            space: -15
         })
     ],
     providers: [],
+    exports: [
+        SvgIconComponent
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

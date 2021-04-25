@@ -1,0 +1,47 @@
+.side-nav {
+  height: 100vh;
+  padding: 24px 42px 24px 24px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.logo__bg {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #657AFF;
+  margin-right: 12px;
+}
+.logo__bg span {
+  display: inline-block;
+  color: white;
+  margin: 0 auto;
+  transform: translate(32%, 65%);
+  font-weight: 600;
+}
+
+.menu-bar ul {
+  padding: 0 42px 0 0;
+  margin: 0;
+}
+.menu-bar li {
+  padding: 12px 0;
+}
+.menu-bar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 12px;
+  color: #343434;
+  width: 100%;
+}
+.menu-bar a.active {
+  color: #657AFF;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=banking-nav.component.css.map */

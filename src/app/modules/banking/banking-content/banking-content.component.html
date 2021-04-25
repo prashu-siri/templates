@@ -1,0 +1,25 @@
+<div class="banking-content">
+    <div class="header">
+        <div class="search-container">
+            <input
+                    aria-label="Search"
+                    class="search-input"
+                    name="search"
+                    placeholder="Search"
+                    type="text">
+            <button class="search-button">
+                <app-svg-icon [svgIconId]="'search-button'"></app-svg-icon>
+            </button>
+        </div>
+        <div class="notification">
+            <app-svg-icon [svgIconId]="'notification'"></app-svg-icon>
+        </div>
+        <div class="profile">
+            <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="image" id="large_img" class=" come_in">
+        </div>
+    </div>
+
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

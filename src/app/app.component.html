@@ -4,6 +4,7 @@
     <div class="btn-wrapper">
         <button (click)="showTemplate('EDT')">Employee dashboard template</button>
         <button (click)="showTemplate('ET')">Email template</button>
+        <button (click)="showTemplate('BT')">Online banking web application template</button>
     </div>
 
     <h4>Note: These are desktop templates</h4>
@@ -19,5 +20,9 @@
 
 <div *ngIf="emailTemplate">
     <app-email-template></app-email-template>
+</div>
+
+<div *ngIf="bankingTemplate">
+    <app-banking-home></app-banking-home>
 </div>
 
