@@ -1,22 +1,18 @@
 .dashboard-container {
   margin-bottom : 32px;
-
-  h1 {
-    font-size : 32px;
-  }
-
-  h2 {
-    font-size : 28px;
-  }
 }
 
 p {
   padding : 12px 0;
 }
 
-.summary {
+.panel {
   background      : white;
   padding         : 24px;
+  margin-bottom: 24px;
+}
+
+.summary {
   border-radius   : 10px;
   display         : flex;
   justify-content : flex-start;
@@ -32,91 +28,7 @@ p {
     align-items : center;
 
     h2 {
-      color : #657AFF;
+      color : var(--bt-primary-color);
     }
-  }
-}
-
-.transaction-history {
-  background    : white;
-  border-radius : 10px;
-
-  h3 {
-    padding       : 24px;
-    border-bottom : 3px solid #E6E6E67D;
-  }
-
-  table {
-    border-collapse : collapse;
-    table-layout    : fixed;
-    width           : 100%;
-    text-align      : left;
-
-    th, td {
-      padding       : 18px 24px;
-      border-bottom : 3px solid #E6E6E67D;
-    }
-
-    th {
-      span {
-        display: flex;
-      }
-    }
-
-    td {
-      & span.credit {
-        color : green;
-      }
-
-      & span.debit {
-        color : red;
-      }
-
-      &.amount {
-        color : #657AFF;
-      }
-
-      & span.transaction-type {
-        display     : flex;
-        align-items : center;
-      }
-
-      button {
-        border         : none;
-        border-radius  : 3px;
-        outline        : none;
-        width          : auto;
-        padding        : 12px;
-        background     : #657AFF;
-        cursor         : pointer;
-        text-transform : uppercase;
-        transition     : transform 0.2s ease;
-        font-weight    : 500;
-        display        : flex;
-        margin         : 0;
-      }
-
-    }
-  }
-}
-
-table.transaction-details-table  {
-
-    width           : 100%;
-    border-collapse : collapse;
-    table-layout    : fixed;
-    margin          : 0 auto;
-
-
-  tr {
-    border-bottom : 1px solid lightgray;
-  }
-
-  tr:nth-child(2n+1) {
-    background : #fcfcfc;
-  }
-
-  tr > td:first-child {
-    padding : 12px 24px;
   }
 }

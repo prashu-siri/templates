@@ -1,0 +1,98 @@
+<section class="transaction-history">
+    <h3>Transaction History</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>
+                <span>
+                    <app-svg-icon [svgIconId]="'calendar'"></app-svg-icon>
+                    Date
+                </span>
+            </th>
+            <th>
+                <span>
+                    <app-svg-icon [svgIconId]="'notebook'"></app-svg-icon>
+                    Transaction Details
+                </span>
+            </th>
+            <th>
+                <span>
+                    <app-svg-icon [svgIconId]="'filter'"></app-svg-icon>
+                    Transaction Type
+                </span>
+            </th>
+            <th>
+                <span>
+                    <app-svg-icon [svgIconId]="'money'"></app-svg-icon>
+                    Amount
+                </span>
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody *ngIf="transactions">
+        <tr *ngFor="let transaction of transactions">
+            <td>{{ transaction.transactionDate }}</td>
+            <td>{{ transaction.transactionDetails}}</td>
+            <td>
+                <span [ngClass]="getClass(transaction.transactionType)"
+                      class="transaction-type">
+                    <app-svg-icon *ngIf="transaction.transactionType == 'Credited'"
+                                  [svgIconId]="'arrow-up'"></app-svg-icon>
+                    <app-svg-icon *ngIf="transaction.transactionType == 'Debited'"
+                                  [svgIconId]="'arrow-down'"></app-svg-icon>
+                    {{ transaction.transactionType }}
+                </span>
+            </td>
+            <td class="amount">{{ transaction.transactionAmount | currency: 'AUD ':'code'}}</td>
+            <td>
+                <a (click)="viewDetails(transaction, $event)"
+                   href="#">View details</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<!--Transaction details modal window-->
+<app-modal (click)="closeModal()"
+           [modalHeader]="modalHeader">
+    <div *ngIf="transaction">
+        <table class="transaction-details-table">
+            <tbody>
+            <tr>
+                <td>Transaction Id</td>
+                <td>{{transaction.transactionId}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Details</td>
+                <td>{{transaction.transactionDetails}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Date</td>
+                <td>{{transaction.transactionDate}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Type</td>
+                <td>{{transaction.transactionType}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Amount</td>
+                <td>{{transaction.transactionAmount | currency: 'AUD ': 'code'}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Status</td>
+                <td>{{transaction.status}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Description</td>
+                <td>{{transaction.description}}</td>
+            </tr>
+            <tr>
+                <td>Payment Service</td>
+                <td>{{transaction.paymentService}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</app-modal>

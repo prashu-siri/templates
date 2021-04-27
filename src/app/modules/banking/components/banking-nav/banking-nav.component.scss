@@ -13,7 +13,7 @@
     height        : 50px;
     width         : 50px;
     border-radius : 50%;
-    background    : #657AFF;
+    background    : var(--bt-primary-color);
     margin-right  : 12px;
 
     span {
@@ -45,7 +45,7 @@
     width           : 100%;
 
     &.active {
-      color        : #657AFF;
+      color        : var(--bt-primary-color);
       font-weight  : 600;
     }
   }

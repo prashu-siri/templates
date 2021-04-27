@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
 import { Transactions } from "../../interface/transactions";
-import { ModalComponent } from "../common/modal/modal.component";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-banking-dashboard',
@@ -9,40 +8,22 @@ import { ModalComponent } from "../common/modal/modal.component";
   styleUrls: ['./banking-dashboard.component.scss']
 })
 export class BankingDashboardComponent implements OnInit {
-  transactions: Transactions[];
-  transaction: Transactions;
-  modalHeader: string;
-
-  @ViewChild(ModalComponent)
-  private modal: ModalComponent;
+  transactions: Transactions[] = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getTransactions();
+    this.getRecentTransactions();
   }
 
-  getTransactions() {
-    this.http.get("./assets/response/transactions.json").subscribe((response: Transactions[]) => {
-      this.transactions = response;
+  getRecentTransactions() {
+    this.http.get('./assets/response/transactions.json').subscribe((response: Transactions[]) => {
+      if(response.length > 0) {
+        for (let i = 0; i < 5; i++) {
+          console.log(this.transactions);
+          this.transactions.push(response[i]);
+        }
+      }
     });
-  }
-
-  getClass(type: string) {
-    return type === 'Credited' ? 'credit': 'debit';
-  }
-
-  viewDetails(transaction: Transactions, event) {
-    if(event) {
-      event.preventDefault();
-    }
-
-    this.modalHeader = "Transaction Details";
-    this.transaction = transaction;
-    this.modal.openModal();
-  }
-
-  closeModal() {
-    this.modal.closeModal();
   }
 }

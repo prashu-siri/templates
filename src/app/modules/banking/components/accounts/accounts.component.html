@@ -1,0 +1,55 @@
+<div class="accounts-container">
+    <h1>Accounts</h1>
+</div>
+
+<!--<section>
+    <div class="custom-select">
+        <label for="accounts">Select an account</label> <select (change)="fetchAccountDetails()"
+                                                                [(ngModel)]="accountNumber"
+                                                                id="accounts"
+                                                                name="color">
+        <option value="select">Select</option>
+        <option value="7877-8765676">7877-8765676</option>
+    </select>
+    </div>
+</section>-->
+
+<div class="radio">
+    <input [(ngModel)]="tab"
+           checked
+           id="1"
+           name="tab"
+           type="radio"
+           value="accountDetails">
+    <label for="1">Account Details</label>
+    <input [(ngModel)]="tab"
+          id="2"
+          name="tab"
+          type="radio"
+          value="transactions">
+    <label for="2">Transaction History</label>
+    <input [(ngModel)]="tab"
+          id="3"
+          name="tab"
+          type="radio"
+          value="loans">
+    <label for="3">Loans</label>
+    <input [(ngModel)]="tab"
+          id="4"
+          name="tab"
+          type="radio"
+          value="credits">
+    <label for="4">Credit cards</label>
+</div>
+
+<section>
+    <app-account-details *ngIf="isActiveTab('accountDetails')"></app-account-details>
+    <app-transactions [transactions]="transactions" *ngIf="isActiveTab('transactions')"></app-transactions>
+    <div *ngIf="isActiveTab('loans')">
+        You haven't applied for any loans yet.
+    </div>
+    <div *ngIf="isActiveTab('credits')">
+        No Credit crd information available.
+    </div>
+</section>
+

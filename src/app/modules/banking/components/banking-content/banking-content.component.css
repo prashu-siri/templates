@@ -1,6 +1,6 @@
 .banking-content {
   height: 100%;
-  background: #E6E6E67D;
+  background: var(--bt-border-color);
   padding: 24px 48px;
 }
 .banking-content .header {

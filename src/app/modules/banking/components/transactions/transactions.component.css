@@ -1,0 +1,65 @@
+.transaction-history {
+  background: white;
+  border-radius: 10px;
+}
+.transaction-history h3 {
+  padding: 24px;
+  border-bottom: 3px solid var(--bt-border-color);
+}
+.transaction-history table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: left;
+}
+.transaction-history table th, .transaction-history table td {
+  padding: 1em 3.9em;
+  border-bottom: 3px solid var(--bt-border-color);
+}
+.transaction-history table th span {
+  display: flex;
+}
+.transaction-history table td span.credit {
+  color: green;
+}
+.transaction-history table td span.debit {
+  color: red;
+}
+.transaction-history table td.amount {
+  color: var(--bt-primary-color);
+}
+.transaction-history table td span.transaction-type {
+  display: flex;
+  align-items: center;
+}
+.transaction-history table td button {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  width: auto;
+  padding: 12px;
+  background: var(--bt-primary-color);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+  font-weight: 500;
+  display: flex;
+  margin: 0;
+}
+
+table.transaction-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+}
+table.transaction-details-table tr {
+  border-bottom: 1px solid lightgray;
+}
+table.transaction-details-table tr:nth-child(2n+1) {
+  background: #FCFCFC;
+}
+table.transaction-details-table tr > td:first-child {
+  padding: 12px 24px;
+}
+
+/*# sourceMappingURL=transactions.component.css.map */

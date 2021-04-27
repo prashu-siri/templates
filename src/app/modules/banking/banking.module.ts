@@ -7,10 +7,15 @@ import { BankingContentComponent } from "./components/banking-content/banking-co
 import { BankingHomeComponent } from "./components/banking-home/banking-home.component";
 import { BankingNavComponent } from "./components/banking-nav/banking-nav.component";
 import { SvgIconComponent } from "./components/common/svg-icon/svg-icon.component";
+import { AccountsComponent } from './components/accounts/accounts.component';
+import { TransactionsComponent } from './components/transactions/transactions.component';
+import { AccountDetailsComponent } from './components/account-details/account-details.component';
+import { FormsModule } from "@angular/forms";
 
 
 const routes: Routes = [
     {path: 'dashboard', component: BankingDashboardComponent},
+    {path: 'accounts', component: AccountsComponent},
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
 ];
 
@@ -21,14 +26,18 @@ const routes: Routes = [
         BankingHomeComponent,
         BankingNavComponent,
         SvgIconComponent,
-        ModalComponent
+        ModalComponent,
+        AccountsComponent,
+        TransactionsComponent,
+        AccountDetailsComponent
     ],
     exports: [
         BankingHomeComponent
     ],
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        FormsModule
     ]
 })
 export class BankingModule {
