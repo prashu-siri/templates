@@ -5,10 +5,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './components/employee-dashboard-template/nav-bar/nav-bar.component';
-import { HeaderComponent } from './components/employee-dashboard-template/header/header.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
-import { DashboardComponent } from './components/employee-dashboard-template/dashboard/dashboard.component';
 import { EmailTemplateComponent } from './components/email-template/email-template.component';
 import { EmailsComponent } from './components/email-template/emails/emails.component';
 import { HttpClientModule } from "@angular/common/http";
@@ -18,10 +15,7 @@ import { BankingModule } from "./modules/banking/banking.module";
 @NgModule({
     declarations: [
         AppComponent,
-        NavBarComponent,
-        HeaderComponent,
         SvgIconComponent,
-        DashboardComponent,
         EmailTemplateComponent,
         EmailsComponent,
         EmailContentComponent

@@ -15,8 +15,7 @@ import { FormsModule } from "@angular/forms";
 
 const routes: Routes = [
     {path: 'dashboard', component: BankingDashboardComponent},
-    {path: 'accounts', component: AccountsComponent},
-    {path: '', redirectTo: 'dashboard', pathMatch: 'full'}
+    {path: 'accounts', component: AccountsComponent}
 ];
 
 @NgModule({

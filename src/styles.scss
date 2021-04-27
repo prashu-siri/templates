@@ -213,6 +213,18 @@ button svg {
   }
 }
 
+.floating {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  background: #657AFF;
+  padding: 6px;
+  svg {
+    fill: white;
+    margin: 0;
+  }
+}
+
 /* Works on Firefox */
 * {
   scrollbar-width : thin;
