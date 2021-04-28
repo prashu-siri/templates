@@ -1,9 +1,18 @@
-<div class="main" *ngIf="showMain">
-    <h2>Click on the below buttons to view the desktop templates</h2>
+<div *ngIf="showMain" class="main">
+    <div class="card">
+        <h3 class="card__heading">Email Web Template</h3>
+        <p class="card__description">This is an email inbox web template built using
+            HTML, CSS and Angular</p>
+        <button (click)="showTemplate('ET')"
+           >View Template</button>
+    </div>
 
-    <div class="btn-wrapper">
-        <button (click)="showTemplate('ET')">Email template</button>
-        <button (click)="showTemplate('BT')">Online banking web application template</button>
+    <div class="card">
+        <h3 class="card__heading">Online Banking Web Template</h3>
+        <p class="card__description">This is an online banking web application template built using
+            HTML, CSS and Angular</p>
+        <button (click)="showTemplate('BT')"
+           >View Template</button>
     </div>
 </div>
 
@@ -15,6 +24,7 @@
     <app-banking-home></app-banking-home>
 </div>
 
-<a class="floating" href="">
+<a class="floating"
+   href="">
     <app-svg-icon [svgIconId]="'home'"></app-svg-icon>
 </a>
