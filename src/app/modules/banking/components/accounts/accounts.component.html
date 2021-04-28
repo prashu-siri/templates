@@ -44,7 +44,11 @@
 
 <section>
     <app-account-details *ngIf="isActiveTab('accountDetails')"></app-account-details>
-    <app-transactions [transactions]="transactions" *ngIf="isActiveTab('transactions')"></app-transactions>
+    <div  *ngIf="isActiveTab('transactions')">
+        <h2>Transaction History</h2>
+        <app-transactions [transactions]="transactions"></app-transactions>
+    </div>
+
     <div *ngIf="isActiveTab('loans')">
         You haven't applied for any loans yet.
     </div>
