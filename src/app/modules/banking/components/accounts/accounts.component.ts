@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Transactions } from "../../interface/transactions";
+import { CommonService } from "../../service/common.service";
 
 @Component({
   selector: 'app-accounts',
@@ -13,7 +14,7 @@ export class AccountsComponent implements OnInit {
   accountNumber: string = "select";
   transactions: Transactions[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private commonService: CommonService) { }
 
   ngOnInit(): void {
     this.fetchAccountDetails();
@@ -21,7 +22,7 @@ export class AccountsComponent implements OnInit {
 
   fetchAccountDetails() {
     console.log(this.accountNumber);
-    this.http.get("./assets/response/transactions.json").subscribe((response: Transactions[]) => {
+    this.commonService.fetchTransactions().subscribe((response: Transactions[]) => {
       this.transactions = response;
       console.log(response);
     });

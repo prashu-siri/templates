@@ -1,10 +1,10 @@
-<section class="dashboard-container">
+<section class="dashboard-container bt_container">
     <h1>Welcome, John Doe</h1>
     <p>Check all your activities with the quick online banking. Create your new way of
         management.</p>
 </section>
 
-<section class="panel">
+<section class="bt_panel">
     <h2>Account Summary</h2>
     <div class="summary">
         <div>
@@ -18,14 +18,14 @@
             <p>Current Balance</p>
             <div class="summary-content">
                 <app-svg-icon [svgIconId]="'bank'"></app-svg-icon>
-                <h2>AUD 54,3421.09</h2>
+                <h2>INR 54,3421.09</h2>
             </div>
         </div>
         <div>
             <p>Available Balance</p>
             <div class="summary-content">
                 <app-svg-icon [svgIconId]="'bank'"></app-svg-icon>
-                <h2>AUD 34,3671.64</h2>
+                <h2>INR 34,3671.64</h2>
             </div>
         </div>
         <div>
@@ -38,13 +38,13 @@
     </div>
 </section>
 
-<section class="panel">
+<section class="bt_panel">
     <h2>Transactions</h2>
     <p>Showing recent 5 transactions</p>
     <app-transactions [transactions]="transactions"></app-transactions>
 </section>
 
-<section class="panel">
+<section class="bt_panel">
     <h2>Loans</h2>
     <p>You haven't applied for any loans</p>
 </section>

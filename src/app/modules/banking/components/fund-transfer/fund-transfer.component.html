@@ -1,0 +1,28 @@
+<div class="bt_container">
+    <h1>Transfer & Pay</h1>
+</div>
+
+<div class="bt_radio">
+    <input [(ngModel)]="tab"
+           checked
+           id="1"
+           name="tab"
+           type="radio"
+           value="transfer"> <label for="1">Transfer</label>
+    <input [(ngModel)]="tab"
+            id="2"
+            name="tab"
+            type="radio"
+            value="payAnyone">
+    <label for="2">Pay Anyone</label>
+</div>
+
+<section class="bt_panel">
+    <div *ngIf="activeTab('transfer')">
+        <app-transfer></app-transfer>
+    </div>
+
+    <div *ngIf="activeTab('payAnyone')">
+        <app-pay-anyone></app-pay-anyone>
+    </div>
+</section>

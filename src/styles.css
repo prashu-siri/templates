@@ -1,16 +1,170 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+.radio-label {
+  display: inline-block;
+  position: relative;
+  padding-left: 32px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.radio-label + .radio-label {
+  margin-left: 18px;
+}
+
+.radio-label input[type=radio] {
+  display: none;
+}
+
+.radio-label .checker {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1.5px solid var(--bt-input-border-color);
+  transition: all 0.5s ease;
+}
+
+.radio-label input:checked ~ .checker-inside {
+  background-color: var(--bt-primary-color);
+}
+
+.radio-label input:checked ~ .checker:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-label input:checked ~ .checker-inside:after {
+  background-color: #FFFFFF;
+}
+
+/*Banking template color variables*/
+.bt {
+  /*Common*/
+  /*switch*/
+}
+.bt_container {
+  margin-bottom: 32px;
+}
+.bt_panel {
+  background: white;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+.bt_section_header, .bt_section_info {
+  margin-bottom: 24px;
+}
+.bt_radio {
+  display: inline-flex;
+  background: white;
+  width: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+.bt_radio input {
+  display: none;
+}
+.bt_radio label {
+  padding: 1em 4.85em;
+  font-size: 18px;
+  cursor: pointer;
+}
+.bt_radio label:not(:last-of-type) {
+  border-right: 1px solid var(--bt-border-color);
+}
+.bt_radio input:checked + label {
+  background: var(--bt-primary-color);
+  color: white;
+}
+.bt_section_info h3 {
+  padding: 12px;
+  background: #7B85C1;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+.bt_section_info h4 {
+  margin-left: 16px;
+}
+.bt .details {
+  display: grid;
+  grid-template-columns: 30% 50%;
+  padding: 12px 24px;
+  align-items: center;
+}
+.bt select {
+  padding: 0.5em 4em 0.5em 0.5em;
+  border-color: var(--bt-input-border-color);
+  border-radius: 5px;
+  font-size: 14px;
+  color: #616161;
+}
+.bt input {
+  border: 1px solid var(--bt-input-border-color);
+  padding: 6px 12px;
+  border-radius: 5px;
+  height: 25px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+.bt .btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 48px 12px;
+}
+.bt .button {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  width: auto;
+  padding: 12px 48px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+.bt .button:hover {
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.bt .button:active {
+  transform: scale(0.95);
+}
+.bt .btn-primary {
+  background: var(--bt-primary-color);
+  color: #FFF;
+}
+.bt .btn-secondary {
+  background: var(--bt-input-border-color);
+  color: #616161;
+}
+
 :root {
-  /*Banking template color variables*/
   --bt-primary-color: #657AFF;
   --bt-border-color: #E6E6E67D;
+  --bt-input-border-color: #D3D3D3;
+  --bt-background: #F3F3F3;
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   letter-spacing: 0.5px;
 }
 

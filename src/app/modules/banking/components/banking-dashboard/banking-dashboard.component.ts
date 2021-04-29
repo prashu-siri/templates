@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Transactions } from "../../interface/transactions";
 import { HttpClient } from "@angular/common/http";
+import { CommonService } from "../../service/common.service";
 
 @Component({
   selector: 'app-banking-dashboard',
@@ -10,17 +11,16 @@ import { HttpClient } from "@angular/common/http";
 export class BankingDashboardComponent implements OnInit {
   transactions: Transactions[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private commonService: CommonService) { }
 
   ngOnInit(): void {
     this.getRecentTransactions();
   }
 
   getRecentTransactions() {
-    this.http.get('./assets/response/transactions.json').subscribe((response: Transactions[]) => {
+    this.commonService.fetchTransactions().subscribe((response: Transactions[]) => {
       if(response.length > 0) {
         for (let i = 0; i < 5; i++) {
-          console.log(this.transactions);
           this.transactions.push(response[i]);
         }
       }

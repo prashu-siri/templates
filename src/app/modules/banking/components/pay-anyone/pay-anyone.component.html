@@ -1,0 +1,91 @@
+<h2 class="bt_section_header">Pay Anyone</h2>
+
+<section class="bt_section_info">
+    <h3>From Account</h3>
+    <div class="details">
+        <label for="account">Account number</label>
+        <select name="account"
+                      id="account">
+            <option value="7877-8765676">7877-8765676</option>
+        </select>
+    </div>
+
+    <div class="details">
+        <span>Account type</span> <span>Savings</span>
+    </div>
+
+    <div class="details">
+        <span>Balance</span> <span>INR 34,3671.64</span>
+    </div>
+</section>
+
+<section class="bt_section_info">
+    <h3>To Account</h3>
+
+    <div class="details">
+        <span>Select Payee</span>
+        <div class="radio-container">
+            <label class="radio-label"> Payee <input checked [(ngModel)]="toAccount"
+                                                   name="pay"
+                                                   type="radio"
+                                                   value="payee">
+                <span class="checker checker-inside"></span>
+            </label>
+            <label class="radio-label"> Pay Anyone <input name="pay"
+                                                          [(ngModel)]="toAccount"
+                                                         type="radio"
+                                                         value="payAnyone">
+                <span class="checker checker-inside"></span>
+            </label>
+        </div>
+    </div>
+
+    <div *ngIf="displayAccountDetails('payee')" class="details">
+        <label for="account1">Payee</label>
+        <select name="account"
+                  id="account1">
+                <option value="select">Select</option>
+                <option *ngFor="let payee of payees"
+                        [value]="payee.name">{{ payee.name }}</option>
+            </select>
+
+    </div>
+
+    <div *ngIf="displayAccountDetails('payAnyone')">
+        <div class="details">
+            <label for="accName">Account Name</label>
+            <input id="accName" type="text">
+        </div>
+        <div class="details">
+            <label for="code">IFSC Code</label>
+            <input id="code" type="text">
+        </div>
+        <div class="details">
+            <label for="accNumber">Account Number</label>
+            <input id="accNumber" type="text">
+        </div>
+    </div>
+
+</section>
+
+<section class="bt_section_info">
+    <h3>Transaction Details</h3>
+    <div class="details">
+        <label for="amount">Amount (INR)</label>
+        <input type="text"
+                      name="amount"
+                      id="amount">
+    </div>
+
+    <div class="details">
+        <label for="description">Description</label>
+        <input type="text" id="description">
+    </div>
+</section>
+
+<section>
+    <div class="btn-container">
+       <button class="button btn-secondary">Cancel</button>
+       <button class="button btn-primary">Pay Now</button>
+    </div>
+</section>

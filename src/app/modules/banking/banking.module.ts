@@ -11,11 +11,15 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
 import { FormsModule } from "@angular/forms";
+import { FundTransferComponent } from './components/fund-transfer/fund-transfer.component';
+import { TransferComponent } from './components/transfer/transfer.component';
+import { PayAnyoneComponent } from './components/pay-anyone/pay-anyone.component';
 
 
 const routes: Routes = [
     {path: 'dashboard', component: BankingDashboardComponent},
-    {path: 'accounts', component: AccountsComponent}
+    {path: 'accounts', component: AccountsComponent},
+    {path: 'fundTransfer', component: FundTransferComponent}
 ];
 
 @NgModule({
@@ -28,7 +32,10 @@ const routes: Routes = [
         ModalComponent,
         AccountsComponent,
         TransactionsComponent,
-        AccountDetailsComponent
+        AccountDetailsComponent,
+        FundTransferComponent,
+        TransferComponent,
+        PayAnyoneComponent
     ],
     exports: [
         BankingHomeComponent

@@ -1,11 +1,3 @@
-.accounts-container {
-  margin-bottom: 32px;
-}
-
-h2 {
-  margin-bottom: 24px;
-}
-
 section {
   padding: 24px;
   background: white;
@@ -20,36 +12,6 @@ section {
   padding: 0.7em 4em 0.7em 1em;
   border: 1px solid #D9D3D6;
   border-radius: 5px;
-}
-
-.panel {
-  background: white;
-  padding: 24px;
-  margin-bottom: 24px;
-}
-
-.radio {
-  display: inline-flex;
-  background: white;
-  width: auto;
-  overflow: hidden;
-  border-radius: 20px;
-  margin-bottom: 24px;
-}
-.radio input {
-  display: none;
-}
-.radio label {
-  padding: 1em 4.875em;
-  font-size: 18px;
-  cursor: pointer;
-}
-.radio label:not(:last-of-type) {
-  border-right: 1px solid var(--bt-border-color);
-}
-.radio input:checked + label {
-  background: var(--bt-primary-color);
-  color: white;
 }
 
 /*# sourceMappingURL=accounts.component.css.map */

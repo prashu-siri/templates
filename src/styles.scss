@@ -1,17 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import "styles/_banking";
 
 :root {
-  /*Banking template color variables*/
   --bt-primary-color: #657AFF;
   --bt-border-color: #E6E6E67D;
+  --bt-input-border-color : #D3D3D3;
+  --bt-background: #F3F3F3;
 }
 
 body {
   padding        : 0;
   margin         : 0;
-  font-family    : 'Open Sans', sans-serif;
-  font-size      : 14px;
+  font-family    : 'Roboto', sans-serif;
+  font-size      : 16px;
   letter-spacing : 0.5px;
 }
 

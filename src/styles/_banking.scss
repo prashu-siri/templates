@@ -1,0 +1,125 @@
+@import "radio";
+
+/*Banking template color variables*/
+.bt {
+  /*Common*/
+  &_container {
+    margin-bottom : 32px;
+  }
+
+  &_panel {
+    background    : white;
+    padding       : 24px;
+    margin-bottom : 24px;
+    border-radius : 10px;
+    box-shadow    : 5px 5px 15px rgb(0 0 0 / 25%);
+  }
+
+  &_section_header, &_section_info {
+    margin-bottom : 24px;
+  }
+
+  /*switch*/
+  &_radio {
+    display       : inline-flex;
+    background    : white;
+    width         : auto;
+    overflow      : hidden;
+    border-radius : 20px;
+    margin-bottom : 24px;
+
+    input {
+      display : none;
+    }
+
+    label {
+      padding   : 1em 4.85em;
+      font-size : 18px;
+      cursor    : pointer;
+
+      &:not(:last-of-type) {
+        border-right : 1px solid var(--bt-border-color);
+      }
+    }
+
+    input:checked + label {
+      background : var(--bt-primary-color);
+      color      : white;
+    }
+  }
+
+  &_section_info {
+    h3 {
+      padding       : 12px;
+      background    : #7B85C1;
+      color         : white;
+      border-radius : 5px;
+      margin-bottom : 24px;
+    }
+
+    h4 {
+      margin-left : 16px;
+    }
+  }
+
+  .details {
+    display               : grid;
+    grid-template-columns : 30% 50%;
+    padding               : 12px 24px;
+    align-items           : center;
+  }
+
+  select {
+    padding       : 0.5em 4em 0.5em 0.5em;
+    border-color  : var(--bt-input-border-color);
+    border-radius : 5px;
+    font-size     : 14px;
+    color         : #616161;
+  }
+
+  input {
+    border        : 1px solid var(--bt-input-border-color);
+    padding       : 6px 12px;
+    border-radius : 5px;
+    height        : 25px;
+    font-family   : Roboto, sans-serif;
+    font-size     : 16px;;
+  }
+
+  .btn-container {
+    display         : flex;
+    justify-content : space-between;
+    margin          : 48px 12px;
+  }
+
+  .button {
+    border         : none;
+    border-radius  : 3px;
+    outline        : none;
+    width          : auto;
+    padding        : 12px 48px;
+    cursor         : pointer;
+    text-transform : uppercase;
+    transition     : transform 0.2s ease;
+    font-family    : Roboto, sans-serif;
+    font-size      : 16px;
+
+    &:hover {
+      box-shadow : 5px 5px 15px 0 rgb(0 0 0 / 15%)
+    }
+
+    &:active {
+      transform : scale(0.95);
+    }
+  }
+
+  .btn-primary {
+    background : var(--bt-primary-color);
+    color      : #FFF;
+  }
+
+  .btn-secondary {
+    background : var(--bt-input-border-color);
+    color      : #616161;
+  }
+}

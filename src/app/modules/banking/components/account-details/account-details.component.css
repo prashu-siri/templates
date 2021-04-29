@@ -2,16 +2,6 @@ h2, section {
   margin-bottom: 24px;
 }
 
-section h3 {
-  padding: 12px;
-  background: #EFEFEF;
-  border-radius: 5px;
-  margin-bottom: 24px;
-}
-section h4 {
-  margin-left: 16px;
-}
-
 table {
   width: 50%;
   border-collapse: collapse;
@@ -25,12 +15,6 @@ tr > td:first-child {
 
 .sub-section span {
   padding: 18px 24px;
-}
-
-.details {
-  display: grid;
-  grid-template-columns: 30% 50%;
-  padding: 12px 24px;
 }
 
 /*# sourceMappingURL=account-details.component.css.map */

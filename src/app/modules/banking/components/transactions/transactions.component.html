@@ -43,7 +43,7 @@
                     {{ transaction.transactionType }}
                 </span>
             </td>
-            <td class="amount">{{ transaction.transactionAmount | currency: 'AUD ':'code'}}</td>
+            <td class="amount">{{ transaction.transactionAmount | currency: 'INR ':'code'}}</td>
             <td>
                 <a (click)="viewDetails(transaction, $event)"
                    href="#">View details</a>
@@ -77,7 +77,7 @@
             </tr>
             <tr>
                 <td>Transaction Amount</td>
-                <td>{{transaction.transactionAmount | currency: 'AUD ': 'code'}}</td>
+                <td>{{transaction.transactionAmount | currency: 'INR ': 'code'}}</td>
             </tr>
             <tr>
                 <td>Transaction Status</td>
