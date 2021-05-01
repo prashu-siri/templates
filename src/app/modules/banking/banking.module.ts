@@ -14,12 +14,16 @@ import { FormsModule } from "@angular/forms";
 import { FundTransferComponent } from './components/fund-transfer/fund-transfer.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { PayAnyoneComponent } from './components/pay-anyone/pay-anyone.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { CreditCardsComponent } from './components/credit-cards/credit-cards.component';
+import { DebitCardsComponent } from './components/debit-cards/debit-cards.component';
 
 
 const routes: Routes = [
     {path: 'dashboard', component: BankingDashboardComponent},
     {path: 'accounts', component: AccountsComponent},
-    {path: 'fundTransfer', component: FundTransferComponent}
+    {path: 'fundTransfer', component: FundTransferComponent},
+    {path: 'cards', component: CardsComponent}
 ];
 
 @NgModule({
@@ -35,7 +39,10 @@ const routes: Routes = [
         AccountDetailsComponent,
         FundTransferComponent,
         TransferComponent,
-        PayAnyoneComponent
+        PayAnyoneComponent,
+        CardsComponent,
+        CreditCardsComponent,
+        DebitCardsComponent
     ],
     exports: [
         BankingHomeComponent

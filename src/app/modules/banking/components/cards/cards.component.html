@@ -1,0 +1,23 @@
+<div class="bt_container">
+    <h1>Cards</h1>
+</div>
+
+<div class="bt_radio">
+    <input [(ngModel)]="tab"
+           checked
+           id="1"
+           name="tab"
+           type="radio"
+           value="credit"> <label for="1">Credit Cards</label>
+    <input [(ngModel)]="tab"
+            id="2"
+            name="tab"
+            type="radio"
+            value="debit">
+    <label for="2">Debit Cards</label>
+</div>
+
+<section>
+    <app-credit-cards *ngIf="activeTab('credit')"></app-credit-cards>
+    <app-debit-cards *ngIf="activeTab('debit')"></app-debit-cards>
+</section>
