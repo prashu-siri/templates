@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  showMain = false; //TODO should be true
+  showMain = true;
   emailTemplate = false;
-  bankingTemplate = true; //TODO should be false
+  bankingTemplate = false;
 
   showTemplate(name: string) {
     this.emailTemplate = false;
