@@ -1,91 +1,153 @@
 <h2 class="bt_section_header">Pay Anyone</h2>
 
-<section class="bt_section_info">
-    <h3>From Account</h3>
-    <div class="details">
-        <label for="account">Account number</label>
-        <select name="account"
-                      id="account">
-            <option value="7877-8765676">7877-8765676</option>
-        </select>
+<div *ngIf="errorMessage" id="errorMessage" class="bt_banner bt_error_banner">
+    <div class="alert">
+        <app-svg-icon [svgIconId]="'alert'"></app-svg-icon>
+        <span>Please correct the errors in the below form.</span>
+    </div>
+</div>
+
+<div *ngIf="successMessage" class="bt_banner bt_success_banner">
+    <div class="alert_heading">
+        <app-svg-icon [svgIconId]="'check-circle'"></app-svg-icon>
+        <h3>Payment successful</h3>
+    </div>
+    <div class="alert_body">
+        <span>Transaction Id: {{ generateTransactionId()}}</span>
+        <span>{{ amount.value | currency: 'Rs.': 'code' }} has been successfully transferred to {{ getAccountNumber() }}.</span>
+        <a href="#" (click)="resetForm($event)">Start a new transaction</a>
     </div>
 
+</div>
+
+<!--Preview section-->
+<section class="bt_section_info" *ngIf="isShowPreview">
+    <h3>Confirmation</h3>
     <div class="details">
-        <span>Account type</span> <span>Savings</span>
+        <span>From Account</span>
+        <span>{{ fromAccount.value }}</span>
+    </div>
+    <div class="details">
+        <span>To Account</span>
+        <span>{{ getAccountNumber() }}</span>
+    </div>
+    <div class="details">
+        <span>Amount</span>
+        <span>{{ amount.value | currency: 'Rs.': 'code'}}</span>
+    </div>
+    <div class="details">
+        <span>Description</span>
+        <span>{{ description.value }}</span>
     </div>
 
-    <div class="details">
-        <span>Balance</span> <span>INR 34,3671.64</span>
+    <div class="btn-container">
+        <button class="button btn-secondary" (click)="goBack()">Edit</button>
+        <button class="button btn-primary" (click)="pay()">Confirm</button>
     </div>
 </section>
 
-<section class="bt_section_info">
-    <h3>To Account</h3>
-
-    <div class="details">
-        <span>Select Payee</span>
-        <div class="radio-container">
-            <label class="radio-label"> Payee <input checked [(ngModel)]="toAccount"
-                                                   name="pay"
-                                                   type="radio"
-                                                   value="payee">
-                <span class="checker checker-inside"></span>
-            </label>
-            <label class="radio-label"> Pay Anyone <input name="pay"
-                                                          [(ngModel)]="toAccount"
-                                                         type="radio"
-                                                         value="payAnyone">
-                <span class="checker checker-inside"></span>
-            </label>
+<!--Payment form-->
+<form [formGroup]="paymentForm" (ngSubmit)="showPreview()" *ngIf="showForm">
+    <section class="bt_section_info">
+        <h3>From Account</h3>
+        <div class="details">
+            <label for="account">Account number</label>
+            <select id="account" name="account" formControlName="fromAccount">
+                <option value="7877-8765676">7877-8765676</option>
+            </select>
         </div>
-    </div>
 
-    <div *ngIf="displayAccountDetails('payee')" class="details">
-        <label for="account1">Payee</label>
-        <select name="account"
-                  id="account1">
-                <option value="select">Select</option>
+        <div class="details">
+            <span>Account type</span> <span>Savings</span>
+        </div>
+
+        <div class="details">
+            <span>Balance</span> <span>INR 34,3671.64</span>
+        </div>
+    </section>
+
+    <section class="bt_section_info">
+        <h3>To Account</h3>
+
+        <div class="details">
+            <span>Select Payee</span>
+            <div class="radio-container">
+                <label class="radio-label"> Payee <input formControlName="payeeType"
+                                                         name="payeeType"
+                                                         type="radio"
+                                                         value="payee">
+                    <span class="checker checker-inside"></span> </label>
+                <label class="radio-label"> Pay Anyone <input formControlName="payeeType"
+                                                              name="payeeType"
+                                                              type="radio"
+                                                              value="payAnyone">
+                    <span class="checker checker-inside"></span> </label>
+            </div>
+            <div *ngIf="submitted && payeeType.invalid" class="bt_inline_error">Payee type is required</div>
+        </div>
+
+        <div *ngIf="displayAccountDetails('payee')"
+             class="details">
+            <label for="payee">Payee</label>
+            <select id="payee" name="payee" formControlName="payee">
+                <option value="" disabled>Select</option>
                 <option *ngFor="let payee of payees"
                         [value]="payee.name">{{ payee.name }}</option>
             </select>
+            <div *ngIf="submitted && payee.invalid" class="bt_inline_error">
+                Payee is required
+            </div>
 
-    </div>
-
-    <div *ngIf="displayAccountDetails('payAnyone')">
-        <div class="details">
-            <label for="accName">Account Name</label>
-            <input id="accName" type="text">
         </div>
-        <div class="details">
-            <label for="code">IFSC Code</label>
-            <input id="code" type="text">
+
+        <div *ngIf="displayAccountDetails('payAnyone')">
+            <div class="details">
+                <label for="accName">Account Name</label>
+                <input id="accName" type="text" formControlName="accountName">
+                <div *ngIf="submitted && accountName.invalid" class="bt_inline_error">Account Name is required</div>
+            </div>
+            <div class="details">
+                <label for="code">IFSC Code</label>
+                <input id="code" type="text" formControlName="code">
+                <div *ngIf="code.invalid && submitted" class="bt_inline_error">IFSC Code is required</div>
+            </div>
+            <div class="details">
+                <label for="accNumber">Account Number</label>
+                <input id="accNumber" type="text" formControlName="accountNumber">
+                <div *ngIf="accountNumber.invalid && submitted" class="bt_inline_error">Amount is required</div>
+            </div>
         </div>
+
+    </section>
+
+    <section class="bt_section_info">
+        <h3>Transaction Details</h3>
         <div class="details">
-            <label for="accNumber">Account Number</label>
-            <input id="accNumber" type="text">
+            <label for="amount">Amount (INR)</label>
+            <input id="amount" name="amount" type="text" formControlName="amount">
+            <div *ngIf="amount.invalid && submitted" class="bt_inline_error">
+                <span *ngIf="amount.errors.required">Amount is required</span>
+                <span *ngIf="amount.errors.pattern">Amount can only contain numbers and " . ". Example: XXX.XXX</span>
+            </div>
         </div>
-    </div>
 
-</section>
+        <div class="details">
+            <label for="description">Description</label>
+            <input id="description" type="text" formControlName="description">
+            <div *ngIf="description.invalid && submitted" class="bt_inline_error">Description is required</div>
+        </div>
 
-<section class="bt_section_info">
-    <h3>Transaction Details</h3>
-    <div class="details">
-        <label for="amount">Amount (INR)</label>
-        <input type="text"
-                      name="amount"
-                      id="amount">
-    </div>
+        <div class="details">
+            <label for="reference">Reference <span class="bt_optional">(optional)</span></label>
+            <input id="reference" type="text" formControlName="reference">
+        </div>
+    </section>
 
-    <div class="details">
-        <label for="description">Description</label>
-        <input type="text" id="description">
-    </div>
-</section>
+    <section>
+        <div class="btn-container">
+            <button class="button btn-secondary" (click)="resetForm($event)">Cancel</button>
+            <button class="button btn-primary" type="submit">Pay Now</button>
+        </div>
+    </section>
 
-<section>
-    <div class="btn-container">
-       <button class="button btn-secondary">Cancel</button>
-       <button class="button btn-primary">Pay Now</button>
-    </div>
-</section>
+</form>

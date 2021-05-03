@@ -209,6 +209,59 @@
   padding: 1em;
   border-radius: 10px;
 }
+.bt_inline_error {
+  color: #f88e94;
+  padding: 12px 0;
+}
+.bt form .bt_inline_error {
+  grid-column: 2/3;
+}
+.bt_banner {
+  padding: 12px;
+  margin-bottom: 12px;
+  color: #fff;
+  border-radius: 5px;
+}
+.bt_banner a {
+  color: white;
+}
+.bt_error_banner {
+  background: #f88e94;
+}
+.bt_success_banner {
+  background: #5ece5e;
+}
+.bt p {
+  padding-bottom: 12px;
+}
+.bt .alert {
+  display: flex;
+  align-items: center;
+}
+.bt .alert svg {
+  fill: white;
+}
+.bt .alert_heading {
+  display: flex;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+.bt .alert_heading svg {
+  fill: white;
+}
+.bt .alert_body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bt .alert_body span {
+  margin-bottom: 12px;
+}
+.bt_optional {
+  opacity: 0.5;
+  font-weight: 400;
+  font-style: italic;
+}
 
 :root {
   --bt-primary-color: #657aff;

@@ -10,7 +10,7 @@ import { SvgIconComponent } from './components/common/svg-icon/svg-icon.componen
 import { AccountsComponent } from './components/accounts/accounts.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FundTransferComponent } from './components/fund-transfer/fund-transfer.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { PayAnyoneComponent } from './components/pay-anyone/pay-anyone.component';
@@ -47,6 +47,6 @@ const routes: Routes = [
     PersonalDetailsComponent,
   ],
   exports: [BankingHomeComponent],
-  imports: [CommonModule, RouterModule.forRoot(routes), FormsModule],
+    imports: [CommonModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule]
 })
 export class BankingModule {}
