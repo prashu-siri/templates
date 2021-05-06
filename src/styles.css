@@ -26,12 +26,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  border: 1.5px solid var(--bt-input-border-color);
+  border: 1.5px solid #D3D3D3;
   transition: all 0.5s ease;
 }
 
 .radio-label input:checked ~ .checker-inside {
-  background-color: var(--bt-primary-color);
+  background-color: #BE5A38;
 }
 
 .radio-label input:checked ~ .checker:after {
@@ -52,8 +52,26 @@
 /*Banking template color variables*/
 .bt {
   /*Common*/
-  /*switch*/
-  /*Card*/
+  /********* BANKING CONTENT START********/
+  /********* BANKING CONTENT END ********/
+  /********* BANKING DASHBOARD START *******/
+  /********* BANKING DASHBOARD END *******/
+  /********* SWITCH **********/
+  /*****NAVIGATION BAR START*****/
+  /*****NAVIGATION BAR END*****/
+  /*****TRANSACTION START******/
+  /*****TRANSACTION END******/
+  /********* CARD START ***********/
+  /********* CARD END ***********/
+  /******* OVERRIDES START ********/
+  /******* OVERRIDES END ********/
+}
+.bt.banking {
+  display: flex;
+  color: #616161;
+}
+.bt .banking-content-container {
+  flex-grow: 1;
 }
 .bt_container {
   margin-bottom: 32px;
@@ -68,6 +86,93 @@
 .bt_section_header, .bt_section_info {
   margin-bottom: 24px;
 }
+.bt .banking-content {
+  height: 100%;
+  background: #EBEBEB;
+  padding: 24px 48px;
+}
+.bt .banking-content .header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 32px;
+}
+.bt .banking-content .search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 24px;
+  box-shadow: 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 20px;
+}
+.bt .banking-content .search-input {
+  height: 40px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  padding: 0 0 0 18px;
+  letter-spacing: 0.7px;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+}
+.bt .banking-content .search-input::placeholder {
+  opacity: 0.5;
+}
+.bt .banking-content .search-button {
+  background: white;
+  border: none;
+  padding: 10px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  outline: none;
+}
+.bt .banking-content .search-button:active {
+  transform: scale(0.95);
+}
+.bt .banking-content .search-button svg {
+  width: 18px;
+  height: 18px;
+}
+.bt .banking-content .notification {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 24px;
+  box-shadow: 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
+}
+.bt .banking-content .profile img {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.bt .dashboard-container h1 {
+  font-size: 2.5em;
+}
+.bt p {
+  padding: 12px 0;
+}
+.bt .summary {
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.bt .summary div {
+  flex: 1;
+}
+.bt .summary .summary-content {
+  display: flex;
+  align-items: center;
+}
+.bt .summary .summary-content h2 {
+  color: #BE5A38;
+}
 .bt_radio {
   display: inline-flex;
   background: white;
@@ -75,6 +180,7 @@
   overflow: hidden;
   border-radius: 20px;
   margin-bottom: 24px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
 }
 .bt_radio input {
   display: none;
@@ -85,18 +191,120 @@
   cursor: pointer;
 }
 .bt_radio label:not(:last-of-type) {
-  border-right: 1px solid var(--bt-border-color);
+  border-right: 1px solid #E0E0E0;
 }
 .bt_radio input:checked + label {
-  background: var(--bt-primary-color);
+  background: linear-gradient(45deg, #BE5A38, #D99781);
   color: white;
+}
+.bt .side-nav {
+  height: 100vh;
+}
+.bt .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 48px 32px;
+}
+.bt .logo__bg {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #BE5A38, #D99781);
+  margin-right: 12px;
+  position: relative;
+}
+.bt .logo__bg span {
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bt .menu-bar ul {
+  padding: 0;
+  margin: 0;
+}
+.bt .menu-bar a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 24px 32px;
+  color: #343434;
+  width: 100%;
+}
+.bt .menu-bar a.active {
+  color: #BE5A38;
+  background: #F6E5E0;
+  border-right: 3px solid;
+}
+.bt .transaction-history h3 {
+  padding: 24px;
+  border-bottom: 3px solid #E0E0E0;
+}
+.bt .transaction-history table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: left;
+  min-width: 100%;
+}
+.bt .transaction-history table th, .bt .transaction-history table td {
+  padding: 1em;
+  border-bottom: 1px solid #E0E0E0;
+}
+.bt .transaction-history table th span {
+  display: flex;
+}
+.bt .transaction-history table td span.credit {
+  color: green;
+}
+.bt .transaction-history table td span.debit {
+  color: red;
+}
+.bt .transaction-history table td.amount {
+  font-weight: 500;
+}
+.bt .transaction-history table td span.transaction-type {
+  display: flex;
+  align-items: center;
+}
+.bt .transaction-history table td button {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  width: auto;
+  padding: 12px;
+  background: #BE5A38;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+  font-weight: 500;
+  display: flex;
+  margin: 0;
+}
+.bt table.transaction-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+}
+.bt table.transaction-details-table tr {
+  border-bottom: 1px solid lightgray;
+}
+.bt table.transaction-details-table tr:nth-child(2n+1) {
+  background: #FCFCFC;
+}
+.bt table.transaction-details-table tr > td:first-child {
+  padding: 12px 24px;
 }
 .bt_section_info h3 {
   padding: 12px;
-  background: #7B85C1;
+  background: linear-gradient(45deg, #BE5A38, #D99781);
   color: white;
   border-radius: 5px;
   margin-bottom: 24px;
+  font-weight: 100;
 }
 .bt_section_info h4 {
   margin-left: 16px;
@@ -107,18 +315,25 @@
   padding: 12px 24px;
   align-items: center;
 }
+.bt .grid-vr {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
+  padding: 12px;
+  align-items: center;
+}
 .bt select {
   padding: 0.5em 4em 0.5em 0.5em;
-  border-color: var(--bt-input-border-color);
+  border-color: #D3D3D3;
   border-radius: 5px;
   font-size: 14px;
   color: #616161;
 }
 .bt input {
-  border: 1px solid var(--bt-input-border-color);
+  border: 1px solid #D3D3D3;
   padding: 6px 12px;
   border-radius: 5px;
-  height: 25px;
+  height: 40px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
 }
@@ -146,11 +361,11 @@
   transform: scale(0.95);
 }
 .bt .btn-primary {
-  background: var(--bt-primary-color);
+  background: linear-gradient(45deg, #BE5A38, #D99781);
   color: #FFF;
 }
 .bt .btn-secondary {
-  background: var(--bt-input-border-color);
+  background: #D3D3D3;
   color: #616161;
 }
 .bt .bt_page_header {
@@ -162,15 +377,16 @@
   grid-gap: 1.5em;
 }
 .bt .card {
-  background: linear-gradient(45deg, #606C88, #3F4C6B);
+  background: linear-gradient(45deg, #BE5A38, #D99781);
   color: white;
   padding: 1em;
   border-radius: 5px;
   box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15);
 }
-.bt .card-content .header {
+.bt .card-content .card-header {
   padding-bottom: 0.5em;
   border-bottom: 2px solid white;
+  text-align: left;
 }
 .bt .card-content ul {
   list-style: disc;
@@ -184,7 +400,7 @@
 .bt .card-content a {
   display: grid;
   justify-content: end;
-  color: #F39E7F;
+  color: white;
   text-decoration: none;
   padding: 0.2em;
   transition: text-decoration 0.3s ease-in;
@@ -198,8 +414,13 @@
   grid-gap: 2em;
 }
 .bt .bt_details_container img {
-  width: 100%;
-  margin-bottom: 32px;
+  width: 65%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 24px auto;
 }
 .bt .bt_details_container .left-panel {
   grid-row: 1/2;
@@ -210,7 +431,7 @@
   border-radius: 10px;
 }
 .bt_inline_error {
-  color: #f88e94;
+  color: #F88E94;
   padding: 12px 0;
 }
 .bt form .bt_inline_error {
@@ -219,17 +440,17 @@
 .bt_banner {
   padding: 12px;
   margin-bottom: 12px;
-  color: #fff;
+  color: #FFF;
   border-radius: 5px;
 }
 .bt_banner a {
   color: white;
 }
 .bt_error_banner {
-  background: #f88e94;
+  background: #F88E94;
 }
 .bt_success_banner {
-  background: #5ece5e;
+  background: #5ECE5E;
 }
 .bt p {
   padding-bottom: 12px;
@@ -262,12 +483,67 @@
   font-weight: 400;
   font-style: italic;
 }
+.bt_side_panel .details {
+  padding: 12px;
+  grid-template-columns: 70% 30%;
+}
+.bt_side_panel:not(:last-child) {
+  margin-bottom: 32px;
+}
+.bt .radio-label .checker {
+  border: 1.5px solid #D3D3D3;
+}
+.bt input.switch-input:checked + .slider {
+  background: #C85E41;
+}
 
-:root {
-  --bt-primary-color: #657aff;
-  --bt-border-color: #e6e6e67d;
-  --bt-input-border-color: #d3d3d3;
-  --bt-background: #f3f3f3;
+.switch {
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 20px;
+  cursor: pointer;
+}
+
+input.switch-input {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: grey;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+input.switch-input:checked + .slider {
+  background: #7B85C1;
+}
+
+input.switch-input:checked + .slider::before {
+  left: 22px;
+}
+
+.slider::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6);
+  transition: 0.2s ease-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -336,7 +612,7 @@ ul {
   width: auto;
   padding: 12px;
   letter-spacing: 0.5px;
-  color: #ffffff;
+  color: #FFFFFF;
   cursor: pointer;
   text-transform: uppercase;
   margin: 24px auto;
@@ -350,7 +626,7 @@ ul {
 }
 
 .btn-primary {
-  background: #2f2f7e;
+  background: #2F2F7E;
 }
 
 .btn-regular {
@@ -371,7 +647,7 @@ ul {
 
 .progress-bar {
   width: 100%;
-  background-color: #ddd;
+  background-color: #DDD;
   border-radius: 5px;
 }
 
@@ -463,11 +739,11 @@ button svg {
 .title-container svg {
   height: 24px;
   width: 24px;
-  fill: #6f6194;
+  fill: #6F6194;
 }
 
 .sort svg {
-  fill: #6f6194;
+  fill: #6F6194;
 }
 
 .banking svg {
@@ -484,7 +760,7 @@ button svg {
   position: fixed;
   bottom: 50px;
   right: 0;
-  background: #657aff;
+  background: #657AFF;
   padding: 6px;
 }
 .floating svg {

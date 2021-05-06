@@ -8,10 +8,10 @@
 
 .main {
   margin: 48px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 .main .card {
-  width: 15%;
   box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.25);
   color: white;
   background: #313131;

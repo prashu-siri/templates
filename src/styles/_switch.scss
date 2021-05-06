@@ -1,0 +1,44 @@
+.switch {
+  position : relative;
+  display  : block;
+  width    : 45px;
+  height   : 20px;
+  cursor   : pointer;
+}
+
+input.switch-input {
+  opacity        : 0;
+  pointer-events : none;
+}
+
+.slider {
+  position      : absolute;
+  top           : 0;
+  left          : 0;
+  right         : 0;
+  bottom        : 0;
+  background    : grey;
+  border-radius : 20px;
+  transition    : all .5s ease;
+}
+
+input.switch-input:checked + .slider {
+  background : #7B85C1;
+}
+
+input.switch-input:checked + .slider::before {
+  left : 22px;
+}
+
+.slider::before {
+  content       : "";
+  width         : 25px;
+  height        : 25px;
+  border-radius : 50%;
+  background    : white;
+  position      : absolute;
+  top           : -3px;
+  left          : 0;
+  box-shadow    : inset 0 0 5px rgb(0 0 0 / 60%);
+  transition    : .2s ease-out;
+}

@@ -23,12 +23,12 @@
   position      : absolute;
   top           : 0;
   left          : 0;
-  border        : 1.5px solid var(--bt-input-border-color);
+  border        : 1.5px solid #D3D3D3;
   transition    : all 0.5s ease;
 }
 
 .radio-label input:checked ~ .checker-inside {
-  background-color : var(--bt-primary-color);
+  background-color : #BE5A38;
 }
 
 .radio-label input:checked ~ .checker:after {
