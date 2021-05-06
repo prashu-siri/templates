@@ -1,11 +1,11 @@
 @import "radio";
 
-$primary-color      : #BE5A38;
+$primary-color      : #348AA7;
 $border-color       : #E0E0E0;
 $input-border-color : #D3D3D3;
-$link-active        : #F6E5E0;
+$link-active        : #D6EEF7;
 $font-color         : #616161;
-$background-clr     : linear-gradient(45deg, $primary-color, #D99781);
+$background-clr     : linear-gradient(45deg, #348AA7, #62B4D0);
 $font-family        : "Roboto", sans-serif;
 
 /*Banking template color variables*/
@@ -31,6 +31,11 @@ $font-family        : "Roboto", sans-serif;
     margin-bottom : 24px;
     border-radius : 10px;
     box-shadow    : 5px 5px 15px rgb(0 0 0 / 25%);
+  }
+
+  &_section_header {
+    padding-bottom : 18px;
+    border-bottom  : 1px solid $border-color;
   }
 
   &_section_header,
@@ -227,6 +232,7 @@ $font-family        : "Roboto", sans-serif;
         color        : $primary-color;
         background   : $link-active;
         border-right : 3px solid;
+        font-weight  : 500;
       }
     }
   }
@@ -566,8 +572,12 @@ $font-family        : "Roboto", sans-serif;
     border : 1.5px solid $input-border-color;
   }
 
+  .radio-label input:checked ~ .checker-inside {
+    background-color : $primary-color;
+  }
+
   input.switch-input:checked + .slider {
-    background : #C85E41;
+    background : $primary-color;
   }
 
   /******* OVERRIDES END ********/
