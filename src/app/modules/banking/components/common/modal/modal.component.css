@@ -27,6 +27,37 @@
   border-radius: 3px;
   transform: scale(0);
 }
+.modal .btn {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  width: auto;
+  padding: 6px 12px;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  background: #BE5A38;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 6px;
+  transition: transform 0.2s ease;
+  font-weight: 500;
+}
+.modal .btn:active {
+  transform: scale(0.9);
+}
+.modal .btn-primary {
+  background: #0C5EA6;
+}
+.modal .button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 12px;
+}
+.modal .button-end {
+  justify-content: flex-end;
+}
 
 .modal svg {
   height: 24px;
@@ -54,42 +85,6 @@
 
 .modal .modal-body {
   padding: 12px 24px;
-}
-
-.btn {
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  width: auto;
-  padding: 6px 12px;
-  letter-spacing: 0.5px;
-  color: #FFFFFF;
-  background: #BE5A38;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin: 6px;
-  transition: transform 0.2s ease;
-  font-weight: 500;
-}
-
-.btn:active {
-  transform: scale(0.9);
-}
-
-.btn-primary {
-  background: #0C5EA6;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 24px;
-  padding: 12px;
-}
-
-.button-end {
-  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=modal.component.css.map */

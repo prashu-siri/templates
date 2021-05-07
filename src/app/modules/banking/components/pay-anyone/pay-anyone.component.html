@@ -1,6 +1,7 @@
 <h2 class="bt_section_header">Pay Anyone</h2>
 
-<div *ngIf="errorMessage" id="errorMessage" class="bt_banner bt_error_banner">
+<!--Alert Banner-->
+<div *ngIf="errorMessage" class="bt_banner bt_error_banner" id="errorMessage">
     <div class="alert">
         <app-svg-icon [svgIconId]="'alert'"></app-svg-icon>
         <span>Please correct the errors in the below form.</span>
@@ -14,14 +15,18 @@
     </div>
     <div class="alert_body">
         <span>Transaction Id: {{ generateTransactionId()}}</span>
-        <span>{{ amount.value | currency: 'Rs.': 'code' }} has been successfully transferred to {{ getAccountNumber() }}.</span>
-        <a href="#" (click)="resetForm($event)">Start a new transaction</a>
+        <span>{{ amount.value | currency: 'Rs.': 'code' }}
+            has been successfully transferred to {{ getAccountNumber() }}.</span>
+        <a
+                (click)="resetForm($event)"
+                href="#"
+        >Start a new transaction
+        </a>
     </div>
-
 </div>
 
 <!--Preview section-->
-<section class="bt_section_info" *ngIf="isShowPreview">
+<section *ngIf="isShowPreview" class="bt_section_info">
     <h3>Confirmation</h3>
     <div class="details">
         <span>From Account</span>
@@ -41,28 +46,34 @@
     </div>
 
     <div class="btn-container">
-        <button class="button btn-secondary" (click)="goBack()">Edit</button>
-        <button class="button btn-primary" (click)="pay()">Confirm</button>
+        <button (click)="goBack()" class="button btn-secondary">Edit</button>
+        <button (click)="pay()" class="button btn-primary">Confirm</button>
     </div>
 </section>
 
 <!--Payment form-->
-<form [formGroup]="paymentForm" (ngSubmit)="showPreview()" *ngIf="showForm">
+<form (ngSubmit)="showPreview()" *ngIf="showForm" [formGroup]="paymentForm">
     <section class="bt_section_info">
         <h3>From Account</h3>
         <div class="details">
             <label for="account">Account number</label>
-            <select id="account" name="account" formControlName="fromAccount">
+            <select
+                    formControlName="fromAccount"
+                    id="account"
+                    name="account"
+            >
                 <option value="7877-8765676">7877-8765676</option>
             </select>
         </div>
 
         <div class="details">
-            <span>Account type</span> <span>Savings</span>
+            <span>Account type</span>
+            <span>Savings</span>
         </div>
 
         <div class="details">
-            <span>Balance</span> <strong>INR 34,3671.64</strong>
+            <span>Balance</span>
+            <strong>INR 34,3671.64</strong>
         </div>
     </section>
 
@@ -72,27 +83,35 @@
         <div class="details">
             <span>Select Payee</span>
             <div class="radio-container">
-                <label class="radio-label"> Payee <input formControlName="payeeType"
-                                                         name="payeeType"
-                                                         type="radio"
-                                                         value="payee">
-                    <span class="checker checker-inside"></span> </label>
-                <label class="radio-label"> Pay Anyone <input formControlName="payeeType"
-                                                              name="payeeType"
-                                                              type="radio"
-                                                              value="payAnyone">
-                    <span class="checker checker-inside"></span> </label>
+                <label class="radio-label"> Payee
+                    <input formControlName="payeeType"
+                           name="payeeType"
+                           type="radio"
+                           value="payee">
+                    <span class="checker checker-inside"></span>
+                </label>
+                <label class="radio-label">
+                    Pay Anyone
+                    <input formControlName="payeeType"
+                           name="payeeType"
+                           type="radio"
+                           value="payAnyone">
+                    <span class="checker checker-inside"></span>
+                </label>
             </div>
-            <div *ngIf="submitted && payeeType.invalid" class="bt_inline_error">Payee type is required</div>
+            <div *ngIf="submitted && payeeType.invalid" class="bt_inline_error">
+                Payee type is required
+            </div>
         </div>
 
-        <div *ngIf="displayAccountDetails('payee')"
-             class="details">
+        <div *ngIf="displayAccountDetails('payee')" class="details">
             <label for="payee">Payee</label>
-            <select id="payee" name="payee" formControlName="payee">
-                <option value="" disabled>Select</option>
-                <option *ngFor="let payee of payees"
-                        [value]="payee.name">{{ payee.name }}</option>
+            <select formControlName="payee" id="payee" name="payee">
+                <option disabled value="">Select</option>
+                <option
+                        *ngFor="let payee of payees"
+                        [value]="payee.name"
+                >{{ payee.name }}</option>
             </select>
             <div *ngIf="submitted && payee.invalid" class="bt_inline_error">
                 Payee is required
@@ -103,51 +122,80 @@
         <div *ngIf="displayAccountDetails('payAnyone')">
             <div class="details">
                 <label for="accName">Account Name</label>
-                <input id="accName" type="text" formControlName="accountName">
-                <div *ngIf="submitted && accountName.invalid" class="bt_inline_error">Account Name is required</div>
+                <input formControlName="accountName" id="accName" type="text">
+                <div *ngIf="submitted" class="bt_inline_error">
+                    <span *ngIf="accountName.hasError('required')">
+                        Account Name is required
+                    </span>
+                    <span *ngIf="accountName.hasError('pattern')">
+                        Account Name can only contain alphabets and space
+                    </span>
+                </div>
             </div>
             <div class="details">
                 <label for="code">IFSC Code</label>
-                <input id="code" type="text" formControlName="code">
-                <div *ngIf="code.invalid && submitted" class="bt_inline_error">IFSC Code is required</div>
+                <input formControlName="code" id="code" type="text">
+                <div *ngIf="submitted" class="bt_inline_error">
+                    <span *ngIf="code.hasError('required')">
+                        IFSC code is required
+                    </span>
+                    <span *ngIf="code.hasError('pattern')">
+                        IFSC Code can only contain alphabets or numbers
+                    </span>
+                </div>
             </div>
+
             <div class="details">
                 <label for="accNumber">Account Number</label>
-                <input id="accNumber" type="text" formControlName="accountNumber">
-                <div *ngIf="accountNumber.invalid && submitted" class="bt_inline_error">Amount is required</div>
+                <input formControlName="accountNumber" id="accNumber" type="text">
+                <div *ngIf="submitted" class="bt_inline_error">
+                    <span *ngIf="accountNumber.hasError('required')">
+                        Account Number is required
+                    </span>
+                    <span *ngIf="accountNumber.hasError('pattern')">
+                        Account number can only contain numbers
+                    </span>
+                </div>
             </div>
         </div>
-
     </section>
 
     <section class="bt_section_info">
         <h3>Transaction Details</h3>
         <div class="details">
             <label for="amount">Amount (INR)</label>
-            <input id="amount" name="amount" type="text" formControlName="amount">
-            <div *ngIf="amount.invalid && submitted" class="bt_inline_error">
-                <span *ngIf="amount.errors.required">Amount is required</span>
-                <span *ngIf="amount.errors.pattern">Amount can only contain numbers and " . ". Example: XXX.XXX</span>
+            <input formControlName="amount"
+                   id="amount"
+                   name="amount"
+                   type="text">
+            <div *ngIf="submitted" class="bt_inline_error">
+                <span *ngIf="amount.hasError('required')">Amount is required</span>
+                <span *ngIf="amount.hasError('pattern')">
+                    Amount can only contain numbers and " . ". Example: XXX.XXX
+                </span>
             </div>
         </div>
 
         <div class="details">
             <label for="description">Description</label>
-            <input id="description" type="text" formControlName="description">
-            <div *ngIf="description.invalid && submitted" class="bt_inline_error">Description is required</div>
+            <input formControlName="description" id="description" type="text">
+            <div *ngIf="description.invalid && submitted" class="bt_inline_error">
+                Description is required
+            </div>
         </div>
 
         <div class="details">
-            <label for="reference">Reference <span class="bt_optional">(optional)</span></label>
-            <input id="reference" type="text" formControlName="reference">
+            <label for="reference">Reference
+                <span class="bt_optional">(optional)</span>
+            </label>
+            <input formControlName="reference" id="reference" type="text">
         </div>
     </section>
 
     <section>
         <div class="btn-container">
-            <button class="button btn-secondary" (click)="resetForm($event)">Cancel</button>
+            <button (click)="resetForm($event)" class="button btn-secondary">Cancel</button>
             <button class="button btn-primary" type="submit">Pay Now</button>
         </div>
     </section>
-
 </form>

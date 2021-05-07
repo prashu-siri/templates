@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
 
 @import "styles/banking";
 @import "styles/switch";
@@ -12,9 +12,10 @@
 body {
   padding        : 0;
   margin         : 0;
-  font-family    : "Roboto", sans-serif;
+  font-family    : "Rubik", sans-serif;
   font-size      : 16px;
   letter-spacing : 0.5px;
+  font-weight    : 400;
 }
 
 h1,

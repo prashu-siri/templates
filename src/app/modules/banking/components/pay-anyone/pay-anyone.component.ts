@@ -18,6 +18,10 @@ export class PayAnyoneComponent implements OnInit {
   isShowPreview: boolean = false;
   initialFormState;
 
+  accountNumberPattern: string = '^[\d]&';
+  ifscCodePattern: string = '^[A-Z]{4}0[A-Z0-9]{6}$';
+  accountNamePattern: string = '^[a-zA-z]+([\\s][a-zA-Z]+)*$';
+
   constructor(private commonService: CommonService) { }
 
   ngOnInit(): void {
@@ -31,7 +35,7 @@ export class PayAnyoneComponent implements OnInit {
       'accountNumber': new FormControl(''),
       'amount': new FormControl('', [
           Validators.required,
-          Validators.pattern(new RegExp('^([0-9]+)(\.[0-9]{1,})?$'))
+          Validators.pattern(new RegExp('^([0-9]+)(\.[0-9]+)?$'))
       ]),
       'description': new FormControl('', Validators.required),
       'reference': new FormControl('')
@@ -44,10 +48,10 @@ export class PayAnyoneComponent implements OnInit {
     this.initialFormState = this.paymentForm.value;
 
     this.payeeType.valueChanges.subscribe(value => {
-      if(value === 'payAnyOne') {
-        this.accountNumber.setValidators(Validators.required);
-        this.code.setValidators(Validators.required);
-        this.accountName.setValidators(Validators.required);
+      if(value === 'payAnyone') {
+        this.accountNumber.setValidators([Validators.required, Validators.pattern(this.accountNumberPattern)]);
+        this.code.setValidators([Validators.required, Validators.pattern(this.ifscCodePattern)]);
+        this.accountName.setValidators([Validators.required, Validators.pattern(this.accountNamePattern)]);
       } else {
         this.payee.setValidators(Validators.required);
       }
@@ -111,35 +115,35 @@ export class PayAnyoneComponent implements OnInit {
     return this.payee.value !== '' ? this.payee.value : this.accountNumber.value;
   }
 
-  get fromAccount() {
-    return this.paymentForm.get('fromAccount');
+  get fromAccount(): FormControl {
+    return this.paymentForm.get('fromAccount') as FormControl;
   }
 
-  get payeeType() {
-    return this.paymentForm.get('payeeType');
+  get payeeType(): FormControl {
+    return this.paymentForm.get('payeeType') as FormControl;
   }
 
-  get payee() {
-    return this.paymentForm.get('payee');
+  get payee(): FormControl {
+    return this.paymentForm.get('payee') as FormControl;
   }
 
-  get accountName() {
-    return this.paymentForm.get('accountName');
+  get accountName(): FormControl {
+    return this.paymentForm.get('accountName') as FormControl;
   }
 
-  get accountNumber() {
-    return this.paymentForm.get('accountNumber');
+  get accountNumber(): FormControl {
+    return this.paymentForm.get('accountNumber') as FormControl;
   }
 
-  get code() {
-    return this.paymentForm.get('code');
+  get code(): FormControl {
+    return this.paymentForm.get('code') as FormControl;
   }
 
-  get amount() {
-    return this.paymentForm.get('amount');
+  get amount(): FormControl {
+    return this.paymentForm.get('amount') as FormControl;
   }
 
-  get description() {
-    return this.paymentForm.get('description');
+  get description(): FormControl {
+    return this.paymentForm.get('description') as FormControl;
   }
 }

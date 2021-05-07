@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap");
 .radio-label {
   display: inline-block;
   position: relative;
@@ -82,6 +82,10 @@
   margin-bottom: 24px;
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+.bt_section_header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #E0E0E0;
 }
 .bt_section_header, .bt_section_info {
   margin-bottom: 24px;
@@ -171,7 +175,7 @@
   align-items: center;
 }
 .bt .summary .summary-content h2 {
-  color: #BE5A38;
+  color: #348AA7;
 }
 .bt_radio {
   display: inline-flex;
@@ -194,7 +198,7 @@
   border-right: 1px solid #E0E0E0;
 }
 .bt_radio input:checked + label {
-  background: linear-gradient(45deg, #BE5A38, #D99781);
+  background: linear-gradient(45deg, #348AA7, #62B4D0);
   color: white;
 }
 .bt .side-nav {
@@ -210,7 +214,7 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #BE5A38, #D99781);
+  background: linear-gradient(45deg, #348AA7, #62B4D0);
   margin-right: 12px;
   position: relative;
 }
@@ -235,9 +239,10 @@
   width: 100%;
 }
 .bt .menu-bar a.active {
-  color: #BE5A38;
-  background: #F6E5E0;
+  color: #348AA7;
+  background: #D6EEF7;
   border-right: 3px solid;
+  font-weight: 500;
 }
 .bt .transaction-history h3 {
   padding: 24px;
@@ -275,7 +280,7 @@
   outline: none;
   width: auto;
   padding: 12px;
-  background: #BE5A38;
+  background: #348AA7;
   cursor: pointer;
   text-transform: uppercase;
   transition: transform 0.2s ease;
@@ -300,7 +305,7 @@
 }
 .bt_section_info h3 {
   padding: 12px;
-  background: linear-gradient(45deg, #BE5A38, #D99781);
+  background: linear-gradient(45deg, #348AA7, #62B4D0);
   color: white;
   border-radius: 5px;
   margin-bottom: 24px;
@@ -361,7 +366,7 @@
   transform: scale(0.95);
 }
 .bt .btn-primary {
-  background: linear-gradient(45deg, #BE5A38, #D99781);
+  background: linear-gradient(45deg, #348AA7, #62B4D0);
   color: #FFF;
 }
 .bt .btn-secondary {
@@ -377,7 +382,7 @@
   grid-gap: 1.5em;
 }
 .bt .card {
-  background: linear-gradient(45deg, #BE5A38, #D99781);
+  background: linear-gradient(45deg, #348AA7, #62B4D0);
   color: white;
   padding: 1em;
   border-radius: 5px;
@@ -493,8 +498,11 @@
 .bt .radio-label .checker {
   border: 1.5px solid #D3D3D3;
 }
+.bt .radio-label input:checked ~ .checker-inside {
+  background-color: #348AA7;
+}
 .bt input.switch-input:checked + .slider {
-  background: #C85E41;
+  background: #348AA7;
 }
 
 .switch {
@@ -516,7 +524,7 @@ input.switch-input {
   left: 0;
   right: 0;
   bottom: 0;
-  background: grey;
+  background: #A7A7A7;
   border-radius: 20px;
   transition: all 0.5s ease;
 }
@@ -549,9 +557,10 @@ input.switch-input:checked + .slider::before {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
   letter-spacing: 0.5px;
+  font-weight: 400;
 }
 
 h1,
