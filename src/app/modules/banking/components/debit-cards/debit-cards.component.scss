@@ -51,7 +51,23 @@
 }
 
 @media (min-width : 1900px) {
-    .bt_card_holder {
-      width : 32%;
-    }
+  .bt_card_holder {
+    width : 32%;
   }
+}
+
+@media (min-width : 320px) and (max-width : 767px) {
+  .bt_card_holder {
+    width : 100%;
+  }
+
+  .emboss.number {
+    font-size : 1.5rem;
+  }
+}
+
+@media (min-width : 768px) and (max-width : 900px) {
+  .bt_card_holder {
+    width : 70%;
+  }
+}

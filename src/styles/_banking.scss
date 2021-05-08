@@ -13,8 +13,9 @@ $font-family        : "Roboto", sans-serif;
 
   /*Common*/
   &.banking {
-    display : flex;
-    color   : $font-color;
+    display    : flex;
+    color      : $font-color;
+    background : #EBEBEB;
   }
 
   .banking-content-container {
@@ -45,9 +46,8 @@ $font-family        : "Roboto", sans-serif;
 
   /********* BANKING CONTENT START********/
   .banking-content {
-    height     : 100%;
-    background : #EBEBEB;
-    padding    : 24px 48px;
+    height  : 100%;
+    padding : 24px 48px;
   }
 
   .banking-content .header {
@@ -78,6 +78,7 @@ $font-family        : "Roboto", sans-serif;
 
   .banking-content .search-input::placeholder {
     opacity : 0.5;
+    z-index : -1;
   }
 
   .banking-content .search-button {
@@ -185,32 +186,33 @@ $font-family        : "Roboto", sans-serif;
   }
 
   /*****NAVIGATION BAR START*****/
+
   .side-nav {
-    height : 100vh;
+    height     : 100vh;
+    background : white;
+  }
+
+  .side-nav-mobile, .icon-close {
+    display : none;
   }
 
   .logo {
     display         : flex;
     justify-content : center;
     align-items     : center;
-    margin          : 48px 32px;
+    padding         : 24px;
 
     &__bg {
       height        : 50px;
       width         : 50px;
       border-radius : 50%;
-      background    : $background-clr;
+      background    : linear-gradient(45deg, #348AA7, #62B4D0);
       margin-right  : 12px;
       position      : relative;
-
-      span {
-        color       : white;
-        font-weight : 600;
-        position    : absolute;
-        top         : 50%;
-        left        : 50%;
-        transform   : translate(-50%, -50%);
-      }
+      display       : inline-block;
+      text-align    : center;
+      padding       : 15px 0;
+      color         : #FFF;
     }
   }
 
@@ -240,6 +242,10 @@ $font-family        : "Roboto", sans-serif;
   /*****NAVIGATION BAR END*****/
 
   /*****TRANSACTION START******/
+  .bt-mobile {
+    display : none;
+  }
+
   .transaction-history {
     h3 {
       padding       : 24px;
@@ -373,7 +379,7 @@ $font-family        : "Roboto", sans-serif;
   .btn-container {
     display         : flex;
     justify-content : space-between;
-    margin          : 48px 12px;
+    margin          : 48px 0;
   }
 
   .button {
@@ -387,6 +393,7 @@ $font-family        : "Roboto", sans-serif;
     transition     : transform 0.2s ease;
     font-family    : Roboto, sans-serif;
     font-size      : 16px;
+    margin         : 12px;
 
     &:hover {
       box-shadow : 5px 5px 15px 0 rgb(0 0 0 / 15%);
@@ -515,10 +522,6 @@ $font-family        : "Roboto", sans-serif;
 
   &_success_banner {
     background : #5ECE5E;
-  }
-
-  p {
-    padding-bottom : 12px;
   }
 
   .alert {

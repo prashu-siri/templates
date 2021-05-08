@@ -21,10 +21,8 @@ export class AccountsComponent implements OnInit {
   }
 
   fetchAccountDetails() {
-    console.log(this.accountNumber);
     this.commonService.fetchTransactions().subscribe((response: Transactions[]) => {
       this.transactions = response;
-      console.log(response);
     });
   }
 

@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
 
 @import "styles/banking";
+@import "styles/banking-mobile";
 @import "styles/switch";
 
 *, *::before, *::after {
@@ -233,12 +234,6 @@ button svg {
   svg {
     fill   : white;
     margin : 0;
-  }
-}
-
-@media (max-width : 500px) {
-  nav {
-    display : none;
   }
 }
 

@@ -12,4 +12,7 @@ export class BankingNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleMenu(element: HTMLElement): void {
+    element.classList.toggle("slide-open");
+  }
 }

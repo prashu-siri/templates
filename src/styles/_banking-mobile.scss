@@ -1,0 +1,209 @@
+@media (min-width : 320px) and (max-width : 767px) {
+  .bt {
+
+    &.banking {
+      flex-direction : column;
+    }
+
+    .side-nav-mobile {
+      display         : flex;
+      justify-content : space-between;
+      align-items     : center;
+    }
+
+    .side-nav {
+      position   : fixed;
+      height     : 100%;
+      width      : 100%;
+      transform  : translateX(-100%);
+      transition : transform 0.3s ease-in;
+      z-index    : 1;
+    }
+
+    .side-nav.slide-open {
+      transform : translateX(0);
+    }
+
+    .icon-close {
+      display : block;
+    }
+
+    .logo {
+      justify-content : space-between;
+    }
+
+    .search-container {
+      flex-grow : 1;
+    }
+
+    .search-input {
+      width : 100%;
+    }
+
+    h1, h2 {
+      text-align : center;
+    }
+
+    .banking-content {
+      padding : 12px 18px;
+
+      .notification {
+        display : none;
+      }
+    }
+
+    .banking-content .header {
+      justify-content : flex-start;
+      padding         : 0;
+    }
+
+    .summary {
+      flex-direction : column;
+      align-items    : flex-start;
+    }
+
+    .transaction-history {
+      display : none;
+    }
+
+    .bt-mobile {
+      display : block;
+
+      table {
+        table-layout    : fixed;
+        border-collapse : collapse;
+        width           : 100%;
+      }
+
+      th {
+        text-align : left;
+
+        &:last-child {
+          text-align : right;
+        }
+      }
+
+      td {
+        padding       : 18px 0;
+        border-bottom : 1px solid #E0E0E0;
+
+        &:last-child {
+          text-align : right;
+        }
+      }
+    }
+
+    .bt_radio {
+      width : 100%;
+
+      label {
+        width      : 100%;
+        padding    : 1em;
+        font-size  : 15px;
+        cursor     : pointer;
+        text-align : center;
+      }
+    }
+
+    .details {
+      grid-template-rows    : repeat(2, 1fr);
+      grid-template-columns : none;
+      grid-gap              : 6px;
+      padding               : 0.75em;
+
+      *:first-child {
+        font-weight : 600;
+      }
+    }
+
+    .bt_section_info h4 {
+      font-size   : 18px;
+      margin-left : 0;
+    }
+
+    .btn-container {
+      flex-direction : column-reverse;
+
+      button {
+        margin : 6px;
+      }
+    }
+
+    .card-wrapper {
+      grid-template-rows    : repeat(3, 1fr);
+      grid-template-columns : none;
+    }
+
+    .bt_details_container {
+      grid-template-rows    : 1fr;
+      grid-template-columns : none;
+    }
+
+    form .bt_inline_error {
+      grid-column : 1;
+      padding     : 6px 0;
+    }
+  }
+}
+
+@media (min-width : 768px) and (max-width : 900px) {
+  .bt {
+
+    .logo {
+      justify-content : space-between;
+    }
+
+    h1, h2 {
+      text-align : left;
+    }
+
+    .banking-content {
+      .notification {
+        display : flex;
+      }
+    }
+
+    &.banking {
+      flex-direction : column;
+    }
+
+    .side-nav-mobile {
+      display         : flex;
+      justify-content : space-between;
+      align-items     : center;
+    }
+
+    .side-nav {
+      position   : fixed;
+      height     : 100%;
+      width      : 100%;
+      transform  : translateX(-100%);
+      transition : transform 0.3s ease-in;
+      z-index    : 1;
+    }
+
+    .side-nav.slide-open {
+      transform : translateX(0);
+    }
+
+    .icon-close {
+      display : block;
+    }
+
+    .summary {
+      display               : grid;
+      grid-template-columns : repeat(2, 1fr);
+      grid-gap              : 6px;
+    }
+
+    .card-wrapper {
+      grid-template-rows    : repeat(3, 1fr);
+      grid-template-columns : none;
+    }
+
+    .bt_details_container {
+      grid-template-rows    : 1fr;
+      grid-template-columns : none;
+    }
+  }
+}

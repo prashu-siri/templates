@@ -54,5 +54,19 @@
     width: 32%;
   }
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .bt_card_holder {
+    width: 100%;
+  }
+
+  .emboss.number {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .bt_card_holder {
+    width: 70%;
+  }
+}
 
 /*# sourceMappingURL=debit-cards.component.css.map */

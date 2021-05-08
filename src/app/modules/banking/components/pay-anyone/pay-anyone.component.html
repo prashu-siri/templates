@@ -99,9 +99,9 @@
                     <span class="checker checker-inside"></span>
                 </label>
             </div>
-            <div *ngIf="submitted && payeeType.invalid" class="bt_inline_error">
-                Payee type is required
-            </div>
+            <span *ngIf="submitted" class="bt_inline_error">
+                <span *ngIf="payeeType.hasError('required')">Payee type is required</span>
+            </span>
         </div>
 
         <div *ngIf="displayAccountDetails('payee')" class="details">
@@ -113,8 +113,8 @@
                         [value]="payee.name"
                 >{{ payee.name }}</option>
             </select>
-            <div *ngIf="submitted && payee.invalid" class="bt_inline_error">
-                Payee is required
+            <div *ngIf="submitted" class="bt_inline_error">
+                <span *ngIf="payee.hasError('required')">Payee is required</span>
             </div>
 
         </div>
@@ -179,8 +179,8 @@
         <div class="details">
             <label for="description">Description</label>
             <input formControlName="description" id="description" type="text">
-            <div *ngIf="description.invalid && submitted" class="bt_inline_error">
-                Description is required
+            <div *ngIf="submitted" class="bt_inline_error">
+                <span *ngIf="description.hasError('required')">Description is required</span>
             </div>
         </div>
 

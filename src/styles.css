@@ -69,6 +69,7 @@
 .bt.banking {
   display: flex;
   color: #616161;
+  background: #EBEBEB;
 }
 .bt .banking-content-container {
   flex-grow: 1;
@@ -92,7 +93,6 @@
 }
 .bt .banking-content {
   height: 100%;
-  background: #EBEBEB;
   padding: 24px 48px;
 }
 .bt .banking-content .header {
@@ -120,6 +120,7 @@
 }
 .bt .banking-content .search-input::placeholder {
   opacity: 0.5;
+  z-index: -1;
 }
 .bt .banking-content .search-button {
   background: white;
@@ -203,12 +204,16 @@
 }
 .bt .side-nav {
   height: 100vh;
+  background: white;
+}
+.bt .side-nav-mobile, .bt .icon-close {
+  display: none;
 }
 .bt .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 48px 32px;
+  padding: 24px;
 }
 .bt .logo__bg {
   height: 50px;
@@ -217,14 +222,10 @@
   background: linear-gradient(45deg, #348AA7, #62B4D0);
   margin-right: 12px;
   position: relative;
-}
-.bt .logo__bg span {
-  color: white;
-  font-weight: 600;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: inline-block;
+  text-align: center;
+  padding: 15px 0;
+  color: #FFF;
 }
 .bt .menu-bar ul {
   padding: 0;
@@ -243,6 +244,9 @@
   background: #D6EEF7;
   border-right: 3px solid;
   font-weight: 500;
+}
+.bt .bt-mobile {
+  display: none;
 }
 .bt .transaction-history h3 {
   padding: 24px;
@@ -345,7 +349,7 @@
 .bt .btn-container {
   display: flex;
   justify-content: space-between;
-  margin: 48px 12px;
+  margin: 48px 0;
 }
 .bt .button {
   border: none;
@@ -358,6 +362,7 @@
   transition: transform 0.2s ease;
   font-family: Roboto, sans-serif;
   font-size: 16px;
+  margin: 12px;
 }
 .bt .button:hover {
   box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15);
@@ -457,9 +462,6 @@
 .bt_success_banner {
   background: #5ECE5E;
 }
-.bt p {
-  padding-bottom: 12px;
-}
 .bt .alert {
   display: flex;
   align-items: center;
@@ -505,6 +507,167 @@
   background: #348AA7;
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .bt.banking {
+    flex-direction: column;
+  }
+  .bt .side-nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bt .side-nav {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+    z-index: 1;
+  }
+  .bt .side-nav.slide-open {
+    transform: translateX(0);
+  }
+  .bt .icon-close {
+    display: block;
+  }
+  .bt .logo {
+    justify-content: space-between;
+  }
+  .bt .search-container {
+    flex-grow: 1;
+  }
+  .bt .search-input {
+    width: 100%;
+  }
+  .bt h1, .bt h2 {
+    text-align: center;
+  }
+  .bt .banking-content {
+    padding: 12px 18px;
+  }
+  .bt .banking-content .notification {
+    display: none;
+  }
+  .bt .banking-content .header {
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .bt .summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bt .transaction-history {
+    display: none;
+  }
+  .bt .bt-mobile {
+    display: block;
+  }
+  .bt .bt-mobile table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .bt .bt-mobile th {
+    text-align: left;
+  }
+  .bt .bt-mobile th:last-child {
+    text-align: right;
+  }
+  .bt .bt-mobile td {
+    padding: 18px 0;
+    border-bottom: 1px solid #E0E0E0;
+  }
+  .bt .bt-mobile td:last-child {
+    text-align: right;
+  }
+  .bt .bt_radio {
+    width: 100%;
+  }
+  .bt .bt_radio label {
+    width: 100%;
+    padding: 1em;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .bt .details {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: none;
+    grid-gap: 6px;
+    padding: 0.75em;
+  }
+  .bt .details *:first-child {
+    font-weight: 600;
+  }
+  .bt .bt_section_info h4 {
+    font-size: 18px;
+    margin-left: 0;
+  }
+  .bt .btn-container {
+    flex-direction: column-reverse;
+  }
+  .bt .btn-container button {
+    margin: 6px;
+  }
+  .bt .card-wrapper {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+  }
+  .bt .bt_details_container {
+    grid-template-rows: 1fr;
+    grid-template-columns: none;
+  }
+  .bt form .bt_inline_error {
+    grid-column: 1;
+    padding: 6px 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .bt .logo {
+    justify-content: space-between;
+  }
+  .bt h1, .bt h2 {
+    text-align: left;
+  }
+  .bt .banking-content .notification {
+    display: flex;
+  }
+  .bt.banking {
+    flex-direction: column;
+  }
+  .bt .side-nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bt .side-nav {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+    z-index: 1;
+  }
+  .bt .side-nav.slide-open {
+    transform: translateX(0);
+  }
+  .bt .icon-close {
+    display: block;
+  }
+  .bt .summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 6px;
+  }
+  .bt .card-wrapper {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+  }
+  .bt .bt_details_container {
+    grid-template-rows: 1fr;
+    grid-template-columns: none;
+  }
+}
 .switch {
   position: relative;
   display: block;
@@ -777,11 +940,6 @@ button svg {
   margin: 0;
 }
 
-@media (max-width: 500px) {
-  nav {
-    display: none;
-  }
-}
 @media (max-width: 768px) {
   .first-row {
     flex-direction: column;

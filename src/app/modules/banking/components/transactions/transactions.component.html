@@ -53,6 +53,32 @@
     </table>
 </section>
 
+<section class="bt-mobile">
+    <table>
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Details</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="transactions">
+        <tr *ngFor="let transaction of transactions">
+            <td>{{ transaction.transactionDate | date: 'dd/MM/yy' }}</td>
+            <td>{{ transaction.transactionDetails}}</td>
+            <td class="amount">
+                <span [ngClass]="getClass(transaction.transactionType)"
+                      class="transaction-type">
+                    <span *ngIf="transaction.transactionType == 'Credited'">Cr.</span>
+                    <span *ngIf="transaction.transactionType == 'Debited'">Db.</span>
+                </span>
+                {{ transaction.transactionAmount | currency: 'INR ':'code'}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
 <!--Transaction details modal window-->
 <app-modal (click)="closeModal()"
            [modalHeader]="modalHeader">

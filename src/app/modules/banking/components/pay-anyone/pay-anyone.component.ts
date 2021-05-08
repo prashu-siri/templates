@@ -19,7 +19,7 @@ export class PayAnyoneComponent implements OnInit {
   initialFormState;
 
   accountNumberPattern: string = '^[\d]&';
-  ifscCodePattern: string = '^[A-Z]{4}0[A-Z0-9]{6}$';
+  ifscCodePattern: string = '^[A-Z0-9]*$';
   accountNamePattern: string = '^[a-zA-z]+([\\s][a-zA-Z]+)*$';
 
   constructor(private commonService: CommonService) { }
@@ -48,6 +48,8 @@ export class PayAnyoneComponent implements OnInit {
     this.initialFormState = this.paymentForm.value;
 
     this.payeeType.valueChanges.subscribe(value => {
+      this.submitted = false;
+
       if(value === 'payAnyone') {
         this.accountNumber.setValidators([Validators.required, Validators.pattern(this.accountNumberPattern)]);
         this.code.setValidators([Validators.required, Validators.pattern(this.ifscCodePattern)]);
