@@ -1,2 +1,94 @@
 <h2 class="bt_section_header">Transfer</h2>
-<p>You do not have any other account(s) to transfer money</p>
+
+<!--Alert Banner-->
+<div id="alert">
+    <div *ngIf="errorMessage" class="bt_banner bt_error_banner">
+    <div class="alert">
+        <app-svg-icon [svgIconId]="'alert'"></app-svg-icon>
+        <span>Please correct the errors in the below form.</span>
+    </div>
+</div>
+
+<div *ngIf="successMessage" class="bt_banner bt_success_banner">
+    <div class="alert">
+        <app-svg-icon [svgIconId]="'check-circle'"></app-svg-icon>
+        <span>Transfer successful</span>
+    </div>
+</div>
+</div>
+
+<div *ngIf="accounts; else noAccounts">
+    <form (ngSubmit)="transfer()" [formGroup]="transferForm">
+        <section class="bt_section_info">
+            <h3>From Account</h3>
+            <div class="details">
+                <label for="fromAccount">Account number</label>
+                <select
+                        (change)="changeFromAccount()"
+                        formControlName="fromAccount"
+                        id="fromAccount"
+                        name="account"
+                >
+                    <option disabled value="">Select</option>
+                    <option *ngFor="let fromAccount of accounts"
+                            [ngValue]="fromAccount">{{ fromAccount.accountNumber }}</option>
+                </select>
+                <div *ngIf="submitted" class="bt_inline_error">
+                    <span *ngIf="fromAccount.hasError('required')">From Account is required</span>
+                </div>
+            </div>
+
+            <div class="details">
+                <span>Available Balance</span>
+                <strong>{{ fromAccountBalance | currency : 'INR ' : 'code'}}</strong>
+            </div>
+        </section>
+
+        <section class="bt_section_info">
+            <h3>To Account</h3>
+            <div class="details">
+                <label for="toAccount">Account number</label>
+                <select
+                        (change)="changeToAccount()"
+                        formControlName="toAccount"
+                        id="toAccount"
+                        name="account"
+                >
+                    <option disabled value="">Select</option>
+                    <option *ngFor="let toAccount of toAccounts"
+                            [ngValue]="toAccount">{{ toAccount.accountNumber }}</option>
+                </select>
+                <div *ngIf="submitted" class="bt_inline_error">
+                    <span *ngIf="toAccount.hasError('required')">To Account is required</span>
+                </div>
+            </div>
+
+            <div class="details">
+                <span>Available Balance</span>
+                <strong>{{ toAccountBalance | currency : 'INR ' : 'code'}}</strong>
+            </div>
+        </section>
+
+        <section class="bt_section_info">
+            <h3>Transfer Amount</h3>
+            <div class="details">
+                <label for="transferAmount">Amount</label>
+                <input formControlName="transferAmount" id="transferAmount" type="text">
+                <div *ngIf="submitted" class="bt_inline_error">
+                    <span *ngIf="transferAmount.hasError('required')">Amount is required</span>
+                    <span *ngIf="transferAmount.hasError('pattern')">Amount can only contain numbers and " . ".</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="btn-container flex-right">
+                <button class="button btn-primary" type="submit">Transfer Now</button>
+            </div>
+        </section>
+    </form>
+</div>
+
+<ng-template #noAccounts>
+    <p>You do not have any other account(s) to transfer money</p>
+</ng-template>

@@ -44,6 +44,18 @@ $font-family        : "Roboto", sans-serif;
     margin-bottom : 24px;
   }
 
+  .custom-select {
+    label {
+      margin-right : 12px;
+    }
+
+    select {
+      font-size     : 1.1em;
+      border        : 1px solid #D9D3D6;
+      border-radius : 5px;
+    }
+  }
+
   /********* BANKING CONTENT START********/
   .banking-content {
     height  : 100%;
@@ -360,11 +372,12 @@ $font-family        : "Roboto", sans-serif;
   }
 
   select {
-    padding       : 0.5em 4em 0.5em 0.5em;
-    border-color  : $input-border-color;
-    border-radius : 5px;
-    font-size     : 14px;
-    color         : #616161;
+    padding        : 0.5em 4em 0.5em 0.5em;
+    border-color   : $input-border-color;
+    border-radius  : 5px;
+    font-size      : 14px;
+    color          : #616161;
+    letter-spacing : 0.75px;
   }
 
   input {
@@ -412,6 +425,10 @@ $font-family        : "Roboto", sans-serif;
   .btn-secondary {
     background : $input-border-color;
     color      : #616161;
+  }
+
+  .flex-right {
+    justify-content: flex-end;
   }
 
   .bt_page_header {

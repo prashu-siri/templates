@@ -4,14 +4,4 @@ section {
   margin-bottom: 24px;
 }
 
-.custom-select label {
-  margin-right: 12px;
-}
-.custom-select select {
-  font-size: 1.2em;
-  padding: 0.7em 4em 0.7em 1em;
-  border: 1px solid #D9D3D6;
-  border-radius: 5px;
-}
-
 /*# sourceMappingURL=accounts.component.css.map */

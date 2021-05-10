@@ -46,4 +46,12 @@
   letter-spacing: 0.7px;
 }
 
+@media (max-width: 768px) {
+  .main {
+    grid-template-rows: 1fr;
+    grid-template-columns: none;
+    gap: 12px;
+  }
+}
+
 /*# sourceMappingURL=app.component.css.map */

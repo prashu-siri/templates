@@ -1,52 +1,52 @@
 <div class="bt_container">
-  <h1>Accounts</h1>
+    <h1>Accounts</h1>
 </div>
-
-<!--<section>
-    <div class="custom-select">
-        <label for="accounts">Select an account</label> <select (change)="fetchAccountDetails()"
-                                                                [(ngModel)]="accountNumber"
-                                                                id="accounts"
-                                                                name="color">
-        <option value="select">Select</option>
-        <option value="7877-8765676">7877-8765676</option>
-    </select>
-    </div>
-</section>-->
 
 <div class="bt_radio">
-  <input
-    [(ngModel)]="tab"
-    checked
-    id="1"
-    name="tab"
-    type="radio"
-    value="accountDetails"
-  />
-  <label for="1">Account Details</label>
-  <input
-    [(ngModel)]="tab"
-    id="2"
-    name="tab"
-    type="radio"
-    value="transactions"
-  />
-  <label for="2">Transaction History</label>
-  <input [(ngModel)]="tab" id="3" name="tab" type="radio" value="loans" />
-  <label for="3">Loans</label>
+    <input
+            [(ngModel)]="tab"
+            checked
+            id="1"
+            name="tab"
+            type="radio"
+            value="accountDetails"
+    />
+    <label for="1">Account Details</label>
+    <input
+            [(ngModel)]="tab"
+            id="2"
+            name="tab"
+            type="radio"
+            value="transactions"
+    />
+    <label for="2">Transaction History</label>
+    <input [(ngModel)]="tab" id="3" name="tab" type="radio" value="loans"/>
+    <label for="3">Loans</label>
 </div>
 
-<section class="bt_panel">
-  <app-account-details
-    *ngIf="isActiveTab('accountDetails')"
-  ></app-account-details>
-  <div *ngIf="isActiveTab('transactions')">
-    <h2 class="bt_section_header">Transaction History</h2>
-    <app-transactions [transactions]="transactions"></app-transactions>
-  </div>
+<section>
+    <div class="custom-select">
+        <label for="accounts">Select an account</label>
+        <select (change)="fetchAccountTransactions()"
+                [(ngModel)]="selectedAccount"
+                id="accounts"
+                name="color">
+            <option *ngFor="let account of userAccounts" [ngValue]="account">{{ account.accountNumber }}</option>
+        </select>
+    </div>
+</section>
 
-  <div *ngIf="isActiveTab('loans')">
-    <h2 class="bt_section_header">Loans</h2>
-    You haven't applied for any loans yet.
-  </div>
+<section class="bt_panel">
+    <app-account-details [accountDetails]="selectedAccount"
+            *ngIf="isActiveTab('accountDetails')"
+    ></app-account-details>
+    <div *ngIf="isActiveTab('transactions')">
+        <h2 class="bt_section_header">Transaction History</h2>
+        <app-transactions [transactions]="transactions"></app-transactions>
+    </div>
+
+    <div *ngIf="isActiveTab('loans')">
+        <h2 class="bt_section_header">Loans</h2>
+        You haven't applied for any loans yet.
+    </div>
 </section>

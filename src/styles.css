@@ -91,6 +91,14 @@
 .bt_section_header, .bt_section_info {
   margin-bottom: 24px;
 }
+.bt .custom-select label {
+  margin-right: 12px;
+}
+.bt .custom-select select {
+  font-size: 1.1em;
+  border: 1px solid #D9D3D6;
+  border-radius: 5px;
+}
 .bt .banking-content {
   height: 100%;
   padding: 24px 48px;
@@ -337,6 +345,7 @@
   border-radius: 5px;
   font-size: 14px;
   color: #616161;
+  letter-spacing: 0.75px;
 }
 .bt input {
   border: 1px solid #D3D3D3;
@@ -377,6 +386,9 @@
 .bt .btn-secondary {
   background: #D3D3D3;
   color: #616161;
+}
+.bt .flex-right {
+  justify-content: flex-end;
 }
 .bt .bt_page_header {
   margin-bottom: 24px;

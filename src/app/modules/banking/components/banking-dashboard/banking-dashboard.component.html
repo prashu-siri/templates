@@ -5,34 +5,44 @@
 </section>
 
 <section class="bt_panel">
+    <h2>Accounts</h2>
+    <div class="custom-select">
+        <label for="accounts">Select an account to view the details</label>
+        <select [(ngModel)]="selectedAccount" id="accounts" name="accounts" (change)="getRecentTransactions()">
+            <option *ngFor="let account of accounts" [ngValue]="account">{{ account.accountNumber }}</option>
+        </select>
+    </div>
+</section>
+
+<section class="bt_panel">
     <h2>Account Summary</h2>
-    <div class="summary">
+    <div class="summary" *ngIf="selectedAccount">
         <div>
             <p>Account Number</p>
             <div class="summary-content">
                 <app-svg-icon [svgIconId]="'subtitles'"></app-svg-icon>
-                <h2>7877-8765676</h2>
+                <h2>{{ selectedAccount.accountNumber }}</h2>
             </div>
         </div>
         <div>
             <p>Current Balance</p>
             <div class="summary-content">
                 <app-svg-icon [svgIconId]="'bank'"></app-svg-icon>
-                <h2>INR 54,3421.09</h2>
+                <h2>{{ selectedAccount.currentBalance | currency : 'INR ' : 'code'}}</h2>
             </div>
         </div>
         <div>
             <p>Available Balance</p>
             <div class="summary-content">
                 <app-svg-icon [svgIconId]="'bank'"></app-svg-icon>
-                <h2>INR 34,3671.64</h2>
+                <h2>{{ selectedAccount.availableBalance | currency : 'INR ' : 'code'}}</h2>
             </div>
         </div>
         <div>
             <p>Account Type</p>
             <div class="summary-content">
                 <app-svg-icon [svgIconId]="'umbrella'"></app-svg-icon>
-                <h2>Savings</h2>
+                <h2>{{ selectedAccount.accountType }}</h2>
             </div>
         </div>
     </div>

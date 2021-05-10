@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserAccount } from "../../interface/userAccount";
 
 @Component({
   selector: 'app-account-details',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class AccountDetailsComponent implements OnInit {
 
   constructor() { }
+
+  @Input()
+  accountDetails: UserAccount;
 
   ngOnInit(): void {
   }

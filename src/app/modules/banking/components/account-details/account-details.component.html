@@ -3,15 +3,18 @@
 <section class="bt_section_info">
     <h3>Account Basics</h3>
     <div class="details">
-        <span>Product name</span> <span>ABC Banking</span>
+        <span>Product name</span>
+        <span>ABC Banking</span>
     </div>
 
     <div class="details">
-        <span>Account number</span> <span>7877-8765676</span>
+        <span>Account number</span>
+        <span>{{ accountDetails.accountNumber }}</span>
     </div>
 
     <div class="details">
-        <span>Uncleared funds</span> <span>INR 0.00</span>
+        <span>Uncleared funds</span>
+        <span>{{ accountDetails.unclearedFunds | currency : 'INR ' : 'code' }}</span>
     </div>
 </section>
 
@@ -20,25 +23,29 @@
     <div>
         <h4>Last month interest received</h4>
         <div class="details">
-            <span>Interest received</span> <span>INR 508.09</span>
+            <span>Interest received</span>
+            <span>{{ accountDetails.interestReceivedLastMonth | currency : 'INR ' : 'code' }}</span>
         </div>
     </div>
     <div>
         <h4>Current financial year to date</h4>
         <div class="details">
-            <span>Interest received</span> <span>INR 8976.09</span>
+            <span>Interest received</span>
+            <span>{{ accountDetails.interestReceivedCurrentYear | currency : 'INR ' : 'code' }}</span>
         </div>
     </div>
     <div>
         <h4>Previous financial year</h4>
         <div class="details">
-            <span>Interest received</span> <span>INR 5089.09</span>
+            <span>Interest received</span>
+            <span>{{ accountDetails.interestReceivedLastYear | currency : 'INR ' : 'code' }}</span>
         </div>
     </div>
     <div>
         <h4>Rate</h4>
         <div class="details">
-            <span>Current interest rate</span> <span>2% p.a.</span>
+            <span>Current interest rate</span>
+            <span>2% p.a.</span>
         </div>
     </div>
 </section>
