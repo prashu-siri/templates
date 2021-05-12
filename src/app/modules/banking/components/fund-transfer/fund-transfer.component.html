@@ -15,6 +15,12 @@
             type="radio"
             value="payAnyone">
     <label for="2">Pay Anyone</label>
+    <input [(ngModel)]="tab"
+            id="3"
+            name="tab"
+            type="radio"
+            value="managePayee">
+    <label for="3">Manage Payee</label>
 </div>
 
 <section class="bt_panel">
@@ -24,5 +30,9 @@
 
     <div *ngIf="activeTab('payAnyone')">
         <app-pay-anyone></app-pay-anyone>
+    </div>
+
+    <div *ngIf="activeTab('managePayee')">
+        <app-manage-payee></app-manage-payee>
     </div>
 </section>

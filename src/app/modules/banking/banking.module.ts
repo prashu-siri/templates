@@ -6,7 +6,6 @@ import { ModalComponent } from './components/common/modal/modal.component';
 import { BankingContentComponent } from './components/banking-content/banking-content.component';
 import { BankingHomeComponent } from './components/banking-home/banking-home.component';
 import { BankingNavComponent } from './components/banking-nav/banking-nav.component';
-import { SvgIconComponent } from './components/common/svg-icon/svg-icon.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
@@ -18,6 +17,10 @@ import { CardsComponent } from './components/cards/cards.component';
 import { CreditCardsComponent } from './components/credit-cards/credit-cards.component';
 import { DebitCardsComponent } from './components/debit-cards/debit-cards.component';
 import { PersonalDetailsComponent } from './components/personal-details/personal-details.component';
+import { ManagePayeeComponent } from './components/manage-payee/manage-payee.component';
+import { DeletePayeeComponent } from './components/delete-payee/delete-payee.component';
+import { AddPayeeComponent } from './components/add-payee/add-payee.component';
+import { SharedModule } from "../shared/shared.module";
 
 const routes: Routes = [
   { path: 'dashboard', component: BankingDashboardComponent },
@@ -33,7 +36,6 @@ const routes: Routes = [
     BankingContentComponent,
     BankingHomeComponent,
     BankingNavComponent,
-    SvgIconComponent,
     ModalComponent,
     AccountsComponent,
     TransactionsComponent,
@@ -45,8 +47,11 @@ const routes: Routes = [
     CreditCardsComponent,
     DebitCardsComponent,
     PersonalDetailsComponent,
+    ManagePayeeComponent,
+    DeletePayeeComponent,
+    AddPayeeComponent
   ],
   exports: [BankingHomeComponent],
-    imports: [CommonModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule]
+    imports: [CommonModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule, SharedModule]
 })
 export class BankingModule {}

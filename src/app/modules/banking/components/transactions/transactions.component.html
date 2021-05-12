@@ -80,8 +80,8 @@
 </section>
 
 <!--Transaction details modal window-->
-<app-modal (click)="closeModal()"
-           [modalHeader]="modalHeader">
+<app-modal (click)="closeModal($event)" primaryButtonText="Close" [isSecondaryButtonVisible]="false"
+           [isPrimaryButtonVisible]="true" [modalHeader]="modalHeader">
     <div *ngIf="transaction">
         <table class="transaction-details-table">
             <tbody>

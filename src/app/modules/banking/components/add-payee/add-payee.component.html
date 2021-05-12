@@ -1,0 +1,59 @@
+<app-alerts [alertDetails]="alertDetails"></app-alerts>
+<h3 class="bt_section_header">Add Payee</h3>
+<form (ngSubmit)="addPayee()" [formGroup]="addPayeeForm">
+    <section class="bt_section_info">
+        <!--Payee name-->
+        <div class="details">
+            <label for="payeeName">Payee Name</label>
+            <input formControlName="payeeName" id="payeeName" type="text"
+                   [class.error-input]="isPayeeNameInvalid()"
+            >
+            <div *ngIf="isPayeeNameInvalid()" class="bt_inline_error">
+                <span *ngIf="payeeName.hasError('required')">
+                    Payee Name is required
+                </span>
+                <span *ngIf="payeeName.hasError('pattern')">
+                    Payee Name can only contain alphabets and space
+                </span>
+            </div>
+        </div>
+
+        <!--IFSC code-->
+        <div class="details">
+            <label for="code">IFSC Code</label>
+            <input (blur)="fetchBankDetails()" formControlName="code" id="code" type="text"
+                [class.error-input]="isCodeInvalid()">
+            <div *ngIf="isCodeInvalid()" class="bt_inline_error">
+                <span *ngIf="code.hasError('required')">
+                    IFSC code is required
+                </span>
+                <span *ngIf="code.hasError('pattern')">
+                    Invalid IFSC code.
+                </span>
+            </div>
+        </div>
+
+        <!--Payee Account Number-->
+        <div class="details">
+            <label for="payeeAccountNumber">Payee Account Number</label>
+            <input formControlName="payeeAccountNumber" id="payeeAccountNumber" type="text"
+                [class.error-input]="isPayeeAccountNumberInvalid()">
+            <div *ngIf="isPayeeAccountNumberInvalid()"
+                 class="bt_inline_error">
+                <span *ngIf="payeeAccountNumber.hasError('required')">
+                    Payee Account Number is required
+                </span>
+                <span *ngIf="payeeAccountNumber.hasError('pattern')">
+                    Payee Account Number can only contain numbers
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="btn-container">
+            <button (click)="resetAddPayeeForm()" class="button btn-secondary">Cancel</button>
+            <button class="button btn-primary" type="submit">Add Payee</button>
+        </div>
+    </section>
+</form>

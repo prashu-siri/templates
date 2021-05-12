@@ -8,6 +8,12 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@ang
 export class ModalComponent implements OnInit {
 
   @Input() modalHeader: string;
+  @Input() isPrimaryButtonVisible: boolean = true;
+  @Input() isSecondaryButtonVisible: boolean = true;
+  @Input() primaryButtonText: string;
+  @Input() secondaryButtonText: string;
+
+  @Output() submittedValue: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
@@ -16,11 +22,14 @@ export class ModalComponent implements OnInit {
 
   openModal() {
     document.querySelector("#modal-info").classList.add("open");
-
   }
 
-  closeModal() {
+  closeModal(event) {
+    this.submittedValue.emit(event.target.innerHTML);
     document.querySelector("#modal-info").classList.remove("open");
   }
 
+  applyClass() {
+    return this.isPrimaryButtonVisible && !this.isSecondaryButtonVisible;
+  }
 }

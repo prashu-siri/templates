@@ -37,8 +37,8 @@ export class TransactionsComponent implements OnInit {
     this.modal.openModal();
   }
 
-  closeModal() {
-    this.modal.closeModal();
+  closeModal(event) {
+    this.modal.closeModal(event);
   }
 
 }

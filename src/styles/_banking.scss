@@ -7,6 +7,7 @@ $link-active        : #D6EEF7;
 $font-color         : #616161;
 $background-clr     : linear-gradient(45deg, #348AA7, #62B4D0);
 $font-family        : "Roboto", sans-serif;
+$error-clr          : #DB3939;
 
 /*Banking template color variables*/
 .bt {
@@ -44,6 +45,10 @@ $font-family        : "Roboto", sans-serif;
     margin-bottom : 24px;
   }
 
+  .sub-section {
+    padding : 24px;
+  }
+
   .custom-select {
     label {
       margin-right : 12px;
@@ -53,6 +58,18 @@ $font-family        : "Roboto", sans-serif;
       font-size     : 1.1em;
       border        : 1px solid #D9D3D6;
       border-radius : 5px;
+    }
+  }
+
+  table {
+    border-collapse : collapse;
+    table-layout    : fixed;
+    text-align      : left;
+    min-width       : 100%;
+
+    th, td {
+      padding       : 1em;
+      border-bottom : 1px solid $border-color;
     }
   }
 
@@ -265,16 +282,6 @@ $font-family        : "Roboto", sans-serif;
     }
 
     table {
-      border-collapse : collapse;
-      table-layout    : fixed;
-      text-align      : left;
-      min-width       : 100%;
-
-      th, td {
-        padding       : 1em;
-        border-bottom : 1px solid $border-color;
-      }
-
       th {
         span {
           display : flex;
@@ -428,7 +435,7 @@ $font-family        : "Roboto", sans-serif;
   }
 
   .flex-right {
-    justify-content: flex-end;
+    justify-content : flex-end;
   }
 
   .bt_page_header {
@@ -512,8 +519,12 @@ $font-family        : "Roboto", sans-serif;
   }
 
   &_inline_error {
-    color   : #F88E94;
+    color   : $error-clr;
     padding : 12px 0;
+  }
+
+  .error-input {
+    border : 2px solid $error-clr;
   }
 
   form {
@@ -524,7 +535,7 @@ $font-family        : "Roboto", sans-serif;
 
   &_banner {
     padding       : 12px;
-    margin-bottom : 12px;
+    margin-bottom : 24px;
     color         : #FFF;
     border-radius : 5px;
 
@@ -534,7 +545,7 @@ $font-family        : "Roboto", sans-serif;
   }
 
   &_error_banner {
-    background : #F88E94;
+    background : $error-clr;
   }
 
   &_success_banner {

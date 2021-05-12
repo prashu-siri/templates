@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from "../../service/common.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Constant } from "../../service/constants";
 
 @Component({
   selector: 'app-pay-anyone',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 })
 export class PayAnyoneComponent implements OnInit {
 
-  payees: any[];
+  payees: any[] = [];
   paymentForm;
   errorMessage: boolean = false;
   submitted: boolean = false;
@@ -17,10 +18,6 @@ export class PayAnyoneComponent implements OnInit {
   successMessage: boolean = false;
   isShowPreview: boolean = false;
   initialFormState;
-
-  accountNumberPattern: string = '^[\d]&';
-  ifscCodePattern: string = '^[A-Z0-9]*$';
-  accountNamePattern: string = '^[a-zA-z]+([\\s][a-zA-Z]+)*$';
 
   constructor(private commonService: CommonService) { }
 
@@ -35,7 +32,7 @@ export class PayAnyoneComponent implements OnInit {
       'accountNumber': new FormControl(''),
       'amount': new FormControl('', [
           Validators.required,
-          Validators.pattern(new RegExp('^([0-9]+)(\.[0-9]+)?$'))
+          Validators.pattern(Constant.AMOUNT_PATTERN)
       ]),
       'description': new FormControl('', Validators.required),
       'reference': new FormControl('')
@@ -51,9 +48,9 @@ export class PayAnyoneComponent implements OnInit {
       this.submitted = false;
 
       if(value === 'payAnyone') {
-        this.accountNumber.setValidators([Validators.required, Validators.pattern(this.accountNumberPattern)]);
-        this.code.setValidators([Validators.required, Validators.pattern(this.ifscCodePattern)]);
-        this.accountName.setValidators([Validators.required, Validators.pattern(this.accountNamePattern)]);
+        this.accountNumber.setValidators([Validators.required, Validators.pattern(Constant.NUMBER_PATTERN)]);
+        this.code.setValidators([Validators.required, Validators.pattern(Constant.IFSC_CODE_PATTERN)]);
+        this.accountName.setValidators([Validators.required, Validators.pattern(Constant.NAME_PATTERN)]);
       } else {
         this.payee.setValidators(Validators.required);
       }
@@ -65,9 +62,14 @@ export class PayAnyoneComponent implements OnInit {
   }
 
   getPayees() {
-      this.commonService.getPayees().subscribe((response: any[]) => {
+      this.payees = this.commonService.getPayeeList();
+
+      if(this.payees.length == 0) {
+        this.commonService.getPayees().subscribe((response: any[]) => {
           this.payees = response;
-      })
+          this.commonService.setPayeeList(this.payees);
+        });
+      }
   }
 
   showPreview() {

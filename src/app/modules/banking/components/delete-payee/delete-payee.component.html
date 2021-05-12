@@ -1,0 +1,34 @@
+<app-alerts *ngIf="successMessage" [message]="message"></app-alerts>
+<h3 class="bt_section_header">Delete Payee</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Account Number</th>
+        <th>Bank</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let payee of payees">
+        <td>{{ payee.name }}</td>
+        <td>{{ payee.accountNumber }}</td>
+        <td>{{ payee.bank }}</td>
+        <td>
+            <a (click)="openModal($event, payee.accountNumber)" href="">
+                <app-svg-icon [svgIconId]="'trash'"></app-svg-icon>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!--Confirmation Modal-->
+<app-modal (submittedValue)="closeModal($event)"
+           [isPrimaryButtonVisible]="true"
+           [isSecondaryButtonVisible]="true"
+           [modalHeader]="header"
+           [primaryButtonText]="'Delete'"
+           [secondaryButtonText]="'Cancel'">
+    <p>Are you sure you want to delete the Payee?</p>
+</app-modal>

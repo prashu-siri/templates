@@ -3,7 +3,7 @@
     <div class="modal">
         <div class="modal-header">
             <h1>{{ modalHeader }}</h1>
-            <a (click)="closeModal()">
+            <a (click)="closeModal($event)">
                 <svg viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0h24v24H0z"
@@ -16,9 +16,13 @@
             <ng-content></ng-content>
         </div>
         <div class="modal-footer">
-            <div class="button-container button-end">
-                <button class="btn btn-primary"
-                        (click)="closeModal()">Close
+            <div class="button-container" [class.flex-right]="applyClass()" (click)="closeModal($event)">
+                <button class="button btn-secondary" *ngIf="isSecondaryButtonVisible">
+                    {{ secondaryButtonText }}
+                </button>
+                <button class="button btn-primary" *ngIf="isPrimaryButtonVisible"
+                        (click)="closeModal($event)">
+                    {{ primaryButtonText }}
                 </button>
             </div>
         </div>

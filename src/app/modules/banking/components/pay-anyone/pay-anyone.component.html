@@ -122,7 +122,8 @@
         <div *ngIf="displayAccountDetails('payAnyone')">
             <div class="details">
                 <label for="accName">Account Name</label>
-                <input formControlName="accountName" id="accName" type="text">
+                <input formControlName="accountName" id="accName" type="text"
+                    [class.error-input]="submitted && accountName.invalid">
                 <div *ngIf="submitted" class="bt_inline_error">
                     <span *ngIf="accountName.hasError('required')">
                         Account Name is required
@@ -134,7 +135,8 @@
             </div>
             <div class="details">
                 <label for="code">IFSC Code</label>
-                <input formControlName="code" id="code" type="text">
+                <input formControlName="code" id="code" type="text"
+                    [class.error-input]="submitted && code.invalid">
                 <div *ngIf="submitted" class="bt_inline_error">
                     <span *ngIf="code.hasError('required')">
                         IFSC code is required
@@ -147,7 +149,8 @@
 
             <div class="details">
                 <label for="accNumber">Account Number</label>
-                <input formControlName="accountNumber" id="accNumber" type="text">
+                <input formControlName="accountNumber" id="accNumber" type="text"
+                    [class.error-input]="submitted && accountNumber.invalid">
                 <div *ngIf="submitted" class="bt_inline_error">
                     <span *ngIf="accountNumber.hasError('required')">
                         Account Number is required
@@ -167,7 +170,8 @@
             <input formControlName="amount"
                    id="amount"
                    name="amount"
-                   type="text">
+                   type="text"
+                   [class.error-input]="submitted && amount.invalid">
             <div *ngIf="submitted" class="bt_inline_error">
                 <span *ngIf="amount.hasError('required')">Amount is required</span>
                 <span *ngIf="amount.hasError('pattern')">
@@ -178,7 +182,8 @@
 
         <div class="details">
             <label for="description">Description</label>
-            <input formControlName="description" id="description" type="text">
+            <input formControlName="description" id="description" type="text"
+                [class.error-input]="submitted && description.invalid">
             <div *ngIf="submitted" class="bt_inline_error">
                 <span *ngIf="description.hasError('required')">Description is required</span>
             </div>

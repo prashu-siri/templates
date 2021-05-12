@@ -1,0 +1,19 @@
+<h2 class="bt_section_header">Manage Payee</h2>
+
+<div class="bt_radio">
+    <input [(ngModel)]="managePayeeTab" checked id="deletePayee" name="subTab"
+           type="radio" value="delete">
+    <label for="deletePayee">Delete Payee</label>
+
+    <input [(ngModel)]="managePayeeTab" id="addPayee" name="subTab"
+           type="radio" value="add">
+    <label for="addPayee">Add Payee</label>
+</div>
+
+<div *ngIf="getActiveTab('delete')" class="sub-section">
+    <app-delete-payee></app-delete-payee>
+</div>
+
+<div *ngIf="getActiveTab('add')" class="sub-section">
+    <app-add-payee></app-add-payee>
+</div>
