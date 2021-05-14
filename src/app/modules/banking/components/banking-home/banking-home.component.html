@@ -1,4 +1,15 @@
-<div class="bt banking container">
+<div class="bt" *ngIf="isLoginPage()">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="bt banking container" *ngIf="!isLoginPage()">
     <app-banking-nav></app-banking-nav>
-    <app-banking-content class="banking-content-container"></app-banking-content>
+    <div class="banking-content-container">
+        <div class="banking-content">
+            <app-header></app-header>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
 </div>

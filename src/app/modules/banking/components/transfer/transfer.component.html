@@ -33,7 +33,7 @@
                     <option *ngFor="let fromAccount of accounts"
                             [ngValue]="fromAccount">{{ fromAccount.accountNumber }}</option>
                 </select>
-                <div *ngIf="submitted" class="bt_inline_error">
+                <div *ngIf="submitted" class="bt_inline_error inline-error">
                     <span *ngIf="fromAccount.hasError('required')">From Account is required</span>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     <option *ngFor="let toAccount of toAccounts"
                             [ngValue]="toAccount">{{ toAccount.accountNumber }}</option>
                 </select>
-                <div *ngIf="submitted" class="bt_inline_error">
+                <div *ngIf="submitted" class="bt_inline_error inline-error">
                     <span *ngIf="toAccount.hasError('required')">To Account is required</span>
                 </div>
             </div>
@@ -74,7 +74,7 @@
             <div class="details">
                 <label for="transferAmount">Amount</label>
                 <input formControlName="transferAmount" id="transferAmount" type="text">
-                <div *ngIf="submitted" class="bt_inline_error">
+                <div *ngIf="submitted" class="bt_inline_error inline-error">
                     <span *ngIf="transferAmount.hasError('required')">Amount is required</span>
                     <span *ngIf="transferAmount.hasError('pattern')">Amount can only contain numbers and " . ".</span>
                 </div>

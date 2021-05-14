@@ -1,209 +1,225 @@
 @media (min-width : 320px) and (max-width : 767px) {
   .bt {
 
-    &.banking {
-      flex-direction : column;
-    }
+	&.banking {
+	  flex-direction : column;
+	}
 
-    .side-nav-mobile {
-      display         : flex;
-      justify-content : space-between;
-      align-items     : center;
-    }
+	.login-container {
+	  grid-template-columns : 1fr;
+	}
 
-    .side-nav {
-      position   : fixed;
-      height     : 100%;
-      width      : 100%;
-      transform  : translateX(-100%);
-      transition : transform 0.3s ease-in;
-      z-index    : 1;
-    }
+	.login-image-container {
+	  display : none;
+	}
 
-    .side-nav.slide-open {
-      transform : translateX(0);
-    }
+	.login-container .form-container {
+	  margin : 3em 5em;
+	}
 
-    .icon-close {
-      display : block;
-    }
+	.side-nav-mobile {
+	  display         : flex;
+	  justify-content : space-between;
+	  align-items     : center;
+	}
 
-    .logo {
-      justify-content : space-between;
-    }
+	.side-nav {
+	  position   : fixed;
+	  height     : 100%;
+	  width      : 100%;
+	  transform  : translateX(-100%);
+	  transition : transform 0.3s ease-in;
+	  z-index    : 1;
+	}
 
-    .search-container {
-      flex-grow : 1;
-    }
+	.side-nav.slide-open {
+	  transform : translateX(0);
+	}
 
-    .search-input {
-      width : 100%;
-    }
+	.icon-close {
+	  display : block;
+	}
 
-    h1, h2 {
-      text-align : center;
-    }
+	.logo {
+	  justify-content : space-between;
+	}
 
-    .banking-content {
-      padding : 12px 18px;
+	.search-container {
+	  flex-grow : 1;
+	}
 
-      .notification {
-        display : none;
-      }
-    }
+	.search-input {
+	  width : 100%;
+	}
 
-    .banking-content .header {
-      justify-content : flex-start;
-      padding         : 0;
-    }
+	h1, h2 {
+	  text-align : center;
+	}
 
-    .summary {
-      flex-direction : column;
-      align-items    : flex-start;
-    }
+	.banking-content {
+	  padding : 12px 18px;
 
-    .transaction-history {
-      display : none;
-    }
+	  .notification {
+		display : none;
+	  }
+	}
 
-    .bt-mobile {
-      display : block;
+	.banking-content .header {
+	  justify-content : flex-start;
+	  padding         : 0;
+	}
 
-      table {
-        table-layout    : fixed;
-        border-collapse : collapse;
-        width           : 100%;
-      }
+	.summary {
+	  flex-direction : column;
+	  align-items    : flex-start;
+	}
 
-      th {
-        text-align : left;
+	.transaction-history {
+	  display : none;
+	}
 
-        &:last-child {
-          text-align : right;
-        }
-      }
+	.bt-mobile {
+	  display : block;
 
-      td {
-        padding       : 18px 0;
-        border-bottom : 1px solid #E0E0E0;
+	  table {
+		table-layout    : fixed;
+		border-collapse : collapse;
+		width           : 100%;
+	  }
 
-        &:last-child {
-          text-align : right;
-        }
-      }
-    }
+	  th {
+		text-align : left;
 
-    .bt_radio {
-      width : 100%;
+		&:last-child {
+		  text-align : right;
+		}
+	  }
 
-      label {
-        width      : 100%;
-        padding    : 1em;
-        font-size  : 15px;
-        cursor     : pointer;
-        text-align : center;
-      }
-    }
+	  td {
+		padding       : 18px 0;
+		border-bottom : 1px solid #E0E0E0;
 
-    .details {
-      grid-template-rows    : repeat(2, 1fr);
-      grid-template-columns : none;
-      grid-gap              : 6px;
-      padding               : 0.75em;
+		&:last-child {
+		  text-align : right;
+		}
+	  }
+	}
 
-      *:first-child {
-        font-weight : 600;
-      }
-    }
+	.bt_radio {
+	  width : 100%;
 
-    .bt_section_info h4 {
-      font-size   : 18px;
-      margin-left : 0;
-    }
+	  label {
+		width      : 100%;
+		padding    : 1em;
+		font-size  : 15px;
+		cursor     : pointer;
+		text-align : center;
+	  }
+	}
 
-    .btn-container {
-      flex-direction : column-reverse;
+	.details {
+	  grid-template-rows    : repeat(2, 1fr);
+	  grid-template-columns : none;
+	  grid-gap              : 6px;
+	  padding               : 0.75em;
 
-      button {
-        margin : 6px;
-      }
-    }
+	  *:first-child {
+		font-weight : 600;
+	  }
+	}
 
-    .card-wrapper {
-      grid-template-rows    : repeat(3, 1fr);
-      grid-template-columns : none;
-    }
+	.bt_section_info h4 {
+	  font-size   : 18px;
+	  margin-left : 0;
+	}
 
-    .bt_details_container {
-      grid-template-rows    : 1fr;
-      grid-template-columns : none;
-    }
+	.btn-container {
+	  flex-direction : column-reverse;
 
-    form .bt_inline_error {
-      grid-column : 1;
-      padding     : 6px 0;
-    }
+	  button {
+		margin : 6px;
+	  }
+	}
+
+	.card-wrapper {
+	  grid-template-rows    : repeat(3, 1fr);
+	  grid-template-columns : none;
+	}
+
+	.bt_details_container {
+	  grid-template-rows    : 1fr;
+	  grid-template-columns : none;
+	}
+
+	form .bt_inline_error {
+	  grid-column : 1;
+	  padding     : 6px 0;
+	}
   }
 }
 
-@media (min-width : 768px) and (max-width : 900px) {
+@media (min-width : 768px) and (max-width : 1024px) {
   .bt {
 
-    .logo {
-      justify-content : space-between;
-    }
+	.login-container .form-container {
+	  margin : 3em 5em;
+	}
 
-    h1, h2 {
-      text-align : left;
-    }
+	.logo {
+	  justify-content : space-between;
+	}
 
-    .banking-content {
-      .notification {
-        display : flex;
-      }
-    }
+	h1, h2 {
+	  text-align : left;
+	}
 
-    &.banking {
-      flex-direction : column;
-    }
+	.banking-content {
+	  .notification {
+		display : flex;
+	  }
+	}
 
-    .side-nav-mobile {
-      display         : flex;
-      justify-content : space-between;
-      align-items     : center;
-    }
+	&.banking {
+	  flex-direction : column;
+	}
 
-    .side-nav {
-      position   : fixed;
-      height     : 100%;
-      width      : 100%;
-      transform  : translateX(-100%);
-      transition : transform 0.3s ease-in;
-      z-index    : 1;
-    }
+	.side-nav-mobile {
+	  display         : flex;
+	  justify-content : space-between;
+	  align-items     : center;
+	}
 
-    .side-nav.slide-open {
-      transform : translateX(0);
-    }
+	.side-nav {
+	  position   : fixed;
+	  height     : 100%;
+	  width      : 100%;
+	  transform  : translateX(-100%);
+	  transition : transform 0.3s ease-in;
+	  z-index    : 1;
+	}
 
-    .icon-close {
-      display : block;
-    }
+	.side-nav.slide-open {
+	  transform : translateX(0);
+	}
 
-    .summary {
-      display               : grid;
-      grid-template-columns : repeat(2, 1fr);
-      grid-gap              : 6px;
-    }
+	.icon-close {
+	  display : block;
+	}
 
-    .card-wrapper {
-      grid-template-rows    : repeat(3, 1fr);
-      grid-template-columns : none;
-    }
+	.summary {
+	  display               : grid;
+	  grid-template-columns : repeat(2, 1fr);
+	  grid-gap              : 6px;
+	}
 
-    .bt_details_container {
-      grid-template-rows    : 1fr;
-      grid-template-columns : none;
-    }
+	.card-wrapper {
+	  grid-template-rows    : repeat(3, 1fr);
+	  grid-template-columns : none;
+	}
+
+	.bt_details_container {
+	  grid-template-rows    : 1fr;
+	  grid-template-columns : none;
+	}
   }
 }

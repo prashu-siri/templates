@@ -1,0 +1,20 @@
+.spinner {
+  width   : 3.5rem;
+  height  : 3.5rem;
+  display : inline-block;
+}
+
+.spinner {
+  border       : dotted 0.35rem;
+  border-color : #FFFFFF16 #25D9E6 #25D9E6;
+  animation    : spin 1.8s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform : rotate(0);
+  }
+  to {
+    transform : rotate(360deg);
+  }
+}

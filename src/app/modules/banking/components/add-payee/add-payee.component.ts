@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { CommonService } from "../../service/common.service";
 import { Constant } from "../../service/constants";
 import { Alert } from "../../../shared/interface/alert";
+import { BankDetails } from "../../interface/bankDetails";
 
 @Component({
     selector: 'app-add-payee',
@@ -13,8 +14,13 @@ export class AddPayeeComponent implements OnInit {
 
     addPayeeForm: FormGroup;
     initialFormValues;
-    alertDetails: Alert;
+    alertDetails: Alert = {
+        message: "",
+        isSuccessMessage: false,
+        isErrorMessage: false
+    };
     showAlert: boolean = false;
+    bankDetails: BankDetails;
 
     constructor(private commonService: CommonService) {
     }
@@ -92,6 +98,7 @@ export class AddPayeeComponent implements OnInit {
     fetchBankDetails() {
         this.commonService.fetchBankDetails(this.code.value).subscribe(response => {
             console.log(response);
+            this.bankDetails = response;
         });
     }
 

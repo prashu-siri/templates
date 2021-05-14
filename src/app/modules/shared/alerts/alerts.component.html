@@ -1,5 +1,6 @@
 <div class="bt_banner"
-     [ngClass]="alertDetails.isSuccessMessage ? 'bt_success_banner' : 'bt_error_banner'">
+     [class.bt_success_banner]="alertDetails.isSuccessMessage"
+     [class.bt_error_banner]="alertDetails.isErrorMessage">
     <div class="alert">
         <app-svg-icon [svgIconId]="'check-circle'" *ngIf="alertDetails.isSuccessMessage"></app-svg-icon>
         <app-svg-icon [svgIconId]="'alert'" *ngIf="alertDetails.isErrorMessage"></app-svg-icon>

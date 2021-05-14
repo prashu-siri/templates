@@ -99,7 +99,7 @@
                     <span class="checker checker-inside"></span>
                 </label>
             </div>
-            <span *ngIf="submitted" class="bt_inline_error">
+            <span *ngIf="submitted" class="bt_inline_error inline-error">
                 <span *ngIf="payeeType.hasError('required')">Payee type is required</span>
             </span>
         </div>
@@ -113,7 +113,7 @@
                         [value]="payee.name"
                 >{{ payee.name }}</option>
             </select>
-            <div *ngIf="submitted" class="bt_inline_error">
+            <div *ngIf="submitted" class="bt_inline_error inline-error">
                 <span *ngIf="payee.hasError('required')">Payee is required</span>
             </div>
 
@@ -124,7 +124,7 @@
                 <label for="accName">Account Name</label>
                 <input formControlName="accountName" id="accName" type="text"
                     [class.error-input]="submitted && accountName.invalid">
-                <div *ngIf="submitted" class="bt_inline_error">
+                <div *ngIf="submitted" class="bt_inline_error inline-error">
                     <span *ngIf="accountName.hasError('required')">
                         Account Name is required
                     </span>
@@ -137,7 +137,7 @@
                 <label for="code">IFSC Code</label>
                 <input formControlName="code" id="code" type="text"
                     [class.error-input]="submitted && code.invalid">
-                <div *ngIf="submitted" class="bt_inline_error">
+                <div *ngIf="submitted" class="bt_inline_error inline-error">
                     <span *ngIf="code.hasError('required')">
                         IFSC code is required
                     </span>
@@ -151,7 +151,7 @@
                 <label for="accNumber">Account Number</label>
                 <input formControlName="accountNumber" id="accNumber" type="text"
                     [class.error-input]="submitted && accountNumber.invalid">
-                <div *ngIf="submitted" class="bt_inline_error">
+                <div *ngIf="submitted" class="bt_inline_error inline-error">
                     <span *ngIf="accountNumber.hasError('required')">
                         Account Number is required
                     </span>
@@ -172,7 +172,7 @@
                    name="amount"
                    type="text"
                    [class.error-input]="submitted && amount.invalid">
-            <div *ngIf="submitted" class="bt_inline_error">
+            <div *ngIf="submitted" class="bt_inline_error inline-error">
                 <span *ngIf="amount.hasError('required')">Amount is required</span>
                 <span *ngIf="amount.hasError('pattern')">
                     Amount can only contain numbers and " . ". Example: XXX.XXX
@@ -184,7 +184,7 @@
             <label for="description">Description</label>
             <input formControlName="description" id="description" type="text"
                 [class.error-input]="submitted && description.invalid">
-            <div *ngIf="submitted" class="bt_inline_error">
+            <div *ngIf="submitted" class="bt_inline_error inline-error">
                 <span *ngIf="description.hasError('required')">Description is required</span>
             </div>
         </div>

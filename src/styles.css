@@ -59,6 +59,8 @@
   /********* SWITCH **********/
   /*****NAVIGATION BAR START*****/
   /*****NAVIGATION BAR END*****/
+  /*****LOGIN START*****/
+  /*****LOGIN END*****/
   /*****TRANSACTION START******/
   /*****TRANSACTION END******/
   /********* CARD START ***********/
@@ -123,10 +125,20 @@
   padding: 12px;
   margin-bottom: 32px;
 }
+.bt .banking-content .header div:not(:last-of-type) {
+  margin-right: 24px;
+}
+.bt .banking-content .header a {
+  display: inline-block;
+  text-decoration: none;
+  color: #348AA7;
+}
+.bt .banking-content .header a:hover {
+  color: #62B4D0;
+}
 .bt .banking-content .search-container {
   display: flex;
   justify-content: flex-end;
-  margin-right: 24px;
   box-shadow: 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
   border-radius: 20px;
 }
@@ -167,7 +179,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 24px;
   box-shadow: 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
 }
 .bt .banking-content .profile img {
@@ -256,7 +267,7 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  padding: 24px 32px;
+  padding: 24px 48px;
   color: #343434;
   width: 100%;
 }
@@ -265,6 +276,46 @@
   background: #D6EEF7;
   border-right: 3px solid;
   font-weight: 500;
+}
+.bt .login-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bt .login-container .login-image-container img {
+  width: 100%;
+  object-fit: cover;
+  height: 100vh;
+}
+.bt .login-container .login-form-wrapper {
+  display: grid;
+  grid-template-rows: 20% 60%;
+}
+.bt .login-container .login-form-wrapper .login-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #348AA7, #62B4D0);
+  color: white;
+}
+.bt .login-container .form-container {
+  margin: 3em 15em;
+}
+.bt .login-container .form-container h2 {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #616161;
+}
+.bt .login-container .form-group-vertical {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-bottom: 3em;
+}
+.bt .login-container label {
+  color: #616161;
+  margin-bottom: 6px;
 }
 .bt .bt-mobile {
   display: none;
@@ -329,7 +380,7 @@
 .bt_section_info h4 {
   margin-left: 16px;
 }
-.bt .details {
+.bt .details, .bt .form-group {
   display: grid;
   grid-template-columns: 30% 70%;
   padding: 12px 24px;
@@ -341,6 +392,12 @@
   grid-gap: 0.5em;
   padding: 12px;
   align-items: center;
+}
+.bt .info {
+  grid-column: 2/3;
+  background: #E7EBEF;
+  margin: 12px 0;
+  padding: 6px 0;
 }
 .bt select {
   padding: 0.5em 4em 0.5em 0.5em;
@@ -362,6 +419,12 @@
   display: flex;
   justify-content: space-between;
   margin: 48px 0;
+}
+.bt .js-center {
+  justify-content: center;
+}
+.bt .js-space-btw {
+  justify-content: space-between;
 }
 .bt .button {
   border: none;
@@ -462,7 +525,7 @@
 .bt .error-input {
   border: 2px solid #DB3939;
 }
-.bt form .bt_inline_error {
+.bt form .inline-error {
   grid-column: 2/3;
 }
 .bt_banner {
@@ -524,10 +587,22 @@
 .bt input.switch-input:checked + .slider {
   background: #348AA7;
 }
+.bt .spinner {
+  border-color: #348AA7 #25D9E6 #25D9E6;
+}
 
 @media (min-width: 320px) and (max-width: 767px) {
   .bt.banking {
     flex-direction: column;
+  }
+  .bt .login-container {
+    grid-template-columns: 1fr;
+  }
+  .bt .login-image-container {
+    display: none;
+  }
+  .bt .login-container .form-container {
+    margin: 3em 5em;
   }
   .bt .side-nav-mobile {
     display: flex;
@@ -640,7 +715,10 @@
     padding: 6px 0;
   }
 }
-@media (min-width: 768px) and (max-width: 900px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bt .login-container .form-container {
+    margin: 3em 5em;
+  }
   .bt .logo {
     justify-content: space-between;
   }
@@ -823,6 +901,26 @@ input.switch-input:checked + .slider::before {
   padding: 12px 24px;
 }
 
+.spinner {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: inline-block;
+}
+
+.spinner {
+  border: dotted 0.35rem;
+  border-color: #FFFFFF16 #25D9E6 #25D9E6;
+  animation: spin 1.8s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }

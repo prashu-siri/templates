@@ -14,6 +14,11 @@ export class AlertsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.alertDetails = {
+      message: '',
+      isErrorMessage: false,
+      isSuccessMessage: false
+    }
   }
 
 }
