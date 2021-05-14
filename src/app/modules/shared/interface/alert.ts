@@ -1,5 +1,5 @@
 export interface Alert {
-    isSuccessMessage: boolean;
-    isErrorMessage: boolean;
-    message: string;
+    isSuccessMessage?: boolean;
+    isErrorMessage?: boolean;
+    message?: string;
 }

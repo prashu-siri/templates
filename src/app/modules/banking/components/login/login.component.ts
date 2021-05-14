@@ -30,17 +30,15 @@ export class LoginComponent implements OnInit {
 
     login() {
         this.alertDetails = {
-            message: '',
-            isSuccessMessage: false,
             isErrorMessage: false
         };
+
         if (this.loginForm.valid) {
             this.route.navigate(['/dashboard'])
         } else {
             this.showAlert = true;
             this.alertDetails = {
                 message: "Please enter Customer Id and Password",
-                isSuccessMessage: false,
                 isErrorMessage: true
             };
         }
