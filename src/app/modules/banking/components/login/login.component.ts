@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
         this.loginForm = new FormGroup({
             'customerId': new FormControl('', [
                 Validators.required,
-                Validators.pattern(Constant.NUMBER_PATTERN)
+                Validators.pattern(Constant.NUMBER_PATTERN),
+                Validators.minLength(8),
+                Validators.maxLength(8)
             ]),
             'password': new FormControl('', Validators.required)
         })

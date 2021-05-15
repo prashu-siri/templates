@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { UserAccount } from "../interface/userAccount";
-import { Observable } from "rxjs";
+import { Observable, throwError } from "rxjs";
 import { BankDetails } from "../interface/bankDetails";
+import { catchError } from "rxjs/operators";
 
 @Injectable({
     providedIn: 'root'
@@ -51,11 +52,11 @@ export class CommonService {
         this.setPayeeList(payees);
     }
 
-    addPayee(payee: any): void {
+    addPayee(payee: any, bankName: string): void {
         const payeeDetails = {
             "name": payee.payeeName,
             "accountNumber": payee.payeeAccountNumber,
-            "bank": "Andhra Bank"
+            "bank": bankName
         };
         this.payees.push(payeeDetails);
     }
@@ -64,6 +65,11 @@ export class CommonService {
         const ifscCode = (code as string).toUpperCase().trim();
         const url = `https://bank-apis.justinclicks.com/API/V1/IFSC/${ ifscCode }`;
 
-        return this.http.get<BankDetails>(url);
+        return this.http.get<BankDetails>(url)
+            .pipe(
+                catchError(() => {
+                    return throwError("Not a valid IFSC code");
+                })
+        );
     }
 }

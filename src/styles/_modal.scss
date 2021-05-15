@@ -96,3 +96,9 @@
 .modal .modal-body {
   padding : 12px 24px;
 }
+
+@media screen and (max-width: 900px){
+  .modal .button-container {
+	flex-direction: column-reverse;
+  }
+}

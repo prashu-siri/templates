@@ -302,11 +302,11 @@ $error-clr          : #DB3939;
 	  grid-template-rows : 20% 60%;
 
 	  .login-header {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: $background-clr;
-		color: white;
+		display         : flex;
+		justify-content : center;
+		align-items     : center;
+		background      : $background-clr;
+		color           : white;
 	  }
 	}
 
@@ -315,9 +315,9 @@ $error-clr          : #DB3939;
 
 	  h2 {
 		padding-bottom : 24px;
-		margin-bottom : 24px;
-		text-align: center;
-		color: $font-color;
+		margin-bottom  : 24px;
+		text-align     : center;
+		color          : $font-color;
 	  }
 	}
 
@@ -328,7 +328,7 @@ $error-clr          : #DB3939;
 	}
 
 	label {
-	  color: $font-color;
+	  color         : $font-color;
 	  margin-bottom : 6px;
 	}
 
@@ -467,6 +467,10 @@ $error-clr          : #DB3939;
 	height        : 40px;
 	font-family   : Roboto, sans-serif;
 	font-size     : 16px;
+
+	&::placeholder {
+	  opacity : 0.5;
+	}
   }
 
   .btn-container {
@@ -475,12 +479,16 @@ $error-clr          : #DB3939;
 	margin          : 48px 0;
   }
 
-  .js-center {
+  .jc-center {
 	justify-content : center;
   }
 
-  .js-space-btw {
+  .jc-space-btw {
 	justify-content : space-between;
+  }
+
+  .jc-right {
+	justify-content : flex-end;
   }
 
   .button {

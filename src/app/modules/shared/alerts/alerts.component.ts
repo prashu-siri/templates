@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Alert } from "../interface/alert";
 
 @Component({
@@ -21,4 +21,13 @@ export class AlertsComponent implements OnInit {
     }
   }
 
+  isShowAlert() {
+    return this.alertDetails.isErrorMessage || this.alertDetails.isSuccessMessage;
+  }
+
+  focus() {
+    setTimeout(() => {
+      document.getElementById('alert').scrollIntoView();
+    }, 100)
+  }
 }

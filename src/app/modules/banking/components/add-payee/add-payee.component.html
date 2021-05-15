@@ -1,4 +1,5 @@
 <app-alerts [alertDetails]="alertDetails"></app-alerts>
+
 <h3 class="bt_section_header">Add Payee</h3>
 <form (ngSubmit)="addPayee()" [formGroup]="addPayeeForm">
     <section class="bt_section_info">
@@ -52,6 +53,9 @@
                 <span *ngIf="code.hasError('pattern')">
                     Invalid IFSC code.
                 </span>
+                 <span *ngIf="code.hasError('incorrectCode')">
+                    Incorrect IFSC code. Please check the IFSC code.
+                </span>
             </div>
         </div>
 
@@ -73,8 +77,7 @@
     </section>
 
     <section>
-        <div class="btn-container">
-            <button (click)="resetAddPayeeForm()" class="button btn-secondary">Cancel</button>
+        <div class="btn-container jc-right">
             <button class="button btn-primary" type="submit">Add Payee</button>
         </div>
     </section>

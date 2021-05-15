@@ -415,16 +415,22 @@
   font-family: Roboto, sans-serif;
   font-size: 16px;
 }
+.bt input::placeholder {
+  opacity: 0.5;
+}
 .bt .btn-container {
   display: flex;
   justify-content: space-between;
   margin: 48px 0;
 }
-.bt .js-center {
+.bt .jc-center {
   justify-content: center;
 }
-.bt .js-space-btw {
+.bt .jc-space-btw {
   justify-content: space-between;
+}
+.bt .jc-right {
+  justify-content: flex-end;
 }
 .bt .button {
   border: none;
@@ -649,29 +655,44 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .bt table, .bt thead, .bt tbody, .bt th, .bt td, .bt tr {
+    display: block;
+  }
+  .bt table {
+    /* Hide table headers (but not display: none;, for accessibility) */
+  }
+  .bt table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .bt table tr {
+    margin: 0 0 1rem 0;
+  }
+  .bt table tr:nth-child(odd) {
+    background: #E0E0E0;
+  }
+  .bt table td {
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    padding: 0.5em;
+  }
+  .bt table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
   .bt .transaction-history {
     display: none;
   }
   .bt .bt-mobile {
     display: block;
-  }
-  .bt .bt-mobile table {
-    table-layout: fixed;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  .bt .bt-mobile th {
-    text-align: left;
-  }
-  .bt .bt-mobile th:last-child {
-    text-align: right;
-  }
-  .bt .bt-mobile td {
-    padding: 18px 0;
-    border-bottom: 1px solid #E0E0E0;
-  }
-  .bt .bt-mobile td:last-child {
-    text-align: right;
   }
   .bt .bt_radio {
     width: 100%;
@@ -683,13 +704,13 @@
     cursor: pointer;
     text-align: center;
   }
-  .bt .details {
+  .bt .details, .bt .form-group {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: none;
     grid-gap: 6px;
     padding: 0.75em;
   }
-  .bt .details *:first-child {
+  .bt .details *:first-child, .bt .form-group *:first-child {
     font-weight: 600;
   }
   .bt .bt_section_info h4 {
@@ -901,6 +922,11 @@ input.switch-input:checked + .slider::before {
   padding: 12px 24px;
 }
 
+@media screen and (max-width: 900px) {
+  .modal .button-container {
+    flex-direction: column-reverse;
+  }
+}
 .spinner {
   width: 3.5rem;
   height: 3.5rem;
