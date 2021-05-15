@@ -6,8 +6,8 @@
         <!--Payee name-->
         <div class="form-group">
             <label for="payeeName">Payee Name</label>
-            <input formControlName="payeeName" id="payeeName" type="text"
-                   [class.error-input]="isPayeeNameInvalid()"
+            <input [class.error-input]="isPayeeNameInvalid()" formControlName="payeeName" id="payeeName"
+                   type="text"
             >
             <div *ngIf="isPayeeNameInvalid()" class="bt_inline_error inline-error">
                 <span *ngIf="payeeName.hasError('required')">
@@ -22,30 +22,8 @@
         <!--IFSC code-->
         <div class="form-group">
             <label for="code">IFSC Code</label>
-            <input (blur)="fetchBankDetails()" formControlName="code" id="code" type="text"
-                [class.error-input]="isCodeInvalid()">
-            <div class="info" *ngIf="bankDetails">
-                <div class="details">
-                    <strong>Bank Name</strong>
-                    <span>{{ bankDetails.BANK }}</span>
-                </div>
-                <div class="details">
-                    <strong>Branch</strong>
-                    <span>{{ bankDetails.BRANCH }}</span>
-                </div>
-                <div class="details">
-                    <strong>City</strong>
-                    <span>{{ bankDetails.CITY }}</span>
-                </div>
-                <div class="details">
-                    <strong>District</strong>
-                    <span>{{ bankDetails.DISTRICT }}</span>
-                </div>
-                <div class="details">
-                    <strong>State</strong>
-                    <span>{{ bankDetails.STATE }}</span>
-                </div>
-            </div>
+            <input (blur)="fetchBankDetails()" [class.error-input]="isCodeInvalid()" formControlName="code" id="code"
+                   type="text">
             <div *ngIf="isCodeInvalid()" class="bt_inline_error inline-error">
                 <span *ngIf="code.hasError('required')">
                     IFSC code is required
@@ -53,17 +31,40 @@
                 <span *ngIf="code.hasError('pattern')">
                     Invalid IFSC code.
                 </span>
-                 <span *ngIf="code.hasError('incorrectCode')">
+                <span *ngIf="code.hasError('incorrectCode')">
                     Incorrect IFSC code. Please check the IFSC code.
                 </span>
+            </div>
+        </div>
+
+        <div *ngIf="bankDetails" class="info">
+            <div class="details">
+                <strong>Bank Name</strong>
+                <span>{{ bankDetails.BANK }}</span>
+            </div>
+            <div class="details">
+                <strong>Branch</strong>
+                <span>{{ bankDetails.BRANCH }}</span>
+            </div>
+            <div class="details">
+                <strong>City</strong>
+                <span>{{ bankDetails.CITY }}</span>
+            </div>
+            <div class="details">
+                <strong>District</strong>
+                <span>{{ bankDetails.DISTRICT }}</span>
+            </div>
+            <div class="details">
+                <strong>State</strong>
+                <span>{{ bankDetails.STATE }}</span>
             </div>
         </div>
 
         <!--Payee Account Number-->
         <div class="form-group">
             <label for="payeeAccountNumber">Payee Account Number</label>
-            <input formControlName="payeeAccountNumber" id="payeeAccountNumber" type="text"
-                [class.error-input]="isPayeeAccountNumberInvalid()">
+            <input [class.error-input]="isPayeeAccountNumberInvalid()" formControlName="payeeAccountNumber" id="payeeAccountNumber"
+                   type="text">
             <div *ngIf="isPayeeAccountNumberInvalid()"
                  class="bt_inline_error inline-error">
                 <span *ngIf="payeeAccountNumber.hasError('required')">

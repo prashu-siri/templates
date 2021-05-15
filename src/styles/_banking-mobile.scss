@@ -1,4 +1,4 @@
-@media (min-width : 320px) and (max-width : 767px) {
+@media (min-width : 320px) and (max-width : 899px) {
   .bt {
 
 	&.banking {
@@ -6,11 +6,12 @@
 	}
 
 	.login-container {
-	  grid-template-columns : 1fr;
+	  flex-direction : column;
 	}
 
 	.login-image-container {
-	  display : none;
+	  height  : 180px;
+	  padding : 1.5em;
 	}
 
 	.login-container .form-container {
@@ -96,8 +97,8 @@
 
 	  td {
 		/* Behave  like a "row" */
-		border        : none;
-		position      : relative;
+		border   : none;
+		position : relative;
 		padding  : 0.5em;
 	  }
 
@@ -175,7 +176,7 @@
   }
 }
 
-@media (min-width : 768px) and (max-width : 1024px) {
+@media (min-width : 900px) and (max-width : 1024px) {
   .bt {
 
 	.login-container .form-container {
@@ -201,7 +202,7 @@
 	}
 
 	.side-nav-mobile {
-	  display         : flex;
+	  display         : none;
 	  justify-content : space-between;
 	  align-items     : center;
 	}

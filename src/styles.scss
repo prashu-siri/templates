@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
-
 @import "styles/banking";
 @import "styles/banking-mobile";
 @import "styles/switch";
@@ -16,6 +15,7 @@ body {
   padding        : 0;
   margin         : 0;
   font-family    : "Rubik", sans-serif;
+  color          : #616161;
   font-size      : 16px;
   letter-spacing : 0.5px;
   font-weight    : 400;
@@ -215,14 +215,14 @@ button svg {
 
 .banking {
   svg {
-    height     : 18px;
-    width      : 18px;
-    display    : grid;
-    align-self : center;
+	height     : 18px;
+	width      : 18px;
+	display    : grid;
+	align-self : center;
   }
 
   .notification svg {
-    margin-right : 0;
+	margin-right : 0;
   }
 }
 
@@ -234,18 +234,18 @@ button svg {
   padding    : 6px;
 
   svg {
-    fill   : white;
-    margin : 0;
+	fill   : white;
+	margin : 0;
   }
 }
 
 @media (max-width : 768px) {
   .first-row {
-    flex-direction : column;
+	flex-direction : column;
   }
 
   .second-row {
-    flex-direction : column;
-    margin-right   : 24px;
+	flex-direction : column;
+	margin-right   : 24px;
   }
 }

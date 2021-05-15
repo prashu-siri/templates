@@ -1,15 +1,17 @@
 <div class="login-container">
     <div class="login-image-container">
-        <img alt="login image" src="assets/img/login.jpg"/>
-    </div>
-    <div class="login-form-wrapper">
-        <div class="login-header">
+        <section class="copy banner">
             <h1>ABC Online Banking</h1>
-        </div>
+            <p class="cta">Create your new way of management</p>
+        </section>
+    </div>
+    <div class="login-form-container">
         <div class="form-container">
-            <h2>Login</h2>
-            <app-alerts [alertDetails]="alertDetails"></app-alerts>
-            <form [formGroup]="loginForm" action="">
+            <div class="copy login-cta">
+                <h2>Login</h2>
+                <p>Welcome back! Please login to your account</p>
+            </div>
+            <form [formGroup]="loginForm" >
                 <div class="form-group-vertical">
                     <label for="id">Customer ID</label>
                     <input formControlName="customerId" id="id" type="text" placeholder="Enter your 8 digit Customer ID"/>
@@ -31,7 +33,7 @@
                     </div>
                 </div>
                 <div class="btn-container jc-center">
-                    <button (click)="login()" class="button btn-primary">Login</button>
+                    <button (click)="login()" class="button btn-primary btn-login">Login</button>
                 </div>
             </form>
         </div>
