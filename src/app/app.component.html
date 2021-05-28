@@ -14,6 +14,13 @@
         <button (click)="showTemplate('BT')"
            >View Template</button>
     </div>
+
+    <div class="card">
+        <h3 class="card__heading">Easy Bank Template</h3>
+        <p class="card__description">This is a static web page built using HTML and CSS.</p>
+        <button (click)="showTemplate('EBT')"
+           >View Template</button>
+    </div>
 </div>
 
 <div *ngIf="emailTemplate">
@@ -22,6 +29,10 @@
 
 <div *ngIf="bankingTemplate">
     <app-banking-home></app-banking-home>
+</div>
+
+<div *ngIf="easyBankTemplate">
+    <app-easy-bank></app-easy-bank>
 </div>
 
 <a class="floating"
