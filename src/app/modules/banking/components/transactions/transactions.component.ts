@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Transactions } from "../../interface/transactions";
+import { Transaction } from "../../interface/transactions";
 import { ModalComponent } from "../common/modal/modal.component";
 import { HttpClient } from "@angular/common/http";
 
@@ -10,10 +10,10 @@ import { HttpClient } from "@angular/common/http";
 })
 export class TransactionsComponent implements OnInit {
 
-  transaction: Transactions;
+  transaction: Transaction;
   modalHeader: string;
 
-  @Input() transactions: Transactions[];
+  @Input() transactions: Transaction[];
 
   @ViewChild(ModalComponent)
   private modal: ModalComponent;
@@ -27,7 +27,7 @@ export class TransactionsComponent implements OnInit {
     return type === 'Credited' ? 'credit': 'debit';
   }
 
-  viewDetails(transaction: Transactions, event) {
+  viewDetails(transaction: Transaction, event) {
     if(event) {
       event.preventDefault();
     }

@@ -25,6 +25,7 @@ export class ModalComponent implements OnInit {
   }
 
   closeModal(event) {
+    event.preventDefault();
     this.submittedValue.emit(event.target.innerHTML);
     document.querySelector("#modal-info").classList.remove("open");
   }

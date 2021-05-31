@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Transactions } from "../../interface/transactions";
 import { CommonService } from "../../service/common.service";
 import { UserAccount } from "../../interface/userAccount";
+import { AccountTransactions } from "../../interface/accountTransactions";
+import { Transaction } from "../../interface/transactions";
 
 @Component({
   selector: 'app-accounts',
@@ -13,7 +13,7 @@ export class AccountsComponent implements OnInit {
 
   tab: string = "accountDetails";
   selectedAccount: UserAccount;
-  transactions: Transactions[];
+  transactions: Transaction[];
   userAccounts: UserAccount[];
 
   constructor(private commonService: CommonService) { }
@@ -25,8 +25,8 @@ export class AccountsComponent implements OnInit {
   }
 
   fetchAccountTransactions() {
-    this.commonService.fetchTransactions(this.selectedAccount.accountNumber).subscribe((response: Transactions[]) => {
-      this.transactions = response;
+    this.commonService.fetchTransactions(this.selectedAccount.accountNumber).subscribe((response: AccountTransactions[]) => {
+      this.transactions = response[0].transactions;
     });
   }
 

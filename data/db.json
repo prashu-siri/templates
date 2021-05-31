@@ -1,0 +1,274 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "accountNumber": "0002565325",
+      "accountType": "Savings",
+      "availableBalance": 8790,
+      "currentBalance": 6787,
+      "unclearedFunds": 0,
+      "interestReceivedLastMonth": 508.09,
+      "interestReceivedCurrentYear": 8976.09,
+      "interestReceivedLastYear": 5089.09
+    },
+    {
+      "id": 2,
+      "accountNumber": "0005552125",
+      "accountType": "Savings",
+      "availableBalance": 52000,
+      "currentBalance": 44500,
+      "unclearedFunds": 0,
+      "interestReceivedLastMonth": 508.09,
+      "interestReceivedCurrentYear": 8976.09,
+      "interestReceivedLastYear": 5089.09
+    }
+  ],
+  "payees": [
+    {
+      "id": 1,
+      "name": "Abhilash",
+      "accountNumber": 12341234234,
+      "bank": "Andhra Bank"
+    },
+    {
+      "name": "Pawan",
+      "accountNumber": "0025659896",
+      "bank": "STATE BANK OF INDIA",
+      "id": 2
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "accountNumber": "0002565325",
+      "transactions": [
+        {
+          "id": 1,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "01/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "ABC Corporation",
+          "status": "Processed",
+          "transactionAmount": 8974,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 2,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "02/10/2021",
+          "transactionType": "Debited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Processed",
+          "transactionAmount": 500,
+          "description": "Fee",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 3,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "02/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Processed",
+          "transactionAmount": 800,
+          "description": "Paid in full",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 4,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "03/10/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Processed",
+          "transactionAmount": 8974,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 5,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "03/11/2021",
+          "transactionType": "Debited",
+          "transactionDetails": "Sports",
+          "status": "Processed",
+          "transactionAmount": 25,
+          "description": "Sports Subscription",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 6,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "03/15/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Processed",
+          "transactionAmount": 1500,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 7,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "04/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "ABC Limited",
+          "status": "Processed",
+          "transactionAmount": 8974,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 8,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "04/23/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Processed",
+          "transactionAmount": 879,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 9,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "05/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "ABC Limited",
+          "status": "Debited",
+          "transactionAmount": 5200,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 10,
+          "transactionId": "ABC00215445L",
+          "transactionDate": "05/21/2021",
+          "transactionType": "Debited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Processed",
+          "transactionAmount": 60,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "accountNumber": "0005552125",
+      "transactions": [
+        {
+          "id": 1,
+          "transactionId": "ABC00215897L",
+          "transactionDate": "01/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "Dell",
+          "status": "Processed",
+          "transactionAmount": 8974,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 2,
+          "transactionId": "ABC00215896L",
+          "transactionDate": "02/10/2021",
+          "transactionType": "Debited",
+          "transactionDetails": "Microsoft Limited",
+          "status": "Processed",
+          "transactionAmount": 500,
+          "description": "Fee",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 3,
+          "transactionId": "ABC00215895L",
+          "transactionDate": "02/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "Apple",
+          "status": "Processed",
+          "transactionAmount": 800,
+          "description": "Paid in full",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 4,
+          "transactionId": "ABC00215894L",
+          "transactionDate": "03/10/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "HP",
+          "status": "Processed",
+          "transactionAmount": 8974,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 5,
+          "transactionId": "ABC00215893L",
+          "transactionDate": "03/11/2021",
+          "transactionType": "Debited",
+          "transactionDetails": "Sports",
+          "status": "Processed",
+          "transactionAmount": 25,
+          "description": "Sports Subscription",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 6,
+          "transactionId": "ABC00215892L",
+          "transactionDate": "03/15/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "Amazon",
+          "status": "Processed",
+          "transactionAmount": 1500,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 7,
+          "transactionId": "ABC00215891L",
+          "transactionDate": "04/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "ZXC Limited",
+          "status": "Processed",
+          "transactionAmount": 8974,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 8,
+          "transactionId": "ABC00215890L",
+          "transactionDate": "04/23/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Processed",
+          "transactionAmount": 879,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 9,
+          "transactionId": "ABC00215889L",
+          "transactionDate": "05/21/2021",
+          "transactionType": "Credited",
+          "transactionDetails": "XYZ Limited",
+          "status": "Debited",
+          "transactionAmount": 5200,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        },
+        {
+          "id": 10,
+          "transactionId": "ABC00215888L",
+          "transactionDate": "05/21/2021",
+          "transactionType": "Debited",
+          "transactionDetails": "Utilities",
+          "status": "Processed",
+          "transactionAmount": 60,
+          "description": "Salary credited",
+          "paymentService": "Fast Payment"
+        }
+      ]
+    }
+  ]
+}

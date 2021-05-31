@@ -1,21 +1,7 @@
 <h2 class="bt_section_header">Transfer</h2>
 
 <!--Alert Banner-->
-<div id="alert">
-    <div *ngIf="errorMessage" class="bt_banner bt_error_banner">
-    <div class="alert">
-        <app-svg-icon [svgIconId]="'alert'"></app-svg-icon>
-        <span>Please correct the errors in the below form.</span>
-    </div>
-</div>
-
-<div *ngIf="successMessage" class="bt_banner bt_success_banner">
-    <div class="alert">
-        <app-svg-icon [svgIconId]="'check-circle'"></app-svg-icon>
-        <span>Transfer successful</span>
-    </div>
-</div>
-</div>
+<app-alerts [alertDetails]="transferAlert"></app-alerts>
 
 <div *ngIf="accounts; else noAccounts">
     <form (ngSubmit)="transfer()" [formGroup]="transferForm">
