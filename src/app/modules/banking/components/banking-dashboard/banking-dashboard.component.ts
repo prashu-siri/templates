@@ -13,6 +13,7 @@ export class BankingDashboardComponent implements OnInit {
 	transactions: Transaction[] = [];
 	accounts: UserAccount[] = [];
 	selectedAccount: UserAccount;
+	isLoading: boolean = false;
 
 	constructor(private commonService: CommonService) {
 	}
@@ -22,6 +23,7 @@ export class BankingDashboardComponent implements OnInit {
 	}
 
 	getAccounts(): void {
+		this.isLoading = true;
 		this.commonService.fetchUserAccounts().subscribe((response: UserAccount[]) => {
 			this.accounts = response;
 			this.selectedAccount = this.accounts[0];
@@ -41,6 +43,7 @@ export class BankingDashboardComponent implements OnInit {
 						this.transactions.push(transactions[i]);
 					}
 				}
+				this.isLoading = false;
 			});
 	}
 }

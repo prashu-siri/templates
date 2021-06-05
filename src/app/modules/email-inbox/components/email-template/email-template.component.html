@@ -6,20 +6,20 @@
         <div class="actions">
             <div class="search">
                 <app-svg-icon [svgIconId]="'search'"></app-svg-icon>
-                <input placeholder="Search"
+                <input placeholder="Search" aria-label="Search"
                        type="text"/>
             </div>
             <div class="sort">
                 <label for="sort">Sort by</label>
                 <div class="menu-container" id="sort">
-                    <button class="btn btn-menu"
-                            id="button-menu"
-                            (click)="toggleMenu('button-menu')">
+                    <button (click)="toggleMenu('button-menu')"
+                            class="btn btn-menu"
+                            id="button-menu">
                         <span class="menu-option">Newest first</span>
                         <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
                         <ul class="menu">
                             <li *ngFor="let sortOption of sortOptions">
-                                <a href="#" (click)="selectOption(sortOption.value)">
+                                <a (click)="selectOption(sortOption.value)" href="#">
                                     {{sortOption.value}}
                                 </a>
                             </li>
@@ -30,20 +30,23 @@
         </div>
         <div class="title-container">
             <span class="title">John doe</span>
-            <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="image" id="large_img" class=" come_in">
+            <img alt="image"
+                 class=" come_in"
+                 id="large_img"
+                 src="https://randomuser.me/api/portraits/men/43.jpg">
             <div class="menu-container">
-                    <button class="btn btn-menu"
-                            id="btn-menu"
-                            (click)="toggleMenu('btn-menu')">
-                        <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
-                        <ul class="menu">
-                            <li>
-                                <a href="#">Log out</a>
-                            </li>
-                        </ul>
-                    </button>
+                <button (click)="toggleMenu('btn-menu')"
+                        class="btn btn-menu"
+                        id="btn-menu">
+                    <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
+                    <ul class="menu">
+                        <li>
+                            <a href="#">Log out</a>
+                        </li>
+                    </ul>
+                </button>
 
-                </div>
+            </div>
         </div>
     </div>
     <div class="mail-content">
@@ -51,23 +54,37 @@
             <div>
                 <ul>
                     <li *ngFor="let option of primaryOptions">
-                        <a href="#" (click)="activate(option)" [ngClass]="option.active? 'active': null">{{ option.value }}</a>
+                        <a (click)="activate($event, option)"
+                           [ngClass]="option.active? 'active': null"
+                           href="#">{{ option.value }}</a>
                     </li>
                 </ul>
             </div>
             <div class="labels">
                 <label for="labels">Labels</label>
                 <ul id="labels">
-                    <li><a href="#">Personal</a></li>
-                    <li><a href="#">Client</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Friends</a></li>
+                    <li>
+                        <a href="#">Personal</a>
+                    </li>
+                    <li>
+                        <a href="#">Client</a>
+                    </li>
+                    <li>
+                        <a href="#">Work</a>
+                    </li>
+                    <li>
+                        <a href="#">Friends</a>
+                    </li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Help & Support</a></li>
+                    <li>
+                        <a href="#">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#">Help & Support</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         };
 
         if (this.loginForm.valid) {
-            this.route.navigate(['/dashboard'])
+            this.route.navigate(['/banking/home'])
         } else {
             this.showAlert = true;
             this.alertDetails = {

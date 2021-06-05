@@ -1,9 +1,9 @@
-<div *ngIf="showMain" class="main">
+<div *ngIf="isHomePage()" class="main">
     <div class="card">
         <h3 class="card__heading">Email Web Template</h3>
         <p class="card__description">This is an email inbox web template built using
             HTML, CSS and Angular</p>
-        <button (click)="showTemplate('ET')"
+        <button routerLink="email-inbox/home"
            >View Template</button>
     </div>
 
@@ -11,31 +11,21 @@
         <h3 class="card__heading">Online Banking Template</h3>
         <p class="card__description">This is an online banking web application template built using
             HTML, CSS and Angular</p>
-        <button (click)="showTemplate('BT')"
+        <button routerLink="banking/login"
            >View Template</button>
     </div>
 
     <div class="card">
         <h3 class="card__heading">Easy Bank Template</h3>
         <p class="card__description">This is a static web page built using HTML and CSS.</p>
-        <button (click)="showTemplate('EBT')"
+        <button routerLink="easy-bank/home"
            >View Template</button>
     </div>
 </div>
 
-<div *ngIf="emailTemplate">
-    <app-email-template></app-email-template>
-</div>
+<router-outlet></router-outlet>
 
-<div *ngIf="bankingTemplate">
-    <app-banking-home></app-banking-home>
-</div>
-
-<div *ngIf="easyBankTemplate">
-    <app-easy-bank></app-easy-bank>
-</div>
-
-<a class="floating"
+<!--<a class="floating"
    href="">
     <app-svg-icon [svgIconId]="'home'"></app-svg-icon>
-</a>
+</a>-->

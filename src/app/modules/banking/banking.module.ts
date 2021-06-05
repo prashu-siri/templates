@@ -24,38 +24,44 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
-    {path: 'dashboard', component: BankingDashboardComponent},
-    {path: 'accounts', component: AccountsComponent},
-    {path: 'fundTransfer', component: FundTransferComponent},
-    {path: 'cards', component: CardsComponent},
-    {path: 'details', component: PersonalDetailsComponent},
-    {path: 'login', component: LoginComponent}
+	{
+		path: 'home', component: BankingHomeComponent, children: [
+			{ path: 'dashboard', component: BankingDashboardComponent },
+			{ path: 'accounts', component: AccountsComponent },
+			{ path: 'fundTransfer', component: FundTransferComponent },
+			{ path: 'cards', component: CardsComponent },
+			{ path: 'details', component: PersonalDetailsComponent },
+			{ path: '', pathMatch: 'full', redirectTo: 'dashboard', component: BankingDashboardComponent }
+		]
+	},
+
+	{ path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
-    declarations: [
-        BankingDashboardComponent,
-        BankingHomeComponent,
-        BankingNavComponent,
-        ModalComponent,
-        AccountsComponent,
-        TransactionsComponent,
-        AccountDetailsComponent,
-        FundTransferComponent,
-        TransferComponent,
-        PayAnyoneComponent,
-        CardsComponent,
-        CreditCardsComponent,
-        DebitCardsComponent,
-        PersonalDetailsComponent,
-        ManagePayeeComponent,
-        DeletePayeeComponent,
-        AddPayeeComponent,
-        LoginComponent,
-        HeaderComponent
-    ],
-    exports: [BankingHomeComponent],
-    imports: [CommonModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule, SharedModule]
+	declarations: [
+		BankingDashboardComponent,
+		BankingHomeComponent,
+		BankingNavComponent,
+		ModalComponent,
+		AccountsComponent,
+		TransactionsComponent,
+		AccountDetailsComponent,
+		FundTransferComponent,
+		TransferComponent,
+		PayAnyoneComponent,
+		CardsComponent,
+		CreditCardsComponent,
+		DebitCardsComponent,
+		PersonalDetailsComponent,
+		ManagePayeeComponent,
+		DeletePayeeComponent,
+		AddPayeeComponent,
+		LoginComponent,
+		HeaderComponent
+	],
+	exports: [BankingHomeComponent],
+	imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule, SharedModule]
 })
 export class BankingModule {
 }

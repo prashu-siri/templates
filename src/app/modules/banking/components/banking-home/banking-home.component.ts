@@ -11,11 +11,5 @@ export class BankingHomeComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit(): void {
-    //Navigate to login on page load
-    this.route.navigate(['/login'])
-  }
-
-  isLoginPage() {
-    return this.route.url.indexOf('login') > -1;
   }
 }

@@ -64,7 +64,10 @@ export class EmailTemplateComponent implements OnInit {
         document.querySelector(".menu-option").textContent = option;
     }
 
-    activate(primaryOption: any) {
+    activate(event: MouseEvent, primaryOption: any) {
+        if(event) {
+            event.preventDefault();
+        }
         this.primaryOptions.forEach((option) => {
             option.active = false;
         });
