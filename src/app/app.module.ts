@@ -3,21 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from "@angular/common/http";
-import { EmailInboxModule } from "./modules/email-inbox/email-inbox.module";
+import { SharedModule } from "./modules/shared/shared.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
+	declarations: [
+		AppComponent
+	],
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
 		AppRoutingModule,
-		HttpClientModule
+		SharedModule
 	],
-    providers: [],
-    exports: [],
-    bootstrap: [AppComponent]
+	providers: [],
+	exports: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule {
 }

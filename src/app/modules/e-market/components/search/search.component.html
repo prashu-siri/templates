@@ -1,0 +1,13 @@
+<div class="search-container" id="search">
+    <div class="search-wrapper">
+        <div class="search-input-wrapper">
+        <input aria-label="Search" id="search-input" name="search" type="search" placeholder="Search">
+            <a href="#" class="icon-search">
+                <app-svg-icon [svgIconId]="'search'"></app-svg-icon>
+            </a>
+        </div>
+        <a href="#" (click)="closeSearch($event)">
+            <app-svg-icon [svgIconId]="'cross'"></app-svg-icon>
+        </a>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from "../../service/common.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Constant } from "../../service/constants";
+import { Alert } from "../../../shared/interface/alert";
 
 @Component({
   selector: 'app-pay-anyone',
@@ -12,10 +13,10 @@ export class PayAnyoneComponent implements OnInit {
 
   payees: any[] = [];
   paymentForm;
-  errorMessage: boolean = false;
+  alert: Alert;
+  paymentSuccessMessage: boolean;
   submitted: boolean = false;
   showForm: boolean = true;
-  successMessage: boolean = false;
   isShowPreview: boolean = false;
   initialFormState;
 
@@ -74,13 +75,12 @@ export class PayAnyoneComponent implements OnInit {
 
   showPreview() {
     this.submitted = true;
-    this.errorMessage = false;
 
     if(this.paymentForm.invalid) {
-      this.errorMessage = true;
-      setTimeout(() => {
-        document.getElementById('errorMessage').scrollIntoView()
-      },300);
+      this.alert = {
+        isErrorMessage: true,
+        message: "Please correct the errors in the below form."
+      };
       return;
     }
 
@@ -95,7 +95,7 @@ export class PayAnyoneComponent implements OnInit {
 
   pay() {
     this.isShowPreview = false;
-    this.successMessage = true;
+    this.paymentSuccessMessage = true;
   }
 
   resetForm(event) {
@@ -104,8 +104,11 @@ export class PayAnyoneComponent implements OnInit {
     }
 
     this.submitted = false;
-    this.successMessage = false;
-    this.errorMessage = false;
+    this.alert = {
+      isErrorMessage: false,
+      isSuccessMessage: false
+    };
+    this.paymentSuccessMessage = false;
     this.isShowPreview = false;
     this.showForm = true;
     this.paymentForm.reset(this.initialFormState);

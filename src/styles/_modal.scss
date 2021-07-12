@@ -35,7 +35,6 @@
     padding        : 6px 12px;
     letter-spacing : 0.5px;
     color          : #FFFFFF;
-    background     : #BE5A38;
     cursor         : pointer;
     text-transform : uppercase;
     margin         : 6px;
@@ -49,6 +48,10 @@
 
   .btn-primary {
     background : #0C5EA6;
+  }
+
+  .btn-secondary {
+    background: lightgrey;
   }
 
   .button-container {

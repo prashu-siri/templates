@@ -1,0 +1,67 @@
+<div class="page-container">
+    <div class="container">
+        <h1 class="page-heading">Cart</h1>
+        <div class="breadcrumb">
+            <ul>
+                <li>
+                    <a routerLink="home" href="#">Home</a>
+                </li>
+                <li>Cart</li>
+            </ul>
+        </div>
+        <div *ngIf="products" class="cart-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price/Unit</th>
+                    <th>Quantity</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let product of products">
+                    <td>
+                        <span class="image-wrapper">
+                            <img [src]="product.imageUrl" alt="">
+                        </span>
+                        {{ product.name }}
+                    </td>
+                    <td>{{ product.cost }} / {{ product.unit}}</td>
+                    <td>{{ product.noOfItems }} {{ product.unit }}</td>
+                    <td>
+                        <a (click)="removeItem($event, product)" href="#">
+                            <app-svg-icon [svgIconId]="'trash'"></app-svg-icon>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <table>
+                    <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.noOfItems + ' X ' + product.cost}}</td>
+                        <td>{{ product.noOfItems * product.cost | currency: 'INR'}}</td>
+                    </tr>
+                    <tr class="total">
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td>
+                            <strong>{{ calculateTotalCost() | currency: 'INR'}}</strong>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-primary" [routerLink]="['../checkout']">Checkout</button>
+            </div>
+        </div>
+
+        <div *ngIf="!products" class="cart-empty">
+            <p>Your cart is empty</p>
+            <button class="btn btn-primary" routerLink="home">Continue shopping</button>
+        </div>
+    </div>
+</div>

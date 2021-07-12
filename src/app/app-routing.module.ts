@@ -13,11 +13,15 @@ const routes: Routes = [
   {
     path: 'easy-bank',
     loadChildren: () => import('./modules/easy-bank/easy-bank.module').then(m => m.EasyBankModule)
+  },
+  {
+    path: 'e-market',
+    loadChildren: () => import('./modules/e-market/e-market.module').then(m => m.EMarketModule)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'top'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

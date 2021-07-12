@@ -1,0 +1,23 @@
+.banner {
+  padding       : 12px;
+  margin-bottom : 24px;
+  color         : #FFF;
+  border-radius : 5px;
+
+  a {
+	color : white;
+  }
+}
+
+.alert {
+  display     : flex;
+  align-items : center;
+}
+
+.error_banner {
+  background : #F46A6A;
+}
+
+.success_banner {
+  background : #5ECE5E;
+}
