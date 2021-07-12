@@ -1171,6 +1171,8 @@ input.switch-input:checked + .slider::before {
   list-style: none;
 }
 .e-market-template nav {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .e-market-template nav img {
