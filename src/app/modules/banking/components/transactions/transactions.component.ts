@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Transaction } from "../../interface/transactions";
-import { ModalComponent } from "../common/modal/modal.component";
-import { HttpClient } from "@angular/common/http";
+import { ModalComponent } from "../../../shared/modal/modal.component";
 
 @Component({
   selector: 'app-transactions',
@@ -18,7 +17,7 @@ export class TransactionsComponent implements OnInit {
   @ViewChild(ModalComponent)
   private modal: ModalComponent;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

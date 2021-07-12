@@ -1,0 +1,47 @@
+<div *ngIf="productDetails" class="product-details-container">
+    <div class="product-image-wrapper">
+        <img [src]="productDetails.imageUrl" alt="">
+    </div>
+    <div class="product-details-wrapper">
+        <div class="product-details">
+            <span>Name</span>
+            <span>{{ productDetails.name }}</span>
+        </div>
+        <div class="product-details">
+            <span>Cost</span>
+            <span>{{ productDetails.cost }} / {{ productDetails.unit }}</span>
+        </div>
+
+        <div class="product-details">
+            <span *ngIf="productDetails.available"
+                  [ngClass]="productDetails.available ? 'available': null">In Stock</span>
+            <span *ngIf="!productDetails.available"
+                  [ngClass]="!productDetails.available ? 'not-available': null">Out of Stock</span>
+        </div>
+
+        <div class="product-details product-fact">
+            <p>{{ productDetails.fact }}</p>
+        </div>
+
+        <div class="quantity-container">
+            <div class="quantity-wrapper">
+                <a (click)="changeQuantity($event, 'minus')" href="#">
+                    <app-svg-icon [svgIconId]="'minus-sm'"></app-svg-icon>
+                </a>
+                <input [(ngModel)]="productDetails.quantity"
+                       aria-label="Quantity"
+                       id="quantity"
+                       name="quantity"
+                       type="text">
+                <a (click)="changeQuantity($event, 'plus')" href="#">
+                    <app-svg-icon [svgIconId]="'plus-sm'"></app-svg-icon>
+                </a>
+            </div>
+
+            <button (click)="addToCart($event)" class="btn btn-primary">
+                <app-svg-icon [svgIconId]="'cart'"></app-svg-icon>
+            </button>
+        </div>
+
+    </div>
+</div>

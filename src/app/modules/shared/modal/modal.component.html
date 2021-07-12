@@ -17,11 +17,11 @@
         </div>
         <div class="modal-footer">
             <div class="button-container" [class.jc-right]="applyClass()">
-                <button class="button btn-secondary" *ngIf="isSecondaryButtonVisible">
+                <button class="btn btn-secondary" *ngIf="isSecondaryButtonVisible">
                     {{ secondaryButtonText }}
                 </button>
-                <button class="button btn-primary" *ngIf="isPrimaryButtonVisible"
-                        (click)="closeModal($event)">
+                <button class="btn btn-primary" *ngIf="isPrimaryButtonVisible"
+                        (click)="emitValue($event)">
                     {{ primaryButtonText }}
                 </button>
             </div>

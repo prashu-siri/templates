@@ -1,0 +1,48 @@
+.checkbox-container {
+  margin : 24px 12px;
+}
+
+.checkbox-label {
+  display      : inline-block;
+  position     : relative;
+  padding-left : 32px;
+  padding-top  : 3px;
+  cursor       : pointer;
+
+  input {
+	display : none;
+  }
+
+  .tick {
+	display       : inline-block;
+	width         : 25px;
+	height        : 25px;
+	border-radius : 3px;
+	border        : 1.5px solid #B8B8B8;
+	position      : absolute;
+	top           : 0;
+	left          : 0;
+	transition    : all 0.5s ease;
+  }
+
+  input:checked ~ .tick {
+	background-color : #279AF1;
+  }
+
+  input:checked ~ .tick:after {
+	content       : "";
+	height        : 8px;
+	width         : 15px;
+	border-left   : 2px solid #FFFFFF;
+	border-bottom : 2px solid #FFFFFF;
+	border-radius : 2px;
+	position      : absolute;
+	left          : 42%;
+	top           : 35%;
+	transform     : translate(-40%, -40%) rotate(-45deg);
+  }
+}
+
+.checkbox-label + .checkbox-label {
+  margin-left : 18px;
+}

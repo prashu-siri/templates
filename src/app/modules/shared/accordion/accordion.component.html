@@ -1,0 +1,16 @@
+<div class="accordion-panel">
+    <button (click)="toggleAccordion($event)" class="accordion-button">
+        <span class="accordion-heading">{{ heading }}</span>
+        <span class="arrow-down">
+            <app-svg-icon [svgIconId]="'down-arrow'"></app-svg-icon>
+        </span>
+        <span class="arrow-up">
+            <app-svg-icon [svgIconId]="'up-arrow'"></app-svg-icon>
+        </span>
+    </button>
+    <div class="accordion-body">
+        <div class="accordion-content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

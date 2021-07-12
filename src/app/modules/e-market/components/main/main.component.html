@@ -1,0 +1,5 @@
+<div class="e-market-template">
+    <app-header *ngIf="!isSignInPage()"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer *ngIf="!isSignInPage()"></app-footer>
+</div>

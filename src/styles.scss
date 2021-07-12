@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
-@import "styles/banking";
-@import "styles/banking-mobile";
+@import "styles/helper";
 @import "styles/switch";
 @import "styles/modal";
 @import "styles/spinner";
+@import "styles/checkbox";
+@import "styles/banking";
+@import "styles/banking-mobile";
+@import "styles/emarket";
 
 *, *::before, *::after {
   box-sizing : border-box;
@@ -19,6 +22,7 @@ body {
   font-size      : 16px;
   letter-spacing : 0.5px;
   font-weight    : 400;
+  overflow-x     : hidden;
 }
 
 h1,
@@ -85,7 +89,6 @@ ul {
   margin         : 24px auto;
   transition     : transform 0.2s ease;
   font-weight    : 500;
-  display        : flex;
 }
 
 .btn:active {
@@ -237,6 +240,18 @@ button svg {
 	fill   : white;
 	margin : 0;
   }
+}
+
+.alert svg {
+  width  : 18px;
+  height : 18px;
+  fill   : white;
+}
+
+/***** Form Error ******/
+.inline_error {
+  color   : $error-clr;
+  padding : 12px 0;
 }
 
 @media (max-width : 768px) {

@@ -36,14 +36,12 @@ export class AlertsComponent implements OnInit, OnDestroy {
 	}
 
 	focus() {
-		this.timeout = setTimeout(() => {
-			const element = document.getElementById('alert');
-			if (element != null) {
-				element.scrollIntoView(
-					{behavior: 'smooth', block: 'nearest', inline: 'start'}
-				);
-			}
-
-		}, 300);
+		const element = document.getElementById('alert');
+		if (element != null) {
+			window.scrollTo({
+			  top: element.offsetTop - 100,
+			  behavior: "smooth"
+			});
+		}
 	}
 }

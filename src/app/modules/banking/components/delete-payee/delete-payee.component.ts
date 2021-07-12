@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ModalComponent } from "../common/modal/modal.component";
 import { CommonService } from "../../service/common.service";
 import { Alert } from "../../../shared/interface/alert";
 import { Payee } from "../../interface/payee";
+import { ModalComponent } from "../../../shared/modal/modal.component";
 
 @Component({
 	selector: 'app-delete-payee',
@@ -43,7 +43,8 @@ export class DeletePayeeComponent implements OnInit {
 		});
 	}
 
-	deletePayee(value: string): void {
+	deletePayee(event: MouseEvent): void {
+		const value = (event.target as HTMLElement).innerHTML;
 		if (value.toUpperCase().trim() === "DELETE") {
 			this.commonService.deletePayee(this.id).subscribe(() => {
 				this.getPayees();
@@ -52,6 +53,7 @@ export class DeletePayeeComponent implements OnInit {
 					isSuccessMessage: true
 				};
 			});
+			this.modal.closeModal(event);
 		}
 	}
 
