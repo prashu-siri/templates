@@ -1015,7 +1015,7 @@ $text-background : #F5F5F5;
   /*********** PROFILE ***************/
   .orders-wrapper {
 	display               : grid;
-	grid-auto-flow        : column;
+	grid-auto-flow        : row;
 	grid-template-columns : repeat(3, 1fr);
 	gap                   : 2em;
   }
@@ -1317,11 +1317,6 @@ $text-background : #F5F5F5;
 	  justify-content : flex-start;
 	}
 
-	.post-wrapper {
-	  grid-auto-flow        : row;
-	  grid-template-columns : 1fr;
-	}
-
 	footer {
 	  padding : 2em;
 
@@ -1369,7 +1364,7 @@ $text-background : #F5F5F5;
 	  }
 	}
 
-	.checkout-container, .form-horizontal {
+	.checkout-container, .form-horizontal, .post-wrapper {
 	  grid-template-columns : 1fr;
 	  grid-auto-flow        : row;
 	}
@@ -1403,7 +1398,7 @@ $text-background : #F5F5F5;
 	  }
 	}
 
-	.tab-content-container, .tab-group {
+	.tab-content-container, .tab-group, .orders-wrapper {
 	  grid-template-columns : 1fr;
 	}
 
@@ -1413,6 +1408,18 @@ $text-background : #F5F5F5;
 
 	.tab-content {
 	  margin-right : 2em;
+	}
+
+	.blog__post {
+	  flex-direction : column;
+	}
+
+	.product-details-container {
+	  flex-direction  : column;
+	  padding         : 0;
+	  justify-content : center;
+	  align-items     : center;
+	  gap             : 1em;
 	}
   }
 }

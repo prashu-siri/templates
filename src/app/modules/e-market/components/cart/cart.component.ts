@@ -34,4 +34,8 @@ export class CartComponent implements OnInit {
 
 		this.service.setProducts(this.products);
 	}
+
+	hasProducts() {
+		return this.products.length > 0;
+	}
 }

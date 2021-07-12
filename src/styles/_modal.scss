@@ -28,46 +28,46 @@
   transform     : scale(0);
 
   .btn {
-    border         : none;
-    border-radius  : 3px;
-    outline        : none;
-    width          : auto;
-    padding        : 6px 12px;
-    letter-spacing : 0.5px;
-    color          : #FFFFFF;
-    cursor         : pointer;
-    text-transform : uppercase;
-    margin         : 6px;
-    transition     : transform 0.2s ease;
-    font-weight    : 500;
+	border         : none;
+	border-radius  : 3px;
+	outline        : none;
+	width          : auto;
+	padding        : 6px 12px;
+	letter-spacing : 0.5px;
+	color          : #FFFFFF;
+	cursor         : pointer;
+	text-transform : uppercase;
+	margin         : 6px;
+	transition     : transform 0.2s ease;
+	font-weight    : 500;
   }
 
   .btn:active {
-    transform : scale(0.9);
+	transform : scale(0.9);
   }
 
   .btn-primary {
-    background : #0C5EA6;
+	background : #0C5EA6;
   }
 
   .btn-secondary {
-    background: lightgrey;
+	background : lightgrey;
   }
 
   .button-container {
-    display         : flex;
-    flex-direction  : row;
-    justify-content : space-between;
-    margin-top      : 24px;
-    padding         : 12px;
+	display         : flex;
+	flex-direction  : row;
+	justify-content : space-between;
+	margin-top      : 24px;
+	padding         : 12px;
   }
 
   .button-end {
-    justify-content : flex-end;
+	justify-content : flex-end;
   }
 
   .flex-right {
-    justify-content : flex-end;
+	justify-content : flex-end;
   }
 
 }
@@ -100,8 +100,17 @@
   padding : 12px 24px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width : 900px) {
   .modal .button-container {
-	flex-direction: column-reverse;
+	flex-direction : column-reverse;
+  }
+
+  .modal-container.open .modal {
+	left   : 0;
+	margin : 1em;
+  }
+
+  .modal {
+    width: 90%;
   }
 }
