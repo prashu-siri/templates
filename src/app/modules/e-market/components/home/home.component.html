@@ -93,7 +93,7 @@
                     <span class="publisher">By: {{post.publishedBy}}</span>
                     <p>{{post.title}}</p>
                     <span class="publisher">Published on: {{post.publishedOn}}</span>
-                    <a href="#">Read more ></a>
+                    <a href="#" [routerLink]="['../blog', post.id]">Read more ></a>
                 </div>
             </div>
         </div>

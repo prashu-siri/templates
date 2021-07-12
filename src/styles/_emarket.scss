@@ -1080,7 +1080,7 @@ $text-background : #F5F5F5;
 	  display               : grid;
 	  grid-auto-flow        : column;
 	  grid-template-columns : 1fr 1fr;
-
+	  height                : 100%;
 	}
 
 	nav .hamburger {
@@ -1191,6 +1191,12 @@ $text-background : #F5F5F5;
 	  padding               : 0 4em;
 	}
 
+	.search-container {
+	  .icon-search {
+		right : 13px;
+	  }
+	}
+
   }
 }
 
@@ -1208,7 +1214,7 @@ $text-background : #F5F5F5;
 	  display               : grid;
 	  grid-auto-flow        : column;
 	  grid-template-columns : 1fr 1fr;
-
+	  height                : 100%;
 	}
 
 	nav .hamburger {
@@ -1273,7 +1279,7 @@ $text-background : #F5F5F5;
 	}
 
 	.product-card-wrapper {
-	  grid-template-columns: 1fr;
+	  grid-template-columns : 1fr;
 	}
 
 	.products {
@@ -1385,6 +1391,28 @@ $text-background : #F5F5F5;
 		  width : 100%;
 		}
 	  }
+	}
+
+	.search-container {
+	  .search-wrapper {
+		width : 100%;
+	  }
+
+	  .icon-search {
+		right : 13px;
+	  }
+	}
+
+	.tab-content-container, .tab-group {
+	  grid-template-columns : 1fr;
+	}
+
+	.tab-group ul {
+	  grid-column : 1/3;
+	}
+
+	.tab-content {
+	  margin-right : 2em;
 	}
   }
 }
