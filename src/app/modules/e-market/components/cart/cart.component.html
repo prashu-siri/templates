@@ -9,7 +9,8 @@
                 <li>Cart</li>
             </ul>
         </div>
-        <div *ngIf="products" class="cart-container">
+
+        <div *ngIf="hasProducts()" class="cart-container">
             <table>
                 <thead>
                 <tr>
@@ -59,7 +60,7 @@
             </div>
         </div>
 
-        <div *ngIf="!products" class="cart-empty">
+        <div *ngIf="!hasProducts()" class="cart-empty">
             <p>Your cart is empty</p>
             <button class="btn btn-primary" routerLink="home">Continue shopping</button>
         </div>

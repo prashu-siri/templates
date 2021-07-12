@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
 	ngOnInit(): void {
 		this.service.productAdded$.subscribe(response => {
 			this.numberOfItems = response;
-		})
+		});
 	}
 
 	openSearch(event) {
