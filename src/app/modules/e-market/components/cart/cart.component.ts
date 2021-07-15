@@ -36,6 +36,6 @@ export class CartComponent implements OnInit {
 	}
 
 	hasProducts() {
-		return this.products.length > 0;
+		return this.products?.length > 0;
 	}
 }
