@@ -6,6 +6,7 @@
 @import "styles/modal";
 @import "styles/spinner";
 @import "styles/checkbox";
+@import "styles/radio";
 @import "styles/banking";
 @import "styles/banking-mobile";
 @import "styles/emarket";
@@ -226,6 +227,7 @@ button svg {
 
   .notification svg {
 	margin-right : 0;
+    margin-top: 0.65rem;
   }
 }
 

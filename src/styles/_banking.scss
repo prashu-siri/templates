@@ -1,5 +1,3 @@
-@import "radio";
-
 $primary-color      : #348AA7;
 $border-color       : #E0E0E0;
 $input-border-color : #D3D3D3;
@@ -276,7 +274,7 @@ $error-clr          : #DB3939;
 	@include flex();
 
 	.login-image-container {
-	  @include flex(center);
+	  @include flex(center, center);
 	  background        : linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 75%)), url(https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fG9mZmljZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
 	  background-size   : cover;
 	  height: 100vh;
@@ -307,7 +305,7 @@ $error-clr          : #DB3939;
 	}
 
 	.login-form-container {
-	  @include flex(center);
+	  @include flex(center, center);
 	  flex-direction  : column;
 	  flex: 1;
 	}
@@ -317,7 +315,7 @@ $error-clr          : #DB3939;
 	}
 
 	.form-group-vertical {
-	  @include flex($direction: column);
+	  @include flex(center, initial, column);
 	  margin-bottom  : 3em;
 	}
 
