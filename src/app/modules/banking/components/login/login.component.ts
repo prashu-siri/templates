@@ -3,6 +3,8 @@ import { Router } from "@angular/router";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Constant } from "../../service/constants";
 import { Alert } from "../../../shared/interface/alert";
+import { AuthService } from "../../service/auth.service";
+import { Title } from "@angular/platform-browser";
 
 @Component({
     selector: 'app-login',
@@ -15,10 +17,11 @@ export class LoginComponent implements OnInit {
     alertDetails: Alert;
     showAlert: boolean = false;
 
-    constructor(private route: Router) {
+    constructor(private route: Router, private service: AuthService, private title: Title) {
     }
 
     ngOnInit(): void {
+        this.title.setTitle(Constant.LOGIN_TITLE);
         this.loginForm = new FormGroup({
             'customerId': new FormControl('', [
                 Validators.required,
@@ -36,6 +39,7 @@ export class LoginComponent implements OnInit {
         };
 
         if (this.loginForm.valid) {
+            this.service.login();
             this.route.navigate(['/banking/home'])
         } else {
             this.showAlert = true;

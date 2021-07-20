@@ -6,6 +6,7 @@ import { Alert } from "../../../shared/interface/alert";
 import { SubscriptionContainer } from "../../helper/subscription-container";
 import { AuthService } from "../../service/auth.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Title } from "@angular/platform-browser";
 
 @Component({
 	selector: 'app-checkout',
@@ -29,14 +30,12 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 	constructor(private service: MarketService,
 	            private authService: AuthService,
 	            private router: Router,
-	            private activatedRoute: ActivatedRoute) {
-	}
-
-	ngOnDestroy(): void {
-		this.subscription.removeSubscription();
+	            private activatedRoute: ActivatedRoute,
+	            private title: Title) {
 	}
 
 	ngOnInit(): void {
+		this.title.setTitle("Purilo | Checkout");
 		this.products = JSON.parse(this.service.getProducts());
 		this.getStates();
 
@@ -149,7 +148,11 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 	navigateToLogin($event: MouseEvent) {
 		$event.preventDefault();
 		this.authService.setCurrentRoute(this.router.routerState.snapshot.url);
-		this.router.navigate(['../login'], {relativeTo: this.activatedRoute});
+		this.router.navigate(['../login'], { relativeTo: this.activatedRoute });
+	}
+
+	ngOnDestroy(): void {
+		this.subscription.removeSubscription();
 	}
 }
 

@@ -151,9 +151,7 @@ $text-background : #F5F5F5;
   }
 
   nav {
-	display         : flex;
-	justify-content : space-between;
-	align-items     : center;
+	@include flex(space-between, center);
 
 	img {
 	  max-width : 100%;
@@ -336,12 +334,10 @@ $text-background : #F5F5F5;
 	}
 
 	&__content {
-	  display         : flex;
-	  flex-direction  : column;
-	  justify-content : center;
-	  align-items     : center;
-	  margin-top      : 4em;
-	  margin-left     : 22em;
+	  @include flex(center, center, column);
+
+	  margin-top     : 4em;
+	  margin-left    : 22em;
 	}
 
 	.card-button {
@@ -365,8 +361,7 @@ $text-background : #F5F5F5;
 	border-radius : 5px;
 
 	& > div {
-	  display     : flex;
-	  align-items : center;
+	  @include flex($alignItem: center);
 	}
 
 	&__text {
@@ -432,10 +427,8 @@ $text-background : #F5F5F5;
 	}
 
 	.product-info {
+	  @include flex($alignItem: center, $direction: column);
 	  background     : $text-background;
-	  display        : flex;
-	  flex-direction : column;
-	  align-items    : center;
 	  padding        : 2em 0;
 	  border-radius  : 0 0 10px 10px;
 	  position       : absolute;
@@ -468,8 +461,7 @@ $text-background : #F5F5F5;
   }
 
   .user-comment {
-	display         : flex;
-	justify-content : space-between;
+	@include flex(space-between);
 	gap             : 1em;
 
 	p {
@@ -478,11 +470,9 @@ $text-background : #F5F5F5;
   }
 
   .user-details {
-	display         : flex;
-	flex-direction  : column;
-	justify-content : center;
-	align-items     : center;
-	margin          : 0;
+	@include flex(center, center);
+	flex-direction : column;
+	margin         : 0;
 
 	img {
 	  border-radius : 50%;
@@ -546,8 +536,7 @@ $text-background : #F5F5F5;
 	}
 
 	.subscribe {
-	  display         : flex;
-	  justify-content : center;
+	  @include flex(center);
 	  margin-top      : 1.25em;
 
 	  input {
@@ -610,10 +599,8 @@ $text-background : #F5F5F5;
   }
 
   .product-quantity-container {
-	display         : flex;
-	justify-content : center;
-	align-items     : center;
-	gap             : 1em;
+	@include flex(center, center);
+	gap : 1em;
   }
 
   .product-details-wrapper {
@@ -622,9 +609,8 @@ $text-background : #F5F5F5;
   }
 
   .product-details {
+	@include flex(space-between);
 	margin-bottom   : 1.25em;
-	display         : flex;
-	justify-content : space-between;
   }
 
   .product-details-buttons {
@@ -698,9 +684,8 @@ $text-background : #F5F5F5;
 	.search-wrapper {
 	  margin          : 0 auto;
 	  width           : 50%;
-	  display         : flex;
-	  align-items     : center;
-	  justify-content : space-between;
+
+	  @include flex(space-between, center);
 	}
 
 	.search-input-wrapper {
@@ -739,8 +724,7 @@ $text-background : #F5F5F5;
 
   /*************BLOG POST **************/
   .blog__post {
-	display         : flex;
-	justify-content : space-between;
+	@include flex(space-between);
 	gap             : 2em;
 
 	&__image {
@@ -827,9 +811,7 @@ $text-background : #F5F5F5;
 	gap     : 1em;
 
 	.quantity-wrapper {
-	  display         : flex;
-	  justify-content : center;
-	  align-items     : center;
+	  @include flex(center, center);
 	}
 
 	input {
@@ -853,9 +835,7 @@ $text-background : #F5F5F5;
 
   /*********** CART **********/
   .cart-container {
-	display         : flex;
-	justify-content : center;
-	align-items     : flex-start;
+	@include flex(center);
 	gap             : 4em;
 
 	table {
@@ -946,8 +926,7 @@ $text-background : #F5F5F5;
 
   /******** CONTACT US ***********/
   .contact-wrapper {
-	display         : flex;
-	justify-content : space-between;
+	@include flex(space-between);
 	gap             : 10em;
 
 	.address, .contact-form {
@@ -974,16 +953,14 @@ $text-background : #F5F5F5;
   }
 
   .order-summary-heading {
-	display         : flex;
-	justify-content : space-between;
+	@include flex(space-between);
 	padding-bottom  : 0.5em;
 	margin-bottom   : 0.5em;
 	border-bottom   : 1px solid $text-secondary;
   }
 
   .product-summary {
-	display         : flex;
-	justify-content : space-between;
+	@include flex(space-between);
 	gap             : 4em;
 
 	li {
@@ -1006,9 +983,7 @@ $text-background : #F5F5F5;
 	width : max-content;
 
 	ul {
-	  display         : flex;
-	  flex-direction  : column;
-	  justify-content : space-between;
+	  @include flex($justifyContent: space-between, $direction: column);
 	  gap             : 0.5em;
 	  margin-top      : 0.5em;
 	}
@@ -1315,8 +1290,7 @@ $text-background : #F5F5F5;
 	}
 
 	.user-comment {
-	  flex-direction  : column;
-	  justify-content : flex-start;
+	  @include flex(center, center, column);
 	}
 
 	footer {

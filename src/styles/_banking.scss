@@ -1,5 +1,3 @@
-@import "radio";
-
 $primary-color      : #348AA7;
 $border-color       : #E0E0E0;
 $input-border-color : #D3D3D3;
@@ -79,11 +77,9 @@ $error-clr          : #DB3939;
   }
 
   .banking-content .header {
-	display         : flex;
-	justify-content : flex-end;
-	align-items     : center;
-	padding         : 12px;
-	margin-bottom   : 32px;
+	@include flex(flex-end, center);
+	padding       : 12px;
+	margin-bottom : 32px;
 
 	div:not(:last-of-type) {
 	  margin-right : 24px;
@@ -101,10 +97,9 @@ $error-clr          : #DB3939;
   }
 
   .banking-content .search-container {
-	display         : flex;
-	justify-content : flex-end;
-	box-shadow      : 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
-	border-radius   : 20px;
+	@include flex(flex-end);
+	box-shadow    : 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
+	border-radius : 20px;
   }
 
   .banking-content .search-input {
@@ -142,14 +137,12 @@ $error-clr          : #DB3939;
   }
 
   .banking-content .notification {
-	height          : 40px;
-	width           : 40px;
-	border-radius   : 50%;
-	background      : white;
-	display         : flex;
-	justify-content : center;
-	align-items     : center;
-	box-shadow      : 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
+	@include flex(center);
+	height        : 40px;
+	width         : 40px;
+	border-radius : 50%;
+	background    : white;
+	box-shadow    : 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
   }
 
   .banking-content .profile img {
@@ -173,19 +166,16 @@ $error-clr          : #DB3939;
   }
 
   .summary {
-	border-radius   : 10px;
-	display         : flex;
-	justify-content : flex-start;
-	align-items     : center;
-	margin-bottom   : 24px;
+	@include flex($alignItem : center);
+	border-radius : 10px;
+	margin-bottom : 24px;
 
 	div {
 	  flex : 1;
 	}
 
 	.summary-content {
-	  display     : flex;
-	  align-items : center;
+	  @include flex($alignItem : center);
 
 	  h2 {
 		color : $primary-color;
@@ -237,10 +227,13 @@ $error-clr          : #DB3939;
   }
 
   .logo {
-	display         : flex;
-	justify-content : center;
-	align-items     : center;
-	padding         : 24px;
+	@include flex(center);
+	padding : 24px;
+
+	a {
+	  text-decoration : none;
+	  color           : $font-color;
+	}
 
 	&__bg {
 	  height        : 50px;
@@ -283,17 +276,14 @@ $error-clr          : #DB3939;
 
   /*****LOGIN START*****/
   .login-container {
-	display        : flex;
-	flex-direction : row;
+	@include flex();
 
 	.login-image-container {
-	  display           : flex;
-	  justify-content   : center;
-	  align-items       : center;
-	  background        : linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 75%)), url(https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fG9mZmljZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
-	  background-size   : cover;
-	  height: 100vh;
-	  flex: 1;
+	  @include flex(center, center);
+	  background      : linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 75%)), url(https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fG9mZmljZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+	  background-size : cover;
+	  height          : 100vh;
+	  flex            : 1;
 	}
 
 	.copy {
@@ -320,11 +310,9 @@ $error-clr          : #DB3939;
 	}
 
 	.login-form-container {
-	  display         : flex;
-	  flex-direction  : column;
-	  justify-content : center;
-	  align-items     : center;
-	  flex: 1;
+	  @include flex(center, center);
+	  flex-direction : column;
+	  flex           : 1;
 	}
 
 	.form-container {
@@ -332,9 +320,8 @@ $error-clr          : #DB3939;
 	}
 
 	.form-group-vertical {
-	  display        : flex;
-	  flex-direction : column;
-	  margin-bottom  : 3em;
+	  @include flex(center, initial, column);
+	  margin-bottom : 3em;
 	}
 
 	label {
@@ -342,8 +329,8 @@ $error-clr          : #DB3939;
 	}
 
 	.btn-login {
-	  width: 100%;
-	  margin: 0;
+	  width  : 100%;
+	  margin : 0;
 	}
 
   }
@@ -382,8 +369,7 @@ $error-clr          : #DB3939;
 		}
 
 		& span.transaction-type {
-		  display     : flex;
-		  align-items : center;
+		  @include flex($alignItem : center);
 		}
 
 		button {
@@ -488,21 +474,8 @@ $error-clr          : #DB3939;
   }
 
   .btn-container {
-	display         : flex;
-	justify-content : space-between;
-	margin          : 48px 0;
-  }
-
-  .jc-center {
-	justify-content : center;
-  }
-
-  .jc-space-btw {
-	justify-content : space-between;
-  }
-
-  .jc-right {
-	justify-content : flex-end;
+	@include flex(space-between);
+	margin : 48px 0;
   }
 
   .button {
@@ -601,13 +574,11 @@ $error-clr          : #DB3939;
 	grid-gap              : 2em;
 
 	img {
-	  width           : 65%;
-	  border-radius   : 50%;
-	  display         : flex;
-	  justify-content : center;
-	  align-items     : center;
-	  align-self      : center;
-	  margin          : 24px auto;
+	  @include flex(center);
+	  width         : 65%;
+	  border-radius : 50%;
+	  align-self    : center;
+	  margin        : 24px auto;
 	}
 
 	.left-panel {
@@ -656,14 +627,12 @@ $error-clr          : #DB3939;
   }
 
   .alert {
-	display     : flex;
-	align-items : center;
+	@include flex($alignItem : center);
   }
 
   .alert_heading {
-	display         : flex;
-	margin-bottom   : 24px;
-	justify-content : center;
+	@include flex(center);
+	margin-bottom : 24px;
 
 	svg {
 	  fill : white;
@@ -671,9 +640,7 @@ $error-clr          : #DB3939;
   }
 
   .alert_body {
-	display        : flex;
-	flex-direction : column;
-	align-items    : center;
+	@include flex($alignItem : center, $direction : center);
 
 	span {
 	  margin-bottom : 12px;

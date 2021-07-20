@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from "@angular/platform-browser";
 
 @Component({
     selector: 'app-email-template',
@@ -8,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class EmailTemplateComponent implements OnInit {
     sortOptions: any[];
     primaryOptions: any[];
-    labels: any[];
 
-    constructor() {
+    constructor(private title: Title) {
       this.sortOptions = [{
         id: "newest",
         value: "Newest first"
@@ -54,6 +54,7 @@ export class EmailTemplateComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.title.setTitle("Email Inbox");
     }
 
     toggleMenu(id) {

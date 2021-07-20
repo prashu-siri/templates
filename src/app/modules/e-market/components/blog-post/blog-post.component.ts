@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 import { MarketService } from "../../service/market.service";
 import { Post } from "../../interface/post";
 import { SubscriptionContainer } from "../../helper/subscription-container";
+import { Title } from "@angular/platform-browser";
 
 @Component({
 	selector: 'app-blog-post',
@@ -12,10 +13,11 @@ import { SubscriptionContainer } from "../../helper/subscription-container";
 export class BlogPostComponent implements OnInit, OnDestroy {
 	post: Post;
 	subscriptionContainer = new SubscriptionContainer();
-	constructor(private route: ActivatedRoute, private service: MarketService) {
+	constructor(private route: ActivatedRoute, private service: MarketService, private title: Title) {
 	}
 
 	ngOnInit(): void {
+		this.title.setTitle("Purilo | Blog | Blog Post");
 		this.route.paramMap.subscribe((params: ParamMap) => {
 			this.fetchBlogPost(+params.get('id'));
 		});

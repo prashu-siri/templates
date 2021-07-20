@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from "../../service/common.service";
+import { Title } from "@angular/platform-browser";
+import { Constant } from "../../service/constants";
 
 @Component({
     selector: 'app-manage-payee',
@@ -10,10 +11,12 @@ export class ManagePayeeComponent implements OnInit {
 
     managePayeeTab: string = 'delete';
 
-    constructor(private commonService: CommonService) {
+    constructor(private title: Title) {
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.title.setTitle(Constant.MANAGE_PAYEE_TITLE);
+    }
 
 
     getActiveTab(selectedTab: string) {

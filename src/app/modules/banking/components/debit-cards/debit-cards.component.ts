@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from "@angular/platform-browser";
+import { Constant } from "../../service/constants";
 
 @Component({
   selector: 'app-debit-cards',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DebitCardsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle(Constant.DEBIT_CARDS_TITLE);
   }
 
 }

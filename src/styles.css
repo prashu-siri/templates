@@ -10,6 +10,14 @@
   justify-content: center;
 }
 
+.jc-space-btw {
+  justify-content: space-between;
+}
+
+.jc-right {
+  justify-content: flex-end;
+}
+
 .jc-sb {
   justify-content: space-between;
 }
@@ -43,18 +51,18 @@ input.switch-input:checked + .slider {
 }
 
 input.switch-input:checked + .slider::before {
-  left: 22px;
+  left: 25px;
 }
 
 .slider::before {
   content: "";
-  width: 25px;
-  height: 25px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: white;
   position: absolute;
-  top: -3px;
-  left: 0;
+  top: 1px;
+  left: 3px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6);
   transition: 0.2s ease-out;
 }
@@ -366,6 +374,7 @@ input.switch-input:checked + .slider::before {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  flex-direction: row;
   padding: 12px;
   margin-bottom: 32px;
 }
@@ -383,6 +392,8 @@ input.switch-input:checked + .slider::before {
 .bt .banking-content .search-container {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row;
   box-shadow: 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
   border-radius: 20px;
 }
@@ -416,13 +427,14 @@ input.switch-input:checked + .slider::before {
   height: 18px;
 }
 .bt .banking-content .notification {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
   height: 40px;
   width: 40px;
   border-radius: 50%;
   background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 6px 7px 15px 0 rgba(0, 0, 0, 0.14);
 }
 .bt .banking-content .profile img {
@@ -438,10 +450,11 @@ input.switch-input:checked + .slider::before {
   padding: 12px 0;
 }
 .bt .summary {
-  border-radius: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
+  border-radius: 10px;
   margin-bottom: 24px;
 }
 .bt .summary div {
@@ -449,7 +462,9 @@ input.switch-input:checked + .slider::before {
 }
 .bt .summary .summary-content {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
 }
 .bt .summary .summary-content h2 {
   color: #348AA7;
@@ -488,8 +503,13 @@ input.switch-input:checked + .slider::before {
 .bt .logo {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: row;
   padding: 24px;
+}
+.bt .logo a {
+  text-decoration: none;
+  color: #616161;
 }
 .bt .logo__bg {
   height: 50px;
@@ -523,12 +543,15 @@ input.switch-input:checked + .slider::before {
 }
 .bt .login-container {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: row;
 }
 .bt .login-container .login-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), url(https://images.unsplash.com/photo-1535957998253-26ae1ef29506?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fG9mZmljZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
   background-size: cover;
   height: 100vh;
@@ -554,9 +577,10 @@ input.switch-input:checked + .slider::before {
 }
 .bt .login-container .login-form-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  flex-direction: column;
   flex: 1;
 }
 .bt .login-container .form-container {
@@ -564,6 +588,8 @@ input.switch-input:checked + .slider::before {
 }
 .bt .login-container .form-group-vertical {
   display: flex;
+  justify-content: center;
+  align-items: initial;
   flex-direction: column;
   margin-bottom: 3em;
 }
@@ -595,7 +621,9 @@ input.switch-input:checked + .slider::before {
 }
 .bt .transaction-history table td span.transaction-type {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
 }
 .bt .transaction-history table td button {
   border: none;
@@ -678,16 +706,9 @@ input.switch-input:checked + .slider::before {
 .bt .btn-container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
   margin: 48px 0;
-}
-.bt .jc-center {
-  justify-content: center;
-}
-.bt .jc-space-btw {
-  justify-content: space-between;
-}
-.bt .jc-right {
-  justify-content: flex-end;
 }
 .bt .button {
   border: none;
@@ -765,11 +786,12 @@ input.switch-input:checked + .slider::before {
   grid-gap: 2em;
 }
 .bt .bt_details_container img {
-  width: 65%;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 65%;
+  border-radius: 50%;
   align-self: center;
   margin: 24px auto;
 }
@@ -808,20 +830,25 @@ input.switch-input:checked + .slider::before {
 }
 .bt .alert {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
 }
 .bt .alert_heading {
   display: flex;
-  margin-bottom: 24px;
   justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-bottom: 24px;
 }
 .bt .alert_heading svg {
   fill: white;
 }
 .bt .alert_body {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: center;
 }
 .bt .alert_body span {
   margin-bottom: 12px;
@@ -1174,6 +1201,7 @@ input.switch-input:checked + .slider::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
 }
 .e-market-template nav img {
   max-width: 100%;
@@ -1327,9 +1355,9 @@ input.switch-input:checked + .slider::before {
 }
 .e-market-template .card__content {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-top: 4em;
   margin-left: 22em;
 }
@@ -1351,7 +1379,9 @@ input.switch-input:checked + .slider::before {
 }
 .e-market-template .info > div {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
 }
 .e-market-template .info__text {
   margin-left: 1em;
@@ -1404,10 +1434,11 @@ input.switch-input:checked + .slider::before {
   padding: 2em 2em 5em 2em;
 }
 .e-market-template .product-card .product-info {
-  background: #F5F5F5;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  background: #F5F5F5;
   padding: 2em 0;
   border-radius: 0 0 10px 10px;
   position: absolute;
@@ -1435,6 +1466,8 @@ input.switch-input:checked + .slider::before {
 .e-market-template .user-comment {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
   gap: 1em;
 }
 .e-market-template .user-comment p {
@@ -1442,9 +1475,10 @@ input.switch-input:checked + .slider::before {
 }
 .e-market-template .user-details {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  flex-direction: column;
   margin: 0;
 }
 .e-market-template .user-details img {
@@ -1499,6 +1533,8 @@ input.switch-input:checked + .slider::before {
 .e-market-template footer .subscribe {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
   margin-top: 1.25em;
 }
 .e-market-template footer .subscribe input {
@@ -1549,6 +1585,7 @@ input.switch-input:checked + .slider::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   gap: 1em;
 }
 .e-market-template .product-details-wrapper {
@@ -1556,9 +1593,11 @@ input.switch-input:checked + .slider::before {
   flex: 1;
 }
 .e-market-template .product-details {
-  margin-bottom: 1.25em;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-bottom: 1.25em;
 }
 .e-market-template .product-details-buttons {
   margin-top: 3em;
@@ -1620,8 +1659,9 @@ input.switch-input:checked + .slider::before {
   margin: 0 auto;
   width: 50%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 .e-market-template .search-container .search-input-wrapper {
   width: 100%;
@@ -1654,6 +1694,8 @@ input.switch-input:checked + .slider::before {
 .e-market-template .blog__post {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
   gap: 2em;
 }
 .e-market-template .blog__post__image {
@@ -1723,6 +1765,7 @@ input.switch-input:checked + .slider::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 .e-market-template .quantity-container input {
   width: 50px;
@@ -1742,6 +1785,7 @@ input.switch-input:checked + .slider::before {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-direction: row;
   gap: 4em;
 }
 .e-market-template .cart-container table {
@@ -1813,6 +1857,8 @@ input.switch-input:checked + .slider::before {
 .e-market-template .contact-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
   gap: 10em;
 }
 .e-market-template .contact-wrapper .address, .e-market-template .contact-wrapper .contact-form {
@@ -1835,6 +1881,8 @@ input.switch-input:checked + .slider::before {
 .e-market-template .order-summary-heading {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
   border-bottom: 1px solid #B8B8B8;
@@ -1842,6 +1890,8 @@ input.switch-input:checked + .slider::before {
 .e-market-template .product-summary {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
   gap: 4em;
 }
 .e-market-template .product-summary li {
@@ -1861,8 +1911,9 @@ input.switch-input:checked + .slider::before {
 }
 .e-market-template .information ul {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
   gap: 0.5em;
   margin-top: 0.5em;
 }
@@ -2092,8 +2143,10 @@ input.switch-input:checked + .slider::before {
     margin: 0;
   }
   .e-market-template .user-comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
   }
   .e-market-template footer {
     padding: 2em;
@@ -2387,6 +2440,7 @@ button svg {
 }
 .banking .notification svg {
   margin-right: 0;
+  margin-top: 0.65rem;
 }
 
 .floating {

@@ -23,16 +23,18 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CommonService } from "./service/common.service";
+import { AuthGuard } from "./guard/auth.guard";
+import { AuthService } from "./service/auth.service";
 
 const routes: Routes = [
 	{
 		path: 'home', component: BankingHomeComponent, children: [
-			{ path: 'dashboard', component: BankingDashboardComponent },
-			{ path: 'accounts', component: AccountsComponent },
-			{ path: 'fundTransfer', component: FundTransferComponent },
-			{ path: 'cards', component: CardsComponent },
-			{ path: 'details', component: PersonalDetailsComponent },
-			{ path: '', pathMatch: 'full', redirectTo: 'dashboard', component: BankingDashboardComponent }
+			{ path: 'dashboard', component: BankingDashboardComponent, canActivate: [AuthGuard] },
+			{ path: 'accounts', component: AccountsComponent, canActivate: [AuthGuard] },
+			{ path: 'fundTransfer', component: FundTransferComponent, canActivate: [AuthGuard] },
+			{ path: 'cards', component: CardsComponent, canActivate: [AuthGuard] },
+			{ path: 'details', component: PersonalDetailsComponent, canActivate: [AuthGuard] },
+			{ path: '', pathMatch: 'full', redirectTo: 'dashboard', component: BankingDashboardComponent, canActivate: [AuthGuard] }
 		]
 	},
 
@@ -62,7 +64,7 @@ const routes: Routes = [
 	],
 	exports: [BankingHomeComponent],
 	imports: [CommonModule, HttpClientModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule, SharedModule],
-	providers: [CommonService]
+	providers: [CommonService, AuthService, AuthGuard]
 })
 export class BankingModule {
 }

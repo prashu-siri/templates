@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarketService } from "../../service/market.service";
 import { Product } from "../../interface/product";
+import { Title } from "@angular/platform-browser";
 
 @Component({
 	selector: 'app-cart',
@@ -11,9 +12,10 @@ export class CartComponent implements OnInit {
 	products: Product[] = [];
 	totalCost: number = 0;
 
-	constructor(private service: MarketService) { }
+	constructor(private service: MarketService, private title: Title) { }
 
 	ngOnInit(): void {
+		this.title.setTitle("Purilo | Cart");
 		this.products = JSON.parse(this.service.getProducts());
 	}
 
@@ -36,6 +38,6 @@ export class CartComponent implements OnInit {
 	}
 
 	hasProducts() {
-		return this.products.length > 0;
+		return this.products?.length > 0;
 	}
 }
