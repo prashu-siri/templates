@@ -5,6 +5,7 @@ import { Review } from "../../interface/review";
 import { Post } from "../../interface/post";
 import { ModalComponent } from "../../../shared/modal/modal.component";
 import { SubscriptionContainer } from "../../helper/subscription-container";
+import { Title } from "@angular/platform-browser";
 
 @Component({
 	selector: 'app-home',
@@ -21,10 +22,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 	@ViewChild(ModalComponent)
 	modal: ModalComponent;
 
-	constructor(private service: MarketService) {
+	constructor(private service: MarketService, private title: Title) {
 	}
 
 	ngOnInit(): void {
+		this.title.setTitle("Purilo | Home");
 		this.fetchFeaturedProducts();
 		this.fetchReviews();
 		this.fetchPosts();

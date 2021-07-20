@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from "@angular/platform-browser";
+import { Constant } from "../../service/constants";
 
 @Component({
   selector: 'app-personal-details',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle(Constant.PERSONAL_DETAILS_TITLE);
   }
 
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 import { MarketService } from "../../service/market.service";
 import { Product } from "../../interface/product";
 import { SubscriptionContainer } from "../../helper/subscription-container";
+import { Title } from "@angular/platform-browser";
 
 @Component({
 	selector: 'app-product',
@@ -17,7 +18,7 @@ export class ProductComponent implements OnInit, OnDestroy {
 	isLoading: boolean = false;
 	subscriptionContainer = new SubscriptionContainer();
 
-	constructor(private route: ActivatedRoute, private service: MarketService) {
+	constructor(private route: ActivatedRoute, private service: MarketService, private title: Title) {
 	}
 
 	ngOnInit(): void {
@@ -26,6 +27,7 @@ export class ProductComponent implements OnInit, OnDestroy {
 			this.itemType = response.get('item');
 			this.pageHeading = this.itemType === 'fruit' ? 'Fruits' : 'Vegetables';
 			this.fetchProducts(this.itemType);
+			this.title.setTitle("Purilo | " + this.pageHeading);
 		});
 	}
 

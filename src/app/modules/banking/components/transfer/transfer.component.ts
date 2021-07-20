@@ -3,6 +3,8 @@ import { CommonService } from "../../service/common.service";
 import { UserAccount } from "../../interface/userAccount";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Alert } from "../../../shared/interface/alert";
+import { Title } from "@angular/platform-browser";
+import { Constant } from "../../service/constants";
 
 @Component({
 	selector: 'app-transfer',
@@ -24,9 +26,10 @@ export class TransferComponent implements OnInit {
 		isErrorMessage: false
 	};
 
-	constructor(private commonService: CommonService) { }
+	constructor(private commonService: CommonService, private title: Title) { }
 
 	ngOnInit(): void {
+		this.title.setTitle(Constant.TRANSFER_TITLE);
 		this.accounts = this.commonService.getUserAccounts();
 		this.toAccounts = this.accounts;
 

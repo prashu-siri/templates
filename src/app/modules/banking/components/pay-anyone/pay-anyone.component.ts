@@ -3,6 +3,7 @@ import { CommonService } from "../../service/common.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Constant } from "../../service/constants";
 import { Alert } from "../../../shared/interface/alert";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-pay-anyone',
@@ -20,9 +21,10 @@ export class PayAnyoneComponent implements OnInit {
   isShowPreview: boolean = false;
   initialFormState;
 
-  constructor(private commonService: CommonService) { }
+  constructor(private commonService: CommonService, private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle(Constant.PAY_ANYONE_TITLE);
     this.getPayees();
     this.paymentForm = new FormGroup({
       'fromAccount': new FormControl('7877-8765676'),

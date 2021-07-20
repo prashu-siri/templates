@@ -1,46 +1,63 @@
-<div class="side-nav" #sidenav>
+<div #sidenav class="side-nav">
     <div class="logo">
-      <div class="logo-wrapper">
-        <span class="logo__bg">ABC</span>
-        <span>Online Banking</span>
-      </div>
-      <a (click)="toggleMenu(sidenav)" class="icon-close">
-        <app-svg-icon [svgIconId]="'cross'"></app-svg-icon>
-      </a>
+        <div class="logo-wrapper">
+            <a href="#" routerLink="dashboard">
+                <span class="logo__bg">ABC</span>
+                <span>Online Banking</span>
+            </a>
+        </div>
+        <a (click)="toggleMenu(sidenav)" class="icon-close">
+            <app-svg-icon [svgIconId]="'cross'"></app-svg-icon>
+        </a>
     </div>
 
     <nav class="menu-bar">
         <ul>
             <li>
-                <a href="#" routerLink="dashboard" routerLinkActive="active" (click)="toggleMenu(sidenav)">
+                <a (click)="toggleMenu(sidenav)"
+                   href="#"
+                   routerLink="dashboard"
+                   routerLinkActive="active">
                     <app-svg-icon [svgIconId]="'dashboard'"></app-svg-icon>
                     Dashboard
                 </a
                 >
             </li>
             <li>
-                <a href="#" routerLink="accounts" routerLinkActive="active" (click)="toggleMenu(sidenav)">
+                <a (click)="toggleMenu(sidenav)"
+                   href="#"
+                   routerLink="accounts"
+                   routerLinkActive="active">
                     <app-svg-icon [svgIconId]="'layers'"></app-svg-icon>
                     Accounts
                 </a
                 >
             </li>
             <li>
-                <a href="#" routerLink="fundTransfer" routerLinkActive="active" (click)="toggleMenu(sidenav)">
+                <a (click)="toggleMenu(sidenav)"
+                   href="#"
+                   routerLink="fundTransfer"
+                   routerLinkActive="active">
                     <app-svg-icon [svgIconId]="'shuffle'"></app-svg-icon>
                     Fund Transfer
                 </a
                 >
             </li>
             <li>
-                <a href="#" routerLink="cards" routerLinkActive="active" (click)="toggleMenu(sidenav)">
+                <a (click)="toggleMenu(sidenav)"
+                   href="#"
+                   routerLink="cards"
+                   routerLinkActive="active">
                     <app-svg-icon [svgIconId]="'credit-card'"></app-svg-icon>
                     Cards
                 </a
                 >
             </li>
             <li>
-                <a href="#" routerLink="details" routerLinkActive="active" (click)="toggleMenu(sidenav)">
+                <a (click)="toggleMenu(sidenav)"
+                   href="#"
+                   routerLink="details"
+                   routerLinkActive="active">
                     <app-svg-icon [svgIconId]="'user'"></app-svg-icon>
                     Personal Details
                 </a
@@ -56,11 +73,11 @@
         <div class="logo__bg">
             <span>ABC</span>
         </div>
-      Online Banking
+        Online Banking
     </div>
     <div>
-      <a (click)="toggleMenu(sidenav)">
-        <app-svg-icon [svgIconId]="'menu'"></app-svg-icon>
-      </a>
+        <a (click)="toggleMenu(sidenav)">
+            <app-svg-icon [svgIconId]="'menu'"></app-svg-icon>
+        </a>
     </div>
 </div>

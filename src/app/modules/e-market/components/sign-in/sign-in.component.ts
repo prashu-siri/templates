@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../service/auth.service";
 import { Alert } from "../../../shared/interface/alert";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Title } from "@angular/platform-browser";
 
 @Component({
 	selector: 'app-sign-in',
@@ -21,10 +22,11 @@ export class SignInComponent implements OnInit {
 
 	constructor(private authService: AuthService, private fb: FormBuilder,
 	            private route: Router,
-	            private activatedRoute: ActivatedRoute) {
+	            private activatedRoute: ActivatedRoute, private title: Title) {
 	}
 
 	ngOnInit(): void {
+		this.title.setTitle("Purilo | Login");
 		this.signInForm = this.fb.group({
 			'email': ['', [
 				Validators.required,

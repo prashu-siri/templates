@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Alert } from "../../../shared/interface/alert";
+import { Title } from "@angular/platform-browser";
 
 @Component({
 	selector: 'app-contact',
@@ -12,10 +13,11 @@ export class ContactComponent implements OnInit {
 	contactForm: FormGroup;
 	alertDetails: Alert;
 
-	constructor() {
+	constructor(private title: Title) {
 	}
 
 	ngOnInit(): void {
+		this.title.setTitle("Purilo | Contact Us");
 		this.contactForm = new FormGroup({
 			'name': new FormControl('', Validators.required),
 			'email': new FormControl('', [Validators.required, Validators.pattern("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")]),

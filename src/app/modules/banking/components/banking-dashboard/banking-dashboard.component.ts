@@ -3,6 +3,8 @@ import { Transaction } from "../../interface/transactions";
 import { CommonService } from "../../service/common.service";
 import { UserAccount } from "../../interface/userAccount";
 import { AccountTransactions } from "../../interface/accountTransactions";
+import { Title } from "@angular/platform-browser";
+import { Constant } from "../../service/constants";
 
 @Component({
 	selector: 'app-banking-dashboard',
@@ -15,10 +17,11 @@ export class BankingDashboardComponent implements OnInit {
 	selectedAccount: UserAccount;
 	isLoading: boolean = false;
 
-	constructor(private commonService: CommonService) {
+	constructor(private commonService: CommonService, private title: Title) {
 	}
 
 	ngOnInit(): void {
+		this.title.setTitle(Constant.DASHBOARD_TITLE);
 		this.getAccounts();
 	}
 
