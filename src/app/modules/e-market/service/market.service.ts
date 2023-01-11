@@ -18,8 +18,7 @@ export class MarketService {
 	private productAddedSource: Subject<number> = new Subject<number>();
 	productAdded$ = this.productAddedSource as Observable<number>;
 
-	constructor(private http: HttpClient,
-	            private notificationsService: NotificationsService) {
+	constructor(private http: HttpClient, private notificationsService: NotificationsService) {
 	}
 
 	fetchFeaturedProducts(): Observable<Product[]> {

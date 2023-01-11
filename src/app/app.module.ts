@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from "./modules/shared/shared.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NotificationsService, SimpleNotificationsModule } from "angular2-notifications";
 
 @NgModule({
 	declarations: [
@@ -14,9 +15,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 		BrowserModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
-		SharedModule
+		SharedModule,
+		SimpleNotificationsModule.forRoot(),
 	],
-	providers: [],
+	providers: [
+		NotificationsService,
+	],
 	exports: [],
 	bootstrap: [AppComponent]
 })

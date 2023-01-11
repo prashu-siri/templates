@@ -14,7 +14,6 @@ import { BlogPostComponent } from './components/blog-post/blog-post.component';
 import { ProductComponent } from './components/product/product.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NotificationsService, SimpleNotificationsModule } from "angular2-notifications";
 import { ContactComponent } from './components/contact/contact.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { MarketService } from "./service/market.service";
@@ -71,12 +70,10 @@ const routes: Routes = [
 		SharedModule,
 		HttpClientModule,
 		FormsModule,
-		SimpleNotificationsModule.forRoot(),
 		ReactiveFormsModule
 	],
 	providers: [
 		MarketService,
-		NotificationsService,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: HeaderInterceptor,
