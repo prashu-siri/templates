@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'e-market',
     loadChildren: () => import('./modules/e-market/e-market.module').then(m => m.EMarketModule)
+  },
+  {
+    path: 'super-lancer',
+    loadChildren: () => import('./modules/super-lancer/super-lancer.module').then(m => m.SuperLancerModule)
   }
 ];
 

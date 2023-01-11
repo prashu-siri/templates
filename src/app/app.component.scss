@@ -10,6 +10,7 @@
   margin  : 48px;
   display : grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
 
   .card {
     box-shadow    : 3px 4px 5px rgba(0, 0, 0, 0.25);

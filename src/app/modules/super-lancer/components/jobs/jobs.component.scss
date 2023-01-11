@@ -1,0 +1,169 @@
+h1 {
+  padding-bottom: 0.25em;
+  margin-bottom: 1em;
+}
+
+button {
+  cursor: pointer;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  background: #2a3748;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  align-self: center;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr;
+  grid-gap: 3em;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.card {
+  padding: 2em;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 0.35fr 0.5fr 0.5fr;
+  height: fit-content;
+}
+
+.card-header {
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 0.05fr;
+  grid-gap: 0.5em;
+  margin-bottom: 1em;
+  align-items: baseline;
+}
+
+.small {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+.active {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #79f179;
+}
+
+.card-body {
+  padding-bottom: 2em;
+  border-bottom: 1px solid #e9e9e9;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1em;
+
+  p {
+	padding-bottom: 1em;
+  }
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  align-items: center;
+
+  span {
+    padding: 6px;
+    background: #e9e9e9;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+.card-footer {
+  padding: 1em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.3em;
+  align-items: center;
+}
+
+.icons > svg {
+  height: 14px;
+  width: 14px;
+}
+
+.df {
+  display: flex;
+}
+
+.filters {
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
+  border-radius: 5px;
+  padding: 2em;
+  background: #FFFFFF;
+  height: fit-content;
+
+  h3, h4 {
+    color: lightcoral;
+    padding-bottom: 0;
+  }
+}
+
+.filter-header {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: cornflowerblue;
+  padding: 0.5em 1em;
+
+  &:hover {
+    background: rgba(156, 206, 255, 0.76);
+    border-radius: 20px;
+    color: white;
+  }
+}
+
+.filter-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+
+  button {
+    width: 100%;
+    margin: 1em 0.5em;
+  }
+}
+
+.checkbox-container, .radio-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  margin: 24px 12px;
+}
+
+.checkbox-label + .checkbox-label, .radio-label + .radio-label {
+  margin-left : 0;
+}
+
+.btn-overlay {
+  border: 2px solid cornflowerblue;
+  background: transparent;
+  color: black;
+}
+
+.radio-label input:checked ~ .checker-outside {
+  background-color :#FFFFFF;
+}
+
+.radio-label input:checked ~ .checker-outside:after {
+  background-color : #279AF1;
+}
