@@ -1,0 +1,47 @@
+<section>
+	<div class="back">
+		<a href="#" [routerLink]="'../../freelancers'">
+			<app-svg-icon [svgIconId]="'arrow-left'"></app-svg-icon>
+		</a>
+	</div>
+	<div class="intro-wrapper">
+		<div class="intro-card">
+			<div>
+				<img [src]="freelancer?.imageUrl" alt="profile picture">
+			</div>
+			<div class="intro-text">
+				<p class="title">{{freelancer?.name}}</p>
+				<p class="sub-title">{{freelancer?.title}}</p>
+				<p class="desc">{{freelancer?.description}}</p>
+			</div>
+		</div>
+		<button>Hire {{freelancer?.name}}</button>
+	</div>
+</section>
+
+<section>
+	<h3>About Freelancer</h3>
+	<div class="details">
+		<div><label>Country</label><b>{{freelancer?.country}}</b></div>
+		<div><label>Reputation</label><b>{{freelancer?.rating}}</b></div>
+		<div><label>Rate</label><b>{{freelancer?.rate}}</b></div>
+		<div><label>Job type</label><b>{{freelancer?.jobType}}</b></div>
+		<div><label>Projects Completed</label><b>{{freelancer?.projectsCompleted}}</b></div>
+	</div>
+</section>
+
+<section>
+	<h3>Customer Review's</h3>
+	<ng-container *ngIf="freelancer?.reviews.length > 0; else noReview">
+		<div *ngFor="let review of freelancer?.reviews" class="review">
+			<h4>
+				<app-svg-icon class="sm" [svgIconId]="'user'"></app-svg-icon>
+				{{review.name}}
+			</h4>
+			<p class="comment">{{review.comment}}</p>
+		</div>
+	</ng-container>
+	<ng-template #noReview>
+		There are no reviews for this freelancer
+	</ng-template>
+</section>

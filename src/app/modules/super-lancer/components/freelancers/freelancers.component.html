@@ -1,0 +1,18 @@
+<h1>Freelancers</h1>
+<section class="card-wrapper">
+	<div class="card" *ngFor="let freelancer of freelancers">
+		<div class="card-image">
+			<img [src]="freelancer.imageUrl" alt="img">
+		</div>
+		<div class="card-text">
+			<h1>{{ freelancer.name }}</h1>
+			<p>{{ freelancer.title }}</p>
+			<p>Rating: {{freelancer.rating}}</p>
+			<div class="button-wrapper">
+				<button (click)="viewFreelancer(freelancer.id)">View Profile</button>
+				<button class="primary">Hire Freelancer</button>
+			</div>
+
+		</div>
+	</div>
+</section>

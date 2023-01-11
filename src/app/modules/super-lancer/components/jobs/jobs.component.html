@@ -1,0 +1,60 @@
+<h1>Freelance Jobs</h1>
+<section>
+	<div class="card-wrapper">
+		<div class="card" *ngFor="let job of jobs">
+			<div class="card-header">
+				<h3><app-svg-icon class="sm" [svgIconId]="'user'"></app-svg-icon>{{job.title}}</h3>
+				<p class="small">{{ job.postedOn }}</p>
+				<div [className]="job.status == 'Active' ? 'active':'inactive'"></div>
+			</div>
+			<div class="card-body">
+				<p>{{job.description}}</p>
+				<div class="skill">
+					<span *ngFor="let skill of job.skills">{{skill}}</span>
+				</div>
+			</div>
+			<div class="card-footer">
+			<span class="df">
+				<app-svg-icon [svgIconId]="'coins'" class="sm"></app-svg-icon>
+				<span>&#x20B9; <b>{{ job.budget }}</b>{{ job.budgetType == "hour" ? '/hour' : ""}}</span>
+			</span>
+				<span class="df">
+				<app-svg-icon class="sm" [svgIconId]="'users'"></app-svg-icon>
+				<span><b>{{job.applicants}}</b> applied</span>
+			</span>
+				<button (click)="navigateToDetails(job.id)">View</button>
+			</div>
+		</div>
+	</div>
+	<div class="filters">
+		<form [formGroup]="filterForm" (ngSubmit)="applyFilters()">
+			<div class="filter-header">
+				<h3>Filters</h3>
+				<a href="#" (click)="reset($event)">Clear all</a>
+			</div>
+			<div class="filter-body">
+				<div>
+					<h4>Job Type</h4>
+					<div class="checkbox-container">
+						<label class="checkbox-label" *ngFor="let type of jobTypes"> {{type.name}}
+							<input type="checkbox" name="type" [value]="type.value" (change)="onChangeType($event)">
+							<span class="tick"></span>
+						</label>
+					</div>
+				</div>
+				<div>
+					<h4>Applicants</h4>
+					<div class="radio-container">
+						<label class="radio-label" *ngFor="let applicant of applicants"> {{applicant.name}}
+							<input type="radio" name="applicant" [value]="applicant.value" formControlName="applicant">
+							<span class="checker checker-outside"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="filter-footer">
+				<button class="btn">Apply</button>
+			</div>
+		</form>
+	</div>
+</section>

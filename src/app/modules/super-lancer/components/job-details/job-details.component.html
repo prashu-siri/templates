@@ -1,0 +1,100 @@
+<div>
+
+</div>
+<section>
+  <div class="back">
+    <a href="#" [routerLink]="'../../jobs'">
+      <app-svg-icon [svgIconId]="'arrow-left'"></app-svg-icon>
+    </a>
+  </div>
+  <div class="job-title">
+    <h2>{{job.title}}</h2>
+    <button>Send Proposal</button>
+  </div>
+</section>
+<section>
+  <h3>Project details</h3>
+  <p>
+    {{job.description || job.title}}
+  </p>
+  <div class="statistics">
+    <div class="stat">
+      <span class="line"><app-svg-icon [svgIconId]="'coins'"></app-svg-icon>Budget</span>
+      <span>
+        &#x20B9; {{ job.budget }}{{ job.budgetType == "hour" ? '/hour' : ""}}
+      </span>
+    </div>
+    <div class="stat">
+      <span class="line"><app-svg-icon [svgIconId]="'time-past'"></app-svg-icon>Estimated hours</span>
+      <span>{{job.estimatedHours}}</span>
+    </div>
+    <div class="stat">
+      <span class="line"><app-svg-icon [svgIconId]="'request'"></app-svg-icon>Proposals</span>
+      <span>29</span>
+    </div>
+    <div class="stat">
+      <span class="line"><app-svg-icon [svgIconId]="'eye'"></app-svg-icon>Views</span>
+      <span>444</span>
+    </div>
+    <div class="stat">
+      <span class="line"><app-svg-icon [svgIconId]="'signal'"></app-svg-icon>Status</span>
+      <span>{{job.status}}</span>
+    </div>
+  </div>
+</section>
+<section>
+  <h3>Skills required</h3>
+  <span class="tag" *ngFor="let skill of job.skills">{{skill}}</span>
+</section>
+<section>
+  <h3>About client</h3>
+  <sub>Member since 19 Oct, 2014</sub>
+  <div class="details">
+    <div><label>Country</label><b>India</b></div>
+    <div><label>Reputation</label><b>5 Star</b></div>
+    <div><label>Projects Paid</label><b>2</b></div>
+    <div><label>Projects Posted</label><b>14</b></div>
+    <div><label>Total Feedbacks</label><b>4</b></div>
+    <div><label>Feedbacks</label><b>50%</b></div>
+    <div><label>Total Spent</label><b>1500</b></div>
+    <div><label>Client Type</label><b>Individual</b></div>
+  </div>
+</section>
+<section>
+  <h3>Proposals</h3>
+  <div class="proposal">
+    <div class="row">
+      <img src="https://randomuser.me/api/portraits/men/66.jpg" alt="img" class="card-image">
+      <div class="column">
+        <b>John Doe</b>
+        <span>
+          <img class="flag" src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png" alt="India">
+          USA
+        </span>
+        <p>Graphic designer</p>
+      </div>
+      <div class="column">
+        <p><b>Received:</b> 09 Mar, 22</p>
+        <p><b>Rating:</b> 4.5</p>
+        <p><b>Projects completed:</b> 340</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="img" class="card-image">
+      <div class="column">
+        <b>Gabriel D</b>
+        <span>
+          <img class="flag" src="https://cdn.countryflags.com/thumbs/france/flag-square-250.png" alt="India">
+          France
+        </span>
+        <p>Graphic designer</p>
+      </div>
+      <div class="column">
+        <p><b>Received:</b> 09 Mar, 22</p>
+        <p><b>Rating:</b> 4.5</p>
+        <p><b>Projects completed:</b> 340</p>
+      </div>
+    </div>
+  </div>
+</section>

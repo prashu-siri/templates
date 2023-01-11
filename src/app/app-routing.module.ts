@@ -17,11 +17,15 @@ const routes: Routes = [
   {
     path: 'e-market',
     loadChildren: () => import('./modules/e-market/e-market.module').then(m => m.EMarketModule)
+  },
+  {
+    path: 'super-lancer',
+    loadChildren: () => import('./modules/super-lancer/super-lancer.module').then(m => m.SuperLancerModule)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'top'})],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top', relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
