@@ -19,8 +19,8 @@ const routes: Routes = [
     loadChildren: () => import('./modules/e-market/e-market.module').then(m => m.EMarketModule)
   },
   {
-    path: 'super-lancer',
-    loadChildren: () => import('./modules/super-lancer/super-lancer.module').then(m => m.SuperLancerModule)
+    path: 'job-finder',
+    loadChildren: () => import('./modules/job-finder/job-finder.module').then(m => m.JobFinderModule)
   }
 ];
 
