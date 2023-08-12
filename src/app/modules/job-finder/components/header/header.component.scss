@@ -1,0 +1,70 @@
+@import "../../../../../styles/job-finder";
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2em;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            padding: 0.5em;
+            background: $primary-color;
+            color: white;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-right: 0.5em;
+            font-weight: bold;
+        }
+        
+    }
+
+    &__menu ul {
+        display: flex;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 2em 0.75em;
+            font-size: 14px;
+            color: #5e666e;
+
+            &.active {
+                color: $primary-color;
+                border-bottom: 2px solid $primary-color;
+            }
+        }
+    }
+}
+
+.header-right {
+    ul {
+        display: flex;
+        justify-content: end;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 1.5em 0.25em;
+            font-size: 14px;
+        }
+
+        .btn-link {
+            margin-top: 1em;
+            padding: 0.75em 1em;
+            background-color: $primary-color;
+            color: white;
+            border-radius: 20px;
+        }
+    }
+}

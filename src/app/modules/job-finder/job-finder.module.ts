@@ -4,6 +4,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { MainComponent } from './components/main/main.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { SharedModule } from '../shared/shared.module';
 
 const routes = [
   {
@@ -22,6 +23,7 @@ const routes = [
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ]
 })
