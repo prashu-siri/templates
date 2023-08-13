@@ -12,4 +12,13 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleMenu(element) {
+    document.querySelector("#"+element).classList.toggle('open');
+  }
+    
+  selectOption(event: any, option: any, element) {
+    event.preventDefault();
+    document.querySelector("."+element).innerHTML = option;
+  }
+
 }

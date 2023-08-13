@@ -10,6 +10,7 @@
 @import "styles/banking";
 @import "styles/banking-mobile";
 @import "styles/emarket";
+@import "styles/job-finder";
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -216,6 +217,15 @@ button svg {
 
 .sort svg {
   fill: #6F6194;
+}
+
+// Job finder filters svg
+.filters {
+  svg#search {
+    height: 12px;
+    width: 12px;
+    margin-left: 0.25em;
+  }
 }
 
 .banking {

@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./svg-icon.component.scss']
 })
 export class SvgIconComponent implements OnInit {
-    @Input() svgIconId;
+    @Input() svgIconId;  
     iconPath;
     constructor() {
     }
