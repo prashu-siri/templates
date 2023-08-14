@@ -5,6 +5,9 @@ import { MainComponent } from './components/main/main.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from '../shared/shared.module';
+import { SuggestedJobComponent } from './components/suggested-job/suggested-job.component';
+import { PopularCompanyComponent } from './components/popular-company/popular-company.component';
+import { FeaturedJobComponent } from './components/featured-job/featured-job.component';
 
 const routes = [
   {
@@ -19,7 +22,10 @@ const routes = [
   declarations: [
     LandingComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    SuggestedJobComponent,
+    PopularCompanyComponent,
+    FeaturedJobComponent
   ],
   imports: [
     CommonModule,

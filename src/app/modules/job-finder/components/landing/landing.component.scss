@@ -98,3 +98,15 @@ button svg {
 .btn-menu.open .menu {
 	display: block;
 }
+
+.content-wrapper {
+	background: #e8f2fb;
+	display: grid;
+	grid-template-columns: 0.5fr 1fr 0.5fr;
+	padding: 3em;
+	gap: 2em;
+}
+
+.side-box {
+	padding: 2em;
+}
