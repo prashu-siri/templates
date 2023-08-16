@@ -3,64 +3,31 @@
 		<h3>Suggested job</h3>
 		<img src="../../../../../assets/img/info.png" alt="">
 	</div>
-	<div class="suggest-box suggest">
-		<div class="suggest__header">
-			<span class="img-wrapper"><img src="../../../../../assets/img/gitlab.png" alt=""></span>
-			<h3>GitLab</h3>
+	<div class="suggest-box suggest" *ngFor="let job of suggestedJobs; let i = index;">
+		<div class="suggest__header-wrapper">
+			<div class="suggest__header">
+				<span class="img-wrapper"><img [src]="job.logo" alt=""></span>
+				<h3>{{job.name}}</h3>
+			</div>
+			<div>
+				<a href="#" (click)="showMenu($event, 'menu-'+i)" (blur)="hideMenu($event, 'menu-'+i)">
+					<img src="../../../../../assets/img/menu_vertical.png" alt="">
+					<ul [id]="'menu-'+i" class="content-menu hide">
+						<li><a href="#">Show details</a></li>
+						<li><a href="#">Apply now</a></li>
+						<li><a href="#">Save job</a></li>
+					</ul>
+				</a>
+			</div>
 		</div>
 		<div class="suggest__title">
-			Senior UX Designer
+			<p>{{ job.title }}</p>
 		</div>
 		<div class="suggest__content">
-			<p>Product Technologies</p>
+			<p>{{ job.content }}</p>
 		</div>
 		<div class="suggest__footer">
-			1 day ago . 13 Applied
-		</div>
-	</div>
-	<div class="suggest-box suggest">
-		<div class="suggest__header">
-			<span class="img-wrapper"><img src="../../../../../assets/img/sketch.png" alt=""></span>
-			<h3>Sketch</h3>
-		</div>
-		<div class="suggest__title">
-			Senior UX Designer
-		</div>
-		<div class="suggest__content">
-			<p>Product Technologies</p>
-		</div>
-		<div class="suggest__footer">
-			2 day ago . 3 Applied
-		</div>
-	</div>
-	<div class="suggest-box suggest">
-		<div class="suggest__header">
-			<span class="img-wrapper"><img src="../../../../../assets/img/figma.png" alt=""></span>
-			<h3>Figma</h3>
-		</div>
-		<div class="suggest__title">
-			Senior UX Designer
-		</div>
-		<div class="suggest__content">
-			<p>Product Technologies</p>
-		</div>
-		<div class="suggest__footer">
-			2 day ago . 23 Applied
-		</div>
-	</div>
-	<div class="suggest-box suggest">
-		<div class="suggest__header">
-			<span class="img-wrapper"><img src="../../../../../assets/img/figma.png" alt=""></span>
-			<h3>Figma</h3>
-		</div>
-		<div class="suggest__title">
-			Junior UX Designer
-		</div>
-		<div class="suggest__content">
-			<p>Product Technologies</p>
-		</div>
-		<div class="suggest__footer">
-			2 day ago . 23 Applied
+			<p>{{ job.footer }}</p>
 		</div>
 	</div>
 </div>
