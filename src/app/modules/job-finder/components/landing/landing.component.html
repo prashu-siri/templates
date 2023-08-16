@@ -1,0 +1,94 @@
+<div class="filters">
+    <div class="search-wrapper">
+        <app-svg-icon svgIconId="search" class="search-icon"></app-svg-icon>
+        <input type="text" class="search" placeholder="Jobs title or keyword">
+    </div>
+    <div class="dd-wrapper">
+        <button class="btn btn-menu" id="location" (click)="toggleMenu('location')">
+            <span class="menu-option location">Location</span>
+            <span>
+                <app-svg-icon svgIconId="dropdown"></app-svg-icon>
+            </span>
+            
+            <ul class="menu">
+                <li><a href="#" (click)="selectOption($event, 'Location', 'location')" class="disabled">Location</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Delhi', 'location')">Delhi</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Mumbai', 'location')">Mumbai</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Hyderabad', 'location')">Hyderabad</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Bengaluru', 'location')">Bengaluru</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Chennai', 'location')">Chennai</a></li>
+            </ul>
+        </button>
+    </div>
+    <div class="dd-wrapper">
+        <button class="btn btn-menu" id="experience" (click)="toggleMenu('experience')">
+            <span class="menu-option experience">Experience</span>
+            <span>
+                <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
+            </span>
+            
+            <ul class="menu">
+                <li><a href="#" (click)="selectOption($event, 'Experience', 'experience')" class="disabled">Experience</a></li>
+                <li><a href="#" (click)="selectOption($event, '&lt; 1 year', 'experience')">&lt; 1 year</a></li>
+                <li><a href="#" (click)="selectOption($event, '1 - 5 years', 'experience')">1 - 5 years</a></li>
+                <li><a href="#" (click)="selectOption($event, '5 - 10 years', 'experience')">5 - 10 years</a></li>
+            </ul>
+        </button>
+    </div>
+    <div class="dd-wrapper">
+        <button class="btn btn-menu" id="job-type" (click)="toggleMenu('job-type')">
+            <span class="menu-option job-type">Job type</span>
+            <span>
+                <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
+            </span>
+            
+            <ul class="menu">
+                <li><a href="#" (click)="selectOption($event, 'Job type', 'job-type')" class="disabled">Job type</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Part time', 'job-type')">Part time</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Full time', 'job-type')">Full time</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Contract', 'job-type')">Contract</a></li>
+            </ul>
+        </button>
+    </div>
+    <div class="dd-wrapper">
+        <button class="btn btn-menu" id="date-posted" (click)="toggleMenu('date-posted')">
+            <span class="menu-option date-posted">Date posted</span>
+            <span>
+                <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
+            </span>
+            
+            <ul class="menu">
+                <li><a href="#" (click)="selectOption($event, 'Date posted', 'date-posted')" class="disabled">Date posted</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Today', 'date-posted')">Today</a></li>
+                <li><a href="#" (click)="selectOption($event, '&lt; 5 days', 'date-posted')">&lt; 5 days</a></li>
+                <li><a href="#" (click)="selectOption($event, '&lt; 10 days', 'date-posted')">&lt; 10 days</a></li>
+            </ul>
+        </button>
+    </div>
+    <div class="dd-wrapper">
+        <button class="btn btn-menu" id="or" (click)="toggleMenu('or')">
+            <span class="menu-option or">Onsite/Remote</span>
+            <span>
+                <app-svg-icon [svgIconId]="'dropdown'"></app-svg-icon>
+            </span>
+            
+            <ul class="menu">
+                <li><a href="#" (click)="selectOption($event, 'Onsite/Remote', 'or')" class="disabled">Onsite/Remote</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Onsite', 'or')">Onsite</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Remote', 'or')">Remote</a></li>
+                <li><a href="#" (click)="selectOption($event, 'Hybrid', 'or')">Hybrid</a></li>
+            </ul>
+        </button>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="side-box">
+        <app-suggested-job></app-suggested-job>
+    </div>
+    <div class="side-box">
+        <app-featured-job></app-featured-job>
+    </div>
+    <div class="side-box">
+        <app-popular-company></app-popular-company>
+    </div>
+</div>

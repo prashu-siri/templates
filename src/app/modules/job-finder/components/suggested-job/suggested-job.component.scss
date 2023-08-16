@@ -1,0 +1,56 @@
+@import "src/styles/job-finder";
+
+.side-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+.suggest-box {
+  background: white;
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+.suggest__header {
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+}
+.suggest__title, .suggest__content {
+  margin-bottom: 0.5em;
+}
+.suggest__title {
+  font-weight: bold;
+}
+.suggest__content p{
+  font-size: 14px;
+  color: #878b8f;
+}
+.suggest__footer{
+  margin-top: 2em;
+  font-size: 13px;
+  color: #858585;
+}
+.img-wrapper {
+  display: inline-block;
+  background: #f7e0d77a;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  margin-right: 0.5em;
+
+  img {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

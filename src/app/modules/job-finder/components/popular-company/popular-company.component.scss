@@ -1,0 +1,15 @@
+@import "src/styles/job-finder";
+
+.section-header {
+    display: flex;
+    line-height: 25px;
+
+    .title {
+        font-weight: bold;
+    }
+
+    .role {
+        font-size: 14px;
+        color: #858585;
+    }
+}
