@@ -8,11 +8,13 @@ import { SharedModule } from '../shared/shared.module';
 import { SuggestedJobComponent } from './components/suggested-job/suggested-job.component';
 import { PopularCompanyComponent } from './components/popular-company/popular-company.component';
 import { FeaturedJobComponent } from './components/featured-job/featured-job.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 const routes = [
   {
     path: '', component: MainComponent, children: [
       { path: 'home', component: LandingComponent },
+      { path: 'faq', component: FaqComponent},
       { path: '**', pathMatch: 'full', redirectTo: 'home' }
     ]
   }
@@ -25,7 +27,8 @@ const routes = [
     HeaderComponent,
     SuggestedJobComponent,
     PopularCompanyComponent,
-    FeaturedJobComponent
+    FeaturedJobComponent,
+    FaqComponent
   ],
   imports: [
     CommonModule,
