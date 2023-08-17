@@ -1,0 +1,64 @@
+@import "src/styles/job-finder";
+
+.content-wrapper {
+	padding: 3em;
+	background: #e8f2fb;
+	height: 100vh;
+}
+
+h2 {
+	margin-bottom: 1.5em;
+}
+.accordion-panel + .accordion-panel {
+	margin-top: 24px;
+}
+
+.accordion-button {
+	width: 100%;
+	text-align: left;
+	padding: 1em;
+	font-size: 16px;
+	border: none;
+	border-bottom: 1px solid #e4e4e4;
+	color: #2f4858;
+	outline: none;
+	cursor: pointer;
+	letter-spacing: 0.5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #ffffff;
+}
+
+.accordion-button .arrow-down,
+.accordion-button.active .arrow-up {
+	display: inline-block;
+}
+
+.accordion-button .arrow-up,
+.accordion-button.active .arrow-down {
+	display: none;
+}
+
+.accordion-button svg {
+	width: 24px;
+	height: 24px;
+}
+
+.accordion-button + div {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.5s ease-out;
+}
+
+.accordion-button + div p {
+	padding: 24px 18px;
+	background: white;
+}
+
+.accordion-button.active + div {
+	max-height: 100vh;
+	transition: all 0.5s ease-in;
+	height: auto;
+	overflow-y: auto;
+}
