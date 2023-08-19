@@ -9,12 +9,14 @@ import { SuggestedJobComponent } from './components/suggested-job/suggested-job.
 import { PopularCompanyComponent } from './components/popular-company/popular-company.component';
 import { FeaturedJobComponent } from './components/featured-job/featured-job.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { MyJobsComponent } from './components/my-jobs/my-jobs.component';
 
 const routes = [
   {
     path: '', component: MainComponent, children: [
       { path: 'home', component: LandingComponent },
       { path: 'faq', component: FaqComponent},
+      { path: 'my-jobs', component: MyJobsComponent},
       { path: '**', pathMatch: 'full', redirectTo: 'home' }
     ]
   }
@@ -28,7 +30,8 @@ const routes = [
     SuggestedJobComponent,
     PopularCompanyComponent,
     FeaturedJobComponent,
-    FaqComponent
+    FaqComponent,
+    MyJobsComponent
   ],
   imports: [
     CommonModule,

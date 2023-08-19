@@ -1,0 +1,35 @@
+@import 'src/styles/job-finder';
+
+.container {
+    padding: 3em;
+    background-color: $bg-clr;
+}
+
+ul {
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+    background: white;
+
+    a {
+        display: inline-block;
+        padding: 1em;
+
+        &.active {
+            color: $primary-color;
+            border-bottom: 3px solid $primary-color;
+        }
+    }
+}
+
+.tab-content > div {
+    display: none;
+}
+
+.tab-content > div.show {
+    display: block;
+    padding: 2em 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+}
