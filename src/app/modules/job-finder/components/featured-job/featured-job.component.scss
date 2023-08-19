@@ -1,7 +1,8 @@
 @import "src/styles/job-finder";
 
 .section-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.25fr 1fr auto;
     margin-bottom: 1.5em;
     line-height: 25px;
 
@@ -12,6 +13,18 @@
     .company, .city {
         font-size: 14px;
         color: #858585;
+    }
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
+
+    a {
+        display: flex;
+        span {
+            font-size: 12px;
+        }
     }
 }
 
