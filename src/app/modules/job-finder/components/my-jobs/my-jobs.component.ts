@@ -44,13 +44,13 @@ export class MyJobsComponent implements OnInit {
 			{
                 "name": "GitLab",
                 "logo": "../../../../../assets/img/gitlab.png",
-                "title": "Senior UX Designer",
+                "title": "Senior Developer",
                 "content": "Product Technologies",
                 "appliedOn": "12-Aug-2023"
             },{
                 "name": "Sketch",
                 "logo": "../../../../../assets/img/sketch.png",
-                "title": "Senior UX Designer",
+                "title": "Junior Developer",
                 "content": "Product Technologies",
                 "appliedOn": "12-Aug-2023"
             },{

@@ -4,20 +4,28 @@
     padding: 3em;
     background-color: $bg-clr;
 }
-
+.tab-container {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+}
 ul {
-    display: flex;
-    gap: 2em;
     margin-top: 2em;
     background: white;
 
     a {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         padding: 1em;
+        width: 100%;
+
+        img {
+            height: 24px;
+            width: 24px;
+        }
 
         &.active {
-            color: $primary-color;
-            border-bottom: 3px solid $primary-color;
+            background: #d3d9ff;
+            font-weight: bold;
         }
     }
 }
