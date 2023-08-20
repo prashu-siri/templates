@@ -10,6 +10,8 @@ import { PopularCompanyComponent } from './components/popular-company/popular-co
 import { FeaturedJobComponent } from './components/featured-job/featured-job.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { MyJobsComponent } from './components/my-jobs/my-jobs.component';
+import { PostJobComponent } from './components/post-job/post-job.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes = [
   {
@@ -17,6 +19,7 @@ const routes = [
       { path: 'home', component: LandingComponent },
       { path: 'faq', component: FaqComponent},
       { path: 'my-jobs', component: MyJobsComponent},
+      { path: 'post-job', component: PostJobComponent},
       { path: '**', pathMatch: 'full', redirectTo: 'home' }
     ]
   }
@@ -31,11 +34,14 @@ const routes = [
     PopularCompanyComponent,
     FeaturedJobComponent,
     FaqComponent,
-    MyJobsComponent
+    MyJobsComponent,
+    PostJobComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })

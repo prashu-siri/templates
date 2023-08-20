@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Post Job</h2>
+    <p class="message-block" *ngIf="isSuccess">
+        <app-svg-icon svgIconId="check-circle"></app-svg-icon>
+        Job posted successfully</p>
+    <form [formGroup]="postJobForm" (ngSubmit)="submitForm()">
+        <div class="form-container">
+            <div class="form-wrapper">
+                <label for="company" class="form-label">Company</label>
+                <input type="text" id="company" class="form-control" formControlName="company">
+                <p *ngIf="isFieldInvalid(company)" class="error-field">This field is mandatory</p>
+            </div>
+            <div class="form-wrapper">
+                <label for="title" class="form-label">Job Title</label>
+                <input type="text" id="title" class="form-control" formControlName="title">
+                <p *ngIf="isFieldInvalid(title)" class="error-field">This field is mandatory</p>
+            </div>
+            <div class="form-wrapper">
+                <label for="jobType" class="form-label">Job Type</label>
+                <select name="jobType" id="jobType" class="form-control" formControlName="jobType">
+                    <option [value]="jobType.value" *ngFor="let jobType of jobTypes">{{ jobType.name}}</option>
+                </select>
+                <p *ngIf="isFieldInvalid(jobType)" class="error-field">This field is mandatory</p>
+            </div>
+            <div class="form-wrapper">
+                <label for="location" class="form-label">Location</label>
+                <select name="location" id="location" class="form-control" formControlName="location">
+                    <option [value]="location.value" *ngFor="let location of locations">{{location.name}}</option>
+                </select>
+                <p *ngIf="isFieldInvalid(location)" class="error-field">This field is mandatory</p>
+            </div>
+            <div class="form-wrapper">
+                <label for="salary" class="form-label">Salary</label>
+                <input type="text" id="salary" class="form-control" formControlName="salary">
+                <p *ngIf="isFieldInvalid(salary)" class="error-field">This field is mandatory</p>
+            </div>
+            <div class="form-wrapper">
+                <label for="description" class="form-label">Description</label>
+                <textarea cols="20" rows="10" id="description" class="form-control" formControlName="description"></textarea>
+                <p *ngIf="isFieldInvalid(description)" class="error-field">This field is mandatory</p>
+            </div>
+        </div>
+        <div class="btn-wrapper">
+            <button>Save Job</button>
+        </div>
+    </form>
+</div>

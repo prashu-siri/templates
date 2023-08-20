@@ -1,0 +1,53 @@
+@import 'src/styles/job-finder';
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.form-label {
+    margin-bottom: 1em;
+}
+
+.form-control {
+    height: 40px;
+    width: 80%;
+    border: 1px solid #c1c1c1;
+    padding: 0 0.5em;
+    border-radius: 5px;
+    font-family: $font-family;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 2em;
+    padding: 1em 2em;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: $font-family;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.error-field {
+    margin-top: 0.25em;
+    color: #ff5050;
+    font-size: 14px;
+}
+
+.message-block {
+    margin: 2em 0 1em 0;
+    color: green;
+    display: flex;
+}
