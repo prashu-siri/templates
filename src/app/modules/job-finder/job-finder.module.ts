@@ -12,6 +12,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { MyJobsComponent } from './components/my-jobs/my-jobs.component';
 import { PostJobComponent } from './components/post-job/post-job.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes = [
   {
@@ -20,6 +21,7 @@ const routes = [
       { path: 'faq', component: FaqComponent},
       { path: 'my-jobs', component: MyJobsComponent},
       { path: 'post-job', component: PostJobComponent},
+      { path: 'profile', component: ProfileComponent},
       { path: '**', pathMatch: 'full', redirectTo: 'home' }
     ]
   }
@@ -35,7 +37,8 @@ const routes = [
     FeaturedJobComponent,
     FaqComponent,
     MyJobsComponent,
-    PostJobComponent
+    PostJobComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
