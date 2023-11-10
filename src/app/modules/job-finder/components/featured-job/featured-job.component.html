@@ -1,86 +1,35 @@
 <div class="main-wrapper">
-    <h3>Featured Jobs</h3>
-    <section class="section-wrapper">
-        <div class="section-header">
-            <span class="img-wrapper"><img src="../../../../../assets/img/gitlab.png" alt=""></span>
-            <div class="header-wrapper">
-                <p class="title">Senior Unity Developer</p>
-                <p class="company">Staker Parson Materials & Construction</p>
-                <p class="city">Atlanta, GA</p>
-            </div>
-        </div>
-        <div class="section-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sint perferendis suscipit, voluptatibus vel aperiam provident quia magnam molestiae tempore.</p>
-        </div>
-        <div class="section-footer">
-            <div class="footer-content">
-                <img src="../../../../../assets/img/dollar_icon.png" alt="">
-                <p>6k - 8k / month</p>
-            </div>
-            <div class="footer-content">
-                <img src="../../../../../assets/img/people_icon.png" alt="">
-                <p>126 Applications</p>
-            </div>
-            <div class="footer-content">
-                <img src="../../../../../assets/img/location_point_icon.png" alt="">
-                <p>Remote</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-wrapper">
-        <div class="section-header">
-            <span class="img-wrapper"><img src="../../../../../assets/img/gitlab.png" alt=""></span>
-            <div class="header-wrapper">
-                <p class="title">Senior Unity Developer</p>
-                <p class="company">Staker Parson Materials & Construction</p>
-                <p class="city">Atlanta, GA</p>
-            </div>
-        </div>
-        <div class="section-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sint perferendis suscipit, voluptatibus vel aperiam provident quia magnam molestiae tempore.</p>
-        </div>
-        <div class="section-footer">
-            <div class="footer-content">
-                <img src="../../../../../assets/img/dollar_icon.png" alt="">
-                <p>6k - 8k / month</p>
-            </div>
-            <div class="footer-content">
-                <img src="../../../../../assets/img/people_icon.png" alt="">
-                <p>126 Applications</p>
-            </div>
-            <div class="footer-content">
-                <img src="../../../../../assets/img/location_point_icon.png" alt="">
-                <p>Remote</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-wrapper">
-        <div class="section-header">
-            <span class="img-wrapper"><img src="../../../../../assets/img/gitlab.png" alt=""></span>
-            <div class="header-wrapper">
-                <p class="title">Senior Unity Developer</p>
-                <p class="company">Staker Parson Materials & Construction</p>
-                <p class="city">Atlanta, GA</p>
-            </div>
-        </div>
-        <div class="section-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sint perferendis suscipit, voluptatibus vel aperiam provident quia magnam molestiae tempore.</p>
-        </div>
-        <div class="section-footer">
-            <div class="footer-content">
-                <img src="../../../../../assets/img/dollar_icon.png" alt="">
-                <p>6k - 8k / month</p>
-            </div>
-            <div class="footer-content">
-                <img src="../../../../../assets/img/people_icon.png" alt="">
-                <p>126 Applications</p>
-            </div>
-            <div class="footer-content">
-                <img src="../../../../../assets/img/location_point_icon.png" alt="">
-                <p>Remote</p>
-            </div>
-        </div>
-    </section>
+	<h3>Featured Jobs</h3>
+	<section class="section-wrapper" *ngFor="let job of jobs">
+		<div class="section-header">
+			<span class="img-wrapper"
+				><img src="../../../../../assets/img/gitlab.png" alt=""
+			/></span>
+			<div class="header-wrapper">
+				<p class="title">{{ job.title }}</p>
+				<p class="company">{{ job.company }}</p>
+				<p class="city">{{ job.city }}, {{ job.state }}</p>
+			</div>
+		</div>
+		<div class="section-content">
+			<p>{{ job.description }}</p>
+		</div>
+		<div class="section-footer">
+			<div class="footer-content">
+				<img src="../../../../../assets/img/dollar_icon.png" alt="" />
+				<p>{{ job.salary }}</p>
+			</div>
+			<div class="footer-content">
+				<img src="../../../../../assets/img/people_icon.png" alt="" />
+				<p>{{ job.applicants }} Applications</p>
+			</div>
+			<div class="footer-content">
+				<img
+					src="../../../../../assets/img/location_point_icon.png"
+					alt=""
+				/>
+				<p>{{ job.type }}</p>
+			</div>
+		</div>
+	</section>
 </div>
