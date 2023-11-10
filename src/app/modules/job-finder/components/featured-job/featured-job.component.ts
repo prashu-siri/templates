@@ -8,7 +8,8 @@ import { Job } from '../../interface/job';
 	styleUrls: ['./featured-job.component.scss'],
 })
 export class FeaturedJobComponent implements OnInit {
-	constructor() {}
+	jobs: Job[] = [];
+	constructor(private service: JobFinderService) {}
 
 	ngOnInit(): void {
 		this.service.fetchJobs().subscribe((response) => {
