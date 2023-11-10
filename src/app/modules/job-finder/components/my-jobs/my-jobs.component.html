@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>My Jobs</h2>
+    <div class="tab-container">
+        <div class="tabs">
+            <ul>
+                <li><a href="#" class="tab active" (click)="activateTab($event, 'applied')">
+                    <app-svg-icon svgIconId="check-circle"></app-svg-icon>
+                    Applied</a></li>
+                <li><a href="#" class="tab" (click)="activateTab($event, 'saved')">
+                    <app-svg-icon svgIconId="bookmark"></app-svg-icon>
+                    Saved</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="applied" class="show">
+                <div class="suggest-box" *ngFor="let job of appliedJobs">
+                    <div class="suggest__header-wrapper">
+                        <div class="suggest__header">
+                            <span class="img-wrapper"><img [src]="job.logo" alt="Company Logo"></span>
+                            <h3>{{ job.name }}</h3>
+                        </div>
+                    </div>
+                    <div class="suggest__title">
+                        <p>{{ job.title }}</p>
+                    </div>
+                    <div class="suggest__content">
+                        <p>{{ job.content }}</p>
+                    </div>
+                    <div class="suggest__footer">
+                        <p>Applied On: {{ job.appliedOn}}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="saved">
+                <div class="suggest-box" *ngFor="let job of savedJobs">
+                    <div class="suggest__header-wrapper">
+                        <div class="suggest__header">
+                            <span class="img-wrapper"><img [src]="job.logo" alt="Company Logo"></span>
+                            <h3>{{ job.name }}</h3>
+                        </div>
+                    </div>
+                    <div class="suggest__title">
+                        <p>{{ job.title }}</p>
+                    </div>
+                    <div class="suggest__content">
+                        <p>{{ job.content }}</p>
+                    </div>
+                    <div class="suggest__footer">
+                        <p>Saved On: {{ job.appliedOn}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

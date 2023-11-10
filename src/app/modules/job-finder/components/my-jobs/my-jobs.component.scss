@@ -1,0 +1,43 @@
+@import 'src/styles/job-finder';
+
+.container {
+    padding: 3em;
+    background-color: $bg-clr;
+}
+.tab-container {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+}
+ul {
+    margin-top: 2em;
+    background: white;
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: 1em;
+        width: 100%;
+
+        img {
+            height: 24px;
+            width: 24px;
+        }
+
+        &.active {
+            background: #d3d9ff;
+            font-weight: bold;
+        }
+    }
+}
+
+.tab-content > div {
+    display: none;
+}
+
+.tab-content > div.show {
+    display: block;
+    padding: 2em 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+}

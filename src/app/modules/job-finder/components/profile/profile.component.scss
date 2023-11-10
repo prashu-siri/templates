@@ -1,0 +1,73 @@
+@import 'src/styles/job-finder';
+
+.profile-wrapper {
+    margin: 0 10em;
+}
+
+.banner {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    border-bottom: 1px solid $border-clr;
+    
+    .profile-pic img {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .details  {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 4em;
+        p {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: 13px;
+            
+            img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    
+    .profile-details .title {
+        text-align: center;
+        text-transform: capitalize;
+        
+        p {
+            font-size: 14px;
+            padding-top: 0.75em;
+        }
+    }
+}
+
+h3 {
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid $border-clr;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    padding: 2em 0;
+
+    & > div {
+        border: 1px solid $border-clr;
+        border-radius: 5px;
+        padding: 1em;
+    }
+}
+.content-section {
+    margin-bottom: 1em;
+}
+.content-label {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: $secondary-text;
+    margin-bottom: 0.25em;
+}
