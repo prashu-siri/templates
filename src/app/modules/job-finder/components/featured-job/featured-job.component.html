@@ -2,14 +2,19 @@
 	<h3>Featured Jobs</h3>
 	<section class="section-wrapper" *ngFor="let job of jobs">
 		<div class="section-header">
-			<span class="img-wrapper"
+			<span class="img-wrapper header-image"
 				><img src="../../../../../assets/img/gitlab.png" alt=""
 			/></span>
 			<div class="header-wrapper">
 				<p class="title">{{ job.title }}</p>
 				<p class="company">{{ job.company }}</p>
-				<p class="city">{{ job.city }}, {{ job.state }}</p>
+				<p class="city">{{ job.city }}</p>
 			</div>
+			<span>
+				<a href="#"
+					><app-svg-icon [svgIconId]="'eye'"></app-svg-icon
+				></a>
+			</span>
 		</div>
 		<div class="section-content">
 			<p>{{ job.description }}</p>
