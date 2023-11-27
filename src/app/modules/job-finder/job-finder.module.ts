@@ -13,39 +13,45 @@ import { MyJobsComponent } from './components/my-jobs/my-jobs.component';
 import { PostJobComponent } from './components/post-job/post-job.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
+import { JobFinderService } from './service/job-finder.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes = [
-  {
-    path: '', component: MainComponent, children: [
-      { path: 'home', component: LandingComponent },
-      { path: 'faq', component: FaqComponent},
-      { path: 'my-jobs', component: MyJobsComponent},
-      { path: 'post-job', component: PostJobComponent},
-      { path: 'profile', component: ProfileComponent},
-      { path: '**', pathMatch: 'full', redirectTo: 'home' }
-    ]
-  }
-]
+	{
+		path: '',
+		component: MainComponent,
+		children: [
+			{ path: 'home', component: LandingComponent },
+			{ path: 'faq', component: FaqComponent },
+			{ path: 'my-jobs', component: MyJobsComponent },
+			{ path: 'post-job', component: PostJobComponent },
+			{ path: 'profile', component: ProfileComponent },
+			{ path: '**', pathMatch: 'full', redirectTo: 'home' },
+		],
+	},
+];
 
 @NgModule({
-  declarations: [
-    LandingComponent,
-    MainComponent,
-    HeaderComponent,
-    SuggestedJobComponent,
-    PopularCompanyComponent,
-    FeaturedJobComponent,
-    FaqComponent,
-    MyJobsComponent,
-    PostJobComponent,
-    ProfileComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(routes)
-  ]
+	declarations: [
+		LandingComponent,
+		MainComponent,
+		HeaderComponent,
+		SuggestedJobComponent,
+		PopularCompanyComponent,
+		FeaturedJobComponent,
+		FaqComponent,
+		MyJobsComponent,
+		PostJobComponent,
+		ProfileComponent,
+	],
+	imports: [
+		CommonModule,
+		SharedModule,
+		FormsModule,
+		ReactiveFormsModule,
+		RouterModule.forChild(routes),
+		HttpClientModule,
+	],
+	providers: [JobFinderService],
 })
-export class JobFinderModule { }
+export class JobFinderModule {}

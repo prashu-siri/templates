@@ -1,43 +1,41 @@
-@import 'src/styles/job-finder';
+@import "src/styles/job-finder";
 
 .container {
-    padding: 3em;
-    background-color: $bg-clr;
+	padding: 3em;
+	background-color: $bg-clr;
 }
-.tab-container {
-    display: grid;
-    grid-template-columns: 0.2fr 1fr;
-}
+
 ul {
-    margin-top: 2em;
-    background: white;
+	margin-top: 2em;
+	display: flex;
 
-    a {
-        display: flex;
-        align-items: center;
-        padding: 1em;
-        width: 100%;
+	a {
+		display: flex;
+		align-items: center;
+		padding: 1em 2em;
+		width: 100%;
 
-        img {
-            height: 24px;
-            width: 24px;
-        }
+		img {
+			height: 24px;
+			width: 24px;
+		}
 
-        &.active {
-            background: #d3d9ff;
-            font-weight: bold;
-        }
-    }
+		&.active {
+			font-weight: bold;
+			color: #4848ff;
+			border-bottom: 2px solid #4848ff;
+		}
+	}
 }
 
 .tab-content > div {
-    display: none;
+	display: none;
 }
 
 .tab-content > div.show {
-    display: block;
-    padding: 2em 1em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
+	display: block;
+	padding: 2em 1em;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2em;
 }

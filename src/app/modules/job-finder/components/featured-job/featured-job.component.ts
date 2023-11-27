@@ -1,31 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { JobFinderService } from '../../service/job-finder.service';
+import { Job } from '../../interface/job';
 
 @Component({
 	selector: 'app-featured-job',
 	templateUrl: './featured-job.component.html',
-	styleUrls: ['./featured-job.component.scss']
+	styleUrls: ['./featured-job.component.scss'],
 })
 export class FeaturedJobComponent implements OnInit {
-	
-	constructor() { }
-	
-	ngOnInit(): void {
-	}
-	
-	saveJob(event) {
-		if(event) {
-			event.preventDefault();
-		}
+	jobs: Job[] = [];
+	constructor(private service: JobFinderService) {}
 
-		if(event.target.nextElementSibling != null) {
-			if( event.target.nextElementSibling.innerHTML == 'Saved') {
-				event.target.nextElementSibling.innerHTML = '';	
-			} else {
-				event.target.nextElementSibling.innerHTML = 'Saved';
-			}
-			
-		} else {
-			event.target.innerHTML = event.target.innerHTML == 'Saved' ? '' : 'Saved';
-		}
+	ngOnInit(): void {
+		this.service.fetchJobs().subscribe((response) => {
+			this.jobs = response;
+		});
 	}
 }

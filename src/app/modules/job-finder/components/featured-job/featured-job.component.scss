@@ -1,54 +1,59 @@
 @import "src/styles/job-finder";
 
 .section-header {
-    display: grid;
-    grid-template-columns: 0.25fr 1fr auto;
-    margin-bottom: 1.5em;
-    line-height: 25px;
+	display: grid;
+	grid-template-columns: 0fr 1fr auto;
+	margin-bottom: 1.5em;
+	line-height: 25px;
 
-    .title {
-        font-weight: bold;
-    }
+	.title {
+		font-weight: bold;
+	}
 
-    .company, .city {
-        font-size: 14px;
-        color: #858585;
-    }
+	.company,
+	.city {
+		font-size: 14px;
+		color: #858585;
+	}
 
-    img {
-        height: 24px;
-        width: 24px;
-    }
+	img {
+		height: 24px;
+		width: 24px;
+	}
 
-    a {
-        display: flex;
-        span {
-            font-size: 12px;
-        }
-    }
+	a {
+		display: flex;
+		span {
+			font-size: 12px;
+		}
+	}
+
+	.header-image {
+		margin-top: 1em;
+	}
 }
 
 .section-content p {
-    color: #858585;
-    margin-bottom: 1em;
-    line-height: 25px;
+	color: #858585;
+	margin-bottom: 1em;
+	line-height: 25px;
 }
 
 .section-footer {
-    border-top: 1px solid #e2e2e2;
-    display: flex;
-    padding-top: 1em;
+	border-top: 1px solid #e2e2e2;
+	display: flex;
+	padding-top: 1em;
 
-    img {
-        height: 18px;
-        width: 18px;
-        margin-right: 0.25em;
-    };
+	img {
+		height: 18px;
+		width: 18px;
+		margin-right: 0.25em;
+	}
 
-    .footer-content {
-        display: flex;
-        font-size: 14px;
-        color: #858585;
-        margin-right: 2em;
-    }
+	.footer-content {
+		display: flex;
+		font-size: 14px;
+		color: #858585;
+		margin-right: 2em;
+	}
 }
