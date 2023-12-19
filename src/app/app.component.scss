@@ -1,66 +1,69 @@
 .home-nav {
-  height      : 40px;
-  background  : linear-gradient(45deg, #AD8CF6, #FFAF7F);
-  color       : #171717;
-  padding     : 12px;
-  font-family : "Open Sans", sans-serif;
+	height: 40px;
+	background: linear-gradient(45deg, #ad8cf6, #ffaf7f);
+	color: #171717;
+	padding: 12px;
+	font-family: "Open Sans", sans-serif;
 }
 
 .main {
-  margin  : 48px;
-  display : grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1em;
+	margin: 48px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1em;
 
-  .card {
-    box-shadow    : 3px 4px 5px rgba(0, 0, 0, 0.25);
-    color         : white;
-    background    : #313131;
-    padding       : 24px;
-    border-radius : 10px;
-    margin-right  : 36px;
+	.card {
+		box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.25);
+		color: white;
+		background: #313131;
+		padding: 24px;
+		border-radius: 10px;
+		margin-right: 36px;
 
-    &__heading {
-      text-align     : center;
-      margin-bottom  : 24px;
-      padding-bottom : 12px;
-      min-height     : 50px;
-    }
+		&__heading {
+			text-align: center;
+			margin-bottom: 24px;
+			padding-bottom: 12px;
+			min-height: 50px;
+		}
 
-    &__description {
-      line-height    : 24px;
-      padding-bottom : 24px;
-      margin-bottom  : 24px;
-      min-height     : 130px;
-    }
+		&__description {
+			line-height: 24px;
+			padding-bottom: 24px;
+			margin-bottom: 24px;
+			min-height: 130px;
+		}
 
-    button {
-      text-decoration : none;
-      padding         : 12px 6px;
-      background      : #808EFF;
-      color           : white;
-      border          : none;
-      border-radius   : 5px;
-      width           : 100%;
-      cursor          : pointer;
-      font-family     : inherit;
-      text-transform  : uppercase;
-      font-weight     : bold;
-      letter-spacing  : 0.7px;
-    }
-  }
+		button {
+			text-decoration: none;
+			padding: 12px 6px;
+			background: #808eff;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			width: 100%;
+			cursor: pointer;
+			font-family: inherit;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 0.7px;
 
+			a {
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
 }
 
-@media (max-width : 768px) {
-  .main {
-    grid-template-rows: 1fr;
-    grid-template-columns: none;
-    gap: 12px;
-  }
+@media (max-width: 768px) {
+	.main {
+		grid-template-rows: 1fr;
+		grid-template-columns: none;
+		gap: 12px;
+	}
 
-  .email-template {
-    display: none;
-  }
+	.email-template {
+		display: none;
+	}
 }
-
