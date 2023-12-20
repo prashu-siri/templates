@@ -1,8 +1,10 @@
 <div class="header">
 	<div class="header-left">
-		<div class="header-left__logo">
-			<p>JF</p>
-			<h1>JobFinder</h1>
+		<div class="header-left">
+			<a href="#" routerLink="./home" class="logo">
+				<p>JF</p>
+				<h1>JobFinder</h1>
+			</a>
 		</div>
 		<div class="header-left__menu">
 			<ul>
@@ -11,7 +13,11 @@
 						>Home</a
 					>
 				</li>
-				<li><a href="#" routerLink="./my-jobs" routerLinkActive="active">My Jobs</a></li>
+				<li>
+					<a href="#" routerLink="./my-jobs" routerLinkActive="active"
+						>My Jobs</a
+					>
+				</li>
 				<li><a href="#">Messages</a></li>
 				<li>
 					<a href="#" routerLink="./faq" routerLinkActive="active"
@@ -33,7 +39,11 @@
 					><app-svg-icon [svgIconId]="'user'"></app-svg-icon
 				></a>
 			</li>
-			<li><a href="#" routerLink="post-job" class="btn-link">Post a job</a></li>
+			<li>
+				<a href="#" routerLink="post-job" class="btn-link"
+					>Post a job</a
+				>
+			</li>
 		</ul>
 	</div>
 </div>
