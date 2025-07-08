@@ -1,29 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { MarketService } from "../../service/market.service";
-import { AuthService } from "../../service/auth.service";
-import { ActivatedRoute, Router } from "@angular/router";
+import { MarketService } from '../../service/market.service';
+import { AuthService } from '../../service/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss']
+	styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
 	numberOfItems: number;
 
-	constructor(private service: MarketService, private authService: AuthService, private activatedRoute: ActivatedRoute,
-	            private router: Router) {
-	}
+	constructor(
+		private service: MarketService,
+		private authService: AuthService,
+		private activatedRoute: ActivatedRoute,
+		private router: Router
+	) {}
 
 	ngOnInit(): void {
-		this.service.productAdded$.subscribe(response => {
+		this.service.productAdded$.subscribe((response) => {
 			this.numberOfItems = response;
 		});
-	}
-
-	openSearch(event) {
-		event.preventDefault();
-		document.querySelector('#search').classList.add('open');
 	}
 
 	hasItems() {
@@ -42,12 +40,12 @@ export class HeaderComponent implements OnInit {
 	navigateToLogin($event: MouseEvent) {
 		$event.preventDefault();
 		this.authService.setCurrentRoute(this.router.routerState.snapshot.url);
-		this.router.navigate(['login'], {relativeTo: this.activatedRoute});
+		this.router.navigate(['login'], { relativeTo: this.activatedRoute });
 	}
 
 	toggleMenu(event: MouseEvent) {
 		event.preventDefault();
-		const navMenu = document.querySelector("#nav-menu");
+		const navMenu = document.querySelector('#nav-menu');
 		navMenu.classList.toggle('open-menu');
 	}
 }
