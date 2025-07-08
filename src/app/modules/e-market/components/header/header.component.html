@@ -1,91 +1,99 @@
-<app-search></app-search>
 <div class="header">
+	<nav>
+		<div class="logo">
+			<a href="#" routerLink="home">
+				<img alt="Logo" src="assets/img/e-market/logo.png" />
+			</a>
+		</div>
+		<div>
+			<ul class="df nav-menu" id="nav-menu">
+				<li>
+					<a
+						(click)="toggleMenu($event)"
+						href="#"
+						routerLink="home"
+						routerLinkActive="active"
+						>Home
+					</a>
+				</li>
+				<li>
+					<a
+						(click)="toggleMenu($event)"
+						href="#"
+						routerLink="product/fruit"
+						routerLinkActive="active"
+						>Fruits
+					</a>
+				</li>
+				<li>
+					<a
+						(click)="toggleMenu($event)"
+						href="#"
+						routerLink="product/vegetable"
+						routerLinkActive="active"
+					>
+						Vegetables
+					</a>
+				</li>
+				<li>
+					<a
+						(click)="toggleMenu($event)"
+						href="#"
+						routerLink="contact"
+						routerLinkActive="active"
+						>Contact Us
+					</a>
+				</li>
+				<li>
+					<a
+						(click)="toggleMenu($event)"
+						href="#"
+						routerLink="blog"
+						routerLinkActive="active"
+						>Blog
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<ul class="df menu-icon">
+				<li>
+					<a href="javascript:">
+						<app-svg-icon [svgIconId]="'user'"></app-svg-icon>
+						<ul *ngIf="isLoggedIn()" class="menu-items">
+							<li>
+								<a href="#" routerLink="profile">Your Orders</a>
+							</li>
+							<li>
+								<a (click)="signOut($event)" href="#"
+									>Sign out</a
+								>
+							</li>
+						</ul>
+						<ul *ngIf="!isLoggedIn()" class="menu-items">
+							<li>
+								<a (click)="navigateToLogin($event)" href="#"
+									>Sign In</a
+								>
+							</li>
+						</ul>
+					</a>
+				</li>
+				<li>
+					<a href="#" routerLink="cart">
+						<app-svg-icon [svgIconId]="'cart'"></app-svg-icon>
+						<span *ngIf="hasItems()" class="badge">{{
+							numberOfItems
+						}}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 
-    <nav>
-        <div class="logo">
-            <a href="#" routerLink="home">
-                <img alt="Logo" src="assets/img/e-market/logo.png">
-            </a>
-        </div>
-        <div>
-            <ul class="df nav-menu" id="nav-menu">
-                <li>
-                    <a (click)="toggleMenu($event)"
-                       href="#"
-                       routerLink="home"
-                       routerLinkActive="active">Home
-                    </a>
-                </li>
-                <li>
-                    <a (click)="toggleMenu($event)"
-                       href="#"
-                       routerLink="product/fruit"
-                       routerLinkActive="active">Fruits
-                    </a>
-                </li>
-                <li>
-                    <a (click)="toggleMenu($event)"
-                       href="#"
-                       routerLink="product/vegetable"
-                       routerLinkActive="active">
-                        Vegetables
-                    </a>
-                </li>
-                <li>
-                    <a (click)="toggleMenu($event)"
-                       href="#"
-                       routerLink="contact"
-                       routerLinkActive="active">Contact Us
-                    </a>
-                </li>
-                <li>
-                    <a (click)="toggleMenu($event)"
-                       href="#"
-                       routerLink="blog"
-                       routerLinkActive="active">Blog
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <ul class="df menu-icon">
-                <li>
-                    <a (click)="openSearch($event)" href="#">
-                        <app-svg-icon [svgIconId]="'search'"></app-svg-icon>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:">
-                        <app-svg-icon [svgIconId]="'user'"></app-svg-icon>
-                        <ul *ngIf="isLoggedIn()" class="menu-items">
-                            <li>
-                                <a href="#" routerLink="profile">Your Orders</a>
-                            </li>
-                            <li>
-                                <a (click)="signOut($event)" href="#">Sign out</a>
-                            </li>
-                        </ul>
-                        <ul *ngIf="!isLoggedIn()" class="menu-items">
-                            <li>
-                                <a (click)="navigateToLogin($event)" href="#">Sign In</a>
-                            </li>
-                        </ul>
-                    </a>
-
-                </li>
-                <li>
-                    <a href="#" routerLink="cart">
-                        <app-svg-icon [svgIconId]="'cart'"></app-svg-icon>
-                        <span *ngIf="hasItems()" class="badge">{{ numberOfItems }}</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="hamburger">
-            <a (click)="toggleMenu($event)" href="#">
-                <app-svg-icon [svgIconId]="'menu'"></app-svg-icon>
-            </a>
-        </div>
-    </nav>
+		<div class="hamburger">
+			<a (click)="toggleMenu($event)" href="#">
+				<app-svg-icon [svgIconId]="'menu'"></app-svg-icon>
+			</a>
+		</div>
+	</nav>
 </div>
