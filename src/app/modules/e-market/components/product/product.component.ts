@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit, OnDestroy {
 	subscriptionContainer = new SubscriptionContainer();
 	searchTerm: string;
 	filteredProducts: Product[];
+	item: Product = {} as Product;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -58,8 +59,18 @@ export class ProductComponent implements OnInit, OnDestroy {
 		product.quantity += 1;
 	}
 
+	openAdd(product: Product) {
+		this.item = product;
+		document.querySelector('.add-to-cart').classList.add('open');
+	}
+
+	cancelAdd() {
+		document.querySelector('.add-to-cart').classList.remove('open');
+	}
+
 	addToCart(product: Product) {
 		this.service.addToCart(product);
+		document.querySelector('.add-to-cart').classList.remove('open');
 	}
 
 	search() {
