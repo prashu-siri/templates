@@ -15,11 +15,12 @@
 				/>
 			</div>
 		</div>
-		<div class="products">
+		<div class="product-card-wrapper">
 			<div *ngFor="let product of filteredProducts" class="product-card">
-				<div class="product-image">
+				<!-- <div class="product-image">
 					<img [src]="product.imageUrl" alt="" />
-				</div>
+				</div> -->
+				<img [src]="product.imageUrl" alt="" />
 				<div class="product-info">
 					<h3 class="product-title">{{ product.name }}</h3>
 					<span
