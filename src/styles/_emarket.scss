@@ -1237,11 +1237,12 @@ $text-background: #f5f5f5;
 			height: 100%;
 			width: 100%;
 			background: #fff3ea;
-			top: 10%;
+			top: 7%;
 			align-items: center;
 
 			&.open-menu {
 				left: 0;
+				top: 7%;
 			}
 		}
 
@@ -1288,7 +1289,7 @@ $text-background: #f5f5f5;
 		}
 
 		.product-card-wrapper {
-			grid-template-columns: 1fr;
+			grid-template-columns: 1fr 1fr;
 		}
 
 		.products {
@@ -1297,9 +1298,13 @@ $text-background: #f5f5f5;
 
 		.product-card {
 			img {
-				min-height: 230px;
 				object-position: top;
+				height: 100px;
 			}
+		}
+
+		.featured-products .product-card {
+			height: 200px;
 		}
 
 		.info {
@@ -1329,10 +1334,14 @@ $text-background: #f5f5f5;
 			padding: 2em;
 
 			.footer-links-wrapper {
-				margin: 2em;
+				margin: 2em 1em;
 				grid-auto-flow: row;
-				grid-template-columns: 1fr;
+				grid-template-columns: 1fr 1fr;
 				gap: 2em;
+			}
+
+			.btn {
+				width: 100%;
 			}
 
 			.subscribe {
@@ -1362,7 +1371,7 @@ $text-background: #f5f5f5;
 			}
 
 			.product {
-				box-shadow: 5px 5px 15px rgba(0 0 0 / 0.25);
+				box-shadow: 5px 5px 15px rgba(0 0 0 / 0.15);
 				border-radius: 5px;
 			}
 
@@ -1419,7 +1428,7 @@ $text-background: #f5f5f5;
 				transition: transform 0.5s ease;
 
 				&.open {
-					transform: translateY(-28vh);
+					transform: translateY(0vh);
 				}
 
 				.quantity-container {
@@ -1441,7 +1450,7 @@ $text-background: #f5f5f5;
 
 					p {
 						color: white;
-						font-size: 16px;
+						font-size: 24px;
 					}
 
 					.quantity {
@@ -1466,9 +1475,14 @@ $text-background: #f5f5f5;
 				}
 
 				.btn-cancel {
-					background-color: slategrey;
+					background: transparent;
+					border: 1px solid;
 				}
 			}
+		}
+
+		#search-input {
+			width: 100%;
 		}
 
 		.products {
@@ -1516,6 +1530,11 @@ $text-background: #f5f5f5;
 		.contact-wrapper {
 			flex-direction: column;
 			gap: 3em;
+
+			.contact-form,
+			.form-input {
+				width: 100%;
+			}
 
 			.contact-form {
 				textarea,
