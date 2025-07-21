@@ -861,6 +861,10 @@ $text-background: #f5f5f5;
 		@include flex(center);
 		gap: 4em;
 
+		#trash {
+			fill: #ff6767;
+		}
+
 		table {
 			table-layout: fixed;
 			width: 100%;
@@ -917,6 +921,79 @@ $text-background: #f5f5f5;
 
 			h2 {
 				text-align: center;
+			}
+
+			.side-content {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 1em;
+			}
+
+			.content-label {
+				font-weight: 300;
+				opacity: 0.9;
+			}
+
+			.content-spl {
+				color: red;
+			}
+
+			.coupon-input {
+				padding-left: 2em;
+
+				&::placeholder {
+					opacity: 0.5;
+				}
+			}
+
+			.coupon-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 1em;
+
+				.btn {
+					margin-top: 0;
+				}
+
+				.btn-coupon {
+					border: 1px solid #b8b8b8;
+					background: transparent;
+					padding: 0.8em 0.5em;
+					color: grey;
+				}
+			}
+
+			p.helper-text {
+				color: green;
+				padding: 0.5em 0.2em;
+				margin-bottom: 2em;
+				font-size: 14px;
+				opacity: 0.7;
+			}
+
+			p.error {
+				font-size: 14px;
+				color: #cd5c5c;
+			}
+
+			.coupon-wrapper {
+				position: relative;
+			}
+
+			.icon-coupon {
+				height: 24px;
+				width: 24px;
+				opacity: 0.3;
+				position: absolute;
+				left: 5px;
+				top: 8px;
+			}
+
+			.side-content-last {
+				margin-top: 1em;
+				padding-top: 1em;
+				border-top: 1px solid #e0dfdf;
 			}
 
 			table {
