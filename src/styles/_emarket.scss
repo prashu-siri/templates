@@ -6,6 +6,7 @@ $primary-clr: #fc7947;
 $background-clr: #444444;
 $white: #ffffff;
 $text-background: #f5f5f5;
+$border-clr: #e4e4e4;
 
 .e-market-template {
 	font-size: 16px;
@@ -51,6 +52,10 @@ $text-background: #f5f5f5;
 		border: 1px solid $text-secondary;
 		height: 40px;
 		padding: 0.5em;
+
+		&::placeholder {
+			opacity: 0.6;
+		}
 	}
 
 	a {
@@ -77,6 +82,12 @@ $text-background: #f5f5f5;
 		background: linear-gradient(to right, #fc7947, #ffa27e);
 	}
 
+	.btn-secondary {
+		background: transparent;
+		color: grey;
+		border: 1px solid $text-secondary;
+	}
+
 	.btn-action:hover {
 		transform: scale(1.25);
 	}
@@ -86,6 +97,44 @@ $text-background: #f5f5f5;
 
 		&:hover {
 			transform: scale(1.25);
+		}
+	}
+
+	.btn-payment {
+		height: 50px;
+		text-align: left;
+		background: transparent;
+		padding: 0 1em;
+		border: none;
+		font-family: Inter, sans-serif;
+		color: $text-primary;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		font-weight: 500;
+		font-size: 16px;
+
+		img {
+			height: 24px;
+			width: 24px;
+		}
+
+		span {
+			display: flex;
+			gap: 0.5em;
+			align-items: center;
+		}
+	}
+
+	.stack-layout {
+		display: flex;
+		flex-direction: column;
+		margin: 1em;
+		padding: 1em;
+		border: 1px solid $border-clr;
+
+		button:not(:last-child) {
+			border-bottom: 1px solid $border-clr;
 		}
 	}
 
@@ -858,7 +907,6 @@ $text-background: #f5f5f5;
 
 	/*********** CART **********/
 	.cart-container {
-		@include flex(center);
 		gap: 4em;
 
 		#trash {
@@ -912,102 +960,112 @@ $text-background: #f5f5f5;
 				}
 			}
 		}
+	}
 
-		.order-summary {
-			flex-basis: 30%;
-			padding: 1em 0.75em;
-			border-radius: 5px;
-			box-shadow: 5px 5px 15px rgba(0 0 0 / 0.25);
+	.order-summary {
+		flex-basis: 30%;
+		padding: 1em 0.75em;
+		border-radius: 5px;
+		box-shadow: 5px 5px 15px rgba(0 0 0 / 0.25);
 
-			h2 {
-				text-align: center;
-			}
+		h2 {
+			text-align: center;
+		}
 
-			.side-content {
-				display: flex;
-				justify-content: space-between;
-				margin-bottom: 1em;
-			}
+		.side-content {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 1em;
+		}
 
-			.content-label {
-				font-weight: 300;
-				opacity: 0.9;
-			}
+		.content-label {
+			font-weight: 300;
+			opacity: 0.9;
+		}
 
-			.content-spl {
-				color: red;
-			}
+		.content-spl {
+			color: red;
+		}
 
-			.coupon-input {
-				padding-left: 2em;
+		.coupon-input {
+			padding-left: 2em;
 
-				&::placeholder {
-					opacity: 0.5;
-				}
-			}
-
-			.coupon-container {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 1em;
-
-				.btn {
-					margin-top: 0;
-				}
-
-				.btn-coupon {
-					border: 1px solid #b8b8b8;
-					background: transparent;
-					padding: 0.8em 0.5em;
-					color: grey;
-				}
-			}
-
-			p.helper-text {
-				color: green;
-				padding: 0.5em 0.2em;
-				margin-bottom: 2em;
-				font-size: 14px;
-				opacity: 0.7;
-			}
-
-			p.error {
-				font-size: 14px;
-				color: #cd5c5c;
-			}
-
-			.coupon-wrapper {
-				position: relative;
-			}
-
-			.icon-coupon {
-				height: 24px;
-				width: 24px;
-				opacity: 0.3;
-				position: absolute;
-				left: 5px;
-				top: 8px;
-			}
-
-			.side-content-last {
-				margin-top: 1em;
-				padding-top: 1em;
-				border-top: 1px solid #e0dfdf;
-			}
-
-			table {
-				td {
-					height: 50px;
-				}
-			}
-
-			button {
-				width: 100%;
-				justify-content: center;
-				margin-top: 2em;
+			&::placeholder {
+				opacity: 0.5;
 			}
 		}
+
+		.coupon-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+
+			.btn {
+				margin-top: 0;
+			}
+
+			.btn-coupon {
+				border: 1px solid #b8b8b8;
+				background: transparent;
+				padding: 0.8em 0.5em;
+				color: grey;
+			}
+		}
+
+		p.helper-text {
+			color: green;
+			padding: 0.5em 0.2em;
+			margin-bottom: 2em;
+			font-size: 14px;
+			opacity: 0.7;
+		}
+
+		p.error {
+			font-size: 14px;
+			color: #cd5c5c;
+		}
+
+		.coupon-wrapper {
+			position: relative;
+		}
+
+		.icon-coupon {
+			height: 24px;
+			width: 24px;
+			opacity: 0.3;
+			position: absolute;
+			left: 5px;
+			top: 8px;
+		}
+
+		.side-content-last {
+			margin-top: 1em;
+			padding-top: 1em;
+			border-top: 1px solid #e0dfdf;
+		}
+
+		table {
+			td {
+				height: 50px;
+			}
+		}
+
+		button {
+			width: 100%;
+			justify-content: center;
+			margin-top: 2em;
+		}
+	}
+
+	.side-layout-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 0.5fr;
+	}
+
+	.side-layout-flex {
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.cart-empty {
@@ -1044,6 +1102,26 @@ $text-background: #f5f5f5;
 		display: grid;
 		grid-auto-flow: column;
 		gap: 5em;
+	}
+
+	.payment-wrapper {
+		margin: 2em 3em;
+
+		.form-field-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5em;
+			margin-top: 1em;
+		}
+
+		.side-layout {
+			display: flex;
+			gap: 1em;
+		}
+	}
+
+	.payment-options li {
+		margin-bottom: 2em;
 	}
 
 	.order-summary {
@@ -1405,6 +1483,20 @@ $text-background: #f5f5f5;
 
 		.user-comment {
 			@include flex(center, center, column);
+		}
+
+		.side-layout-wrapper {
+			grid-template-columns: 1fr;
+		}
+
+		.side-layout-flex {
+			flex-direction: column;
+			gap: 1em;
+		}
+
+		.side-layout {
+			flex-direction: column;
+			gap: 0;
 		}
 
 		footer {
