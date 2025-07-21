@@ -1,14 +1,14 @@
 <div class="page-container">
 	<div class="container">
 		<h1 class="page-heading">Cart</h1>
-		<div class="breadcrumb">
+		<!-- <div class="breadcrumb">
 			<ul>
 				<li>
 					<a routerLink="home" href="#">Home</a>
 				</li>
 				<li>Cart</li>
 			</ul>
-		</div>
+		</div> -->
 
 		<div *ngIf="hasProducts()" class="cart-container">
 			<table>
@@ -40,94 +40,6 @@
 					</tr>
 				</tbody>
 			</table>
-			<div class="order-summary">
-				<h2>Order Summary</h2>
-				<div>
-					<div class="coupon-container">
-						<div class="coupon-wrapper">
-							<input
-								type="text"
-								name="coupon"
-								placeholder="coupon code"
-								class="coupon-input"
-								[(ngModel)]="couponCode"
-							/>
-							<img
-								class="icon-coupon"
-								src="../../../../../assets/img/e-market/coupon-percent.svg"
-							/>
-						</div>
-						<button
-							(click)="validateCoupon()"
-							class="btn btn-coupon"
-						>
-							Apply
-						</button>
-					</div>
-					<p class="error" *ngIf="isInvalidCoupon">Invalid coupon</p>
-					<p class="helper-text">
-						<strong>FRESH50</strong> save 50 on order above 200
-					</p>
-					<div class="side-content">
-						<span class="content-label">Subtotal</span>
-						<strong>{{
-							calculateSubTotal() | currency : "INR"
-						}}</strong>
-					</div>
-					<div class="side-content">
-						<span class="content-label">Discount</span>
-						<strong class="content-spl"> -{{ discount }}</strong>
-					</div>
-					<div class="side-content">
-						<span class="content-label">Delivery</span>
-						<strong>FREE</strong>
-					</div>
-					<div class="side-content side-content-last">
-						<strong>TOTAL</strong>
-						<strong>{{
-							calculateTotalCost() | currency : "INR"
-						}}</strong>
-					</div>
-				</div>
-				<!-- <table>
-					<tbody>
-						<tr *ngFor="let product of products">
-							<td>{{ product.name }}</td>
-							<td>
-								{{ product.noOfItems + " X " + product.cost }}
-							</td>
-							<td>
-								{{
-									product.noOfItems * product.cost
-										| currency : "INR"
-								}}
-							</td>
-						</tr>
-						<tr>
-							<td>SubTotal</td>
-							<td></td>
-							<td>
-								{{
-									calculateSubTotal(products)
-										| currency : "INR"
-								}}
-							</td>
-						</tr>
-						<tr class="total">
-							<td><strong>Total</strong></td>
-							<td></td>
-							<td>
-								<strong>{{
-									calculateTotalCost() | currency : "INR"
-								}}</strong>
-							</td>
-						</tr>
-					</tbody>
-				</table> -->
-				<button class="btn btn-primary" [routerLink]="['../checkout']">
-					Checkout
-				</button>
-			</div>
 		</div>
 
 		<div *ngIf="!hasProducts()" class="cart-empty">

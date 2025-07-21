@@ -1,31 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup } from '@angular/forms';
+import { MarketService } from '../../service/market.service';
 
 @Component({
 	selector: 'app-address',
 	templateUrl: './address.component.html',
-	styleUrls: ['./address.component.scss']
+	styleUrls: ['./address.component.scss'],
 })
 export class AddressComponent implements OnInit {
-
 	@Input()
 	form: FormGroup;
 
 	@Input()
 	states: any[];
 
-	isFormComplete: boolean = false;
+	constructor(private service: MarketService) {}
 
-	constructor() {
-	}
+	ngOnInit(): void {}
 
-	ngOnInit(): void {
-
+	navigateToPreviousPage() {
+		this.service.setpageName('cart');
 	}
 
 	submit() {
-		if(this.form.valid) {
-			this.isFormComplete = true;
+		if (this.form.valid) {
+			this.service.setpageName('payment');
 		} else {
 			this.form.markAllAsTouched();
 		}

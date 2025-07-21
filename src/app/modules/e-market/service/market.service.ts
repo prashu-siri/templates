@@ -18,6 +18,8 @@ export class MarketService {
 	products: Product[] = [];
 	private productAddedSource: Subject<number> = new Subject<number>();
 	productAdded$ = this.productAddedSource as Observable<number>;
+	private pageNameSource: Subject<string> = new Subject<string>();
+	pageName$ = this.pageNameSource as Observable<string>;
 
 	constructor(
 		private http: HttpClient,
@@ -151,5 +153,9 @@ export class MarketService {
 		const path = this.baseUrl + 'orders?email=' + email;
 
 		return this.http.get(path);
+	}
+
+	setpageName(pageName: string) {
+		this.pageNameSource.next(pageName);
 	}
 }
