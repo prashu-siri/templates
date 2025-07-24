@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap");
 @import "styles/helper";
 @import "styles/switch";
 @import "styles/modal";
@@ -9,22 +9,23 @@
 @import "styles/radio";
 @import "styles/banking";
 @import "styles/banking-mobile";
-@import "styles/emarket";
 
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Rubik", sans-serif;
-  color: #616161;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  font-weight: 400;
-  overflow-x: hidden;
-  height: 100vh;
+	padding: 0;
+	margin: 0;
+	font-family: "Rubik", sans-serif;
+	color: #616161;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	font-weight: 400;
+	overflow-x: hidden;
+	height: 100vh;
 }
 
 h1,
@@ -34,257 +35,257 @@ h4,
 h5,
 h6,
 p {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 h4 {
-  padding: 1rem 0.5rem;
+	padding: 1rem 0.5rem;
 }
 
 .wrapper {
-  display: flex;
+	display: flex;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0 1rem 2rem;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem 0 1rem 2rem;
+	width: 100%;
 }
 
 .icon svg {
-  height: 24px;
-  width: 24px;
-  fill: black;
+	height: 24px;
+	width: 24px;
+	fill: black;
 }
 
 .icon.icon-nav svg {
-  height: 18px;
-  width: 18px;
-  fill: white;
-  margin-right: 12px;
-  margin-top: 5px;
+	height: 18px;
+	width: 18px;
+	fill: white;
+	margin-right: 12px;
+	margin-top: 5px;
 }
 
 .progress svg {
-  width: 100px;
-  height: 100px;
+	width: 100px;
+	height: 100px;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 /**Button**/
 .btn {
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  width: auto;
-  padding: 12px;
-  letter-spacing: 0.5px;
-  color: #FFFFFF;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin: 24px auto;
-  transition: transform 0.2s ease;
-  font-weight: 500;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	width: auto;
+	padding: 12px;
+	letter-spacing: 0.5px;
+	color: #ffffff;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin: 24px auto;
+	transition: transform 0.2s ease;
+	font-weight: 500;
 }
 
 .btn:active {
-  transform: scale(0.95);
+	transform: scale(0.95);
 }
 
 .btn-primary {
-  background: #2F2F7E;
+	background: #2f2f7e;
 }
 
 .btn-regular {
-  height: 40px;
+	height: 40px;
 }
 
 .btn-small {
-  height: 30px;
+	height: 30px;
 }
 
 .btn-large {
-  height: 50px;
+	height: 50px;
 }
 
 .sub-title {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 .progress-bar {
-  width: 100%;
-  background-color: #DDD;
-  border-radius: 5px;
+	width: 100%;
+	background-color: #ddd;
+	border-radius: 5px;
 }
 
 .bar {
-  width: 1%;
-  height: 8px;
-  border-radius: 5px;
-  margin: 18px 0;
+	width: 1%;
+	height: 8px;
+	border-radius: 5px;
+	margin: 18px 0;
 }
 
 #individual {
-  width: 100%;
+	width: 100%;
 }
 
 .menu-option {
-  padding-right: 24px;
+	padding-right: 24px;
 }
 
 .btn-menu {
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
-  position: relative;
-  padding: 6px 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.7px;
-  font-family: sans-serif;
-  max-width: 150px;
-  color: black;
-  margin: 0;
+	background: transparent;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	border-radius: 3px;
+	position: relative;
+	padding: 6px 12px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	letter-spacing: 0.7px;
+	font-family: sans-serif;
+	max-width: 150px;
+	color: black;
+	margin: 0;
 }
 
 .menu {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 150px;
-  list-style: none;
-  margin: 12px 0;
-  padding: 0;
-  background: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 150px;
+	list-style: none;
+	margin: 12px 0;
+	padding: 0;
+	background: white;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
 }
 
 .menu a {
-  text-decoration: none;
-  padding: 12px;
-  display: block;
-  text-align: left;
-  color: black;
-  letter-spacing: 0.7px;
+	text-decoration: none;
+	padding: 12px;
+	display: block;
+	text-align: left;
+	color: black;
+	letter-spacing: 0.7px;
 }
 
 .menu a:hover {
-  background: rgb(225, 240, 252);
+	background: rgb(225, 240, 252);
 }
 
 .btn-menu .menu {
-  display: none;
+	display: none;
 }
 
 .btn-menu.open .menu {
-  display: block;
+	display: block;
 }
 
 svg {
-  height: 24px;
-  width: 24px;
-  fill: grey;
-  margin-right: 12px;
+	height: 24px;
+	width: 24px;
+	fill: grey;
+	margin-right: 12px;
 }
 
 button svg {
-  height: 24px;
-  width: 24px;
+	height: 24px;
+	width: 24px;
 }
 
 .search svg,
 .side-bar svg {
-  height: 12px;
-  width: 12px;
-  fill: #191919;
-  margin-right: 6px;
+	height: 12px;
+	width: 12px;
+	fill: #191919;
+	margin-right: 6px;
 }
 
 .title-container svg {
-  height: 24px;
-  width: 24px;
-  fill: #6F6194;
+	height: 24px;
+	width: 24px;
+	fill: #6f6194;
 }
 
 .sort svg {
-  fill: #6F6194;
+	fill: #6f6194;
 }
 
 // Job finder filters svg
 .filters {
-  svg#search {
-    height: 12px;
-    width: 12px;
-    margin-left: 0.25em;
-  }
+	svg#search {
+		height: 12px;
+		width: 12px;
+		margin-left: 0.25em;
+	}
 }
 
 .banking {
-  svg {
-    height: 18px;
-    width: 18px;
-    display: grid;
-    align-self: center;
-  }
+	svg {
+		height: 18px;
+		width: 18px;
+		display: grid;
+		align-self: center;
+	}
 
-  .notification svg {
-    margin-right: 0;
-    margin-top: 0.65rem;
-  }
+	.notification svg {
+		margin-right: 0;
+		margin-top: 0.65rem;
+	}
 }
 
 .floating {
-  position: fixed;
-  bottom: 50px;
-  right: 0;
-  background: #657AFF;
-  padding: 6px;
+	position: fixed;
+	bottom: 50px;
+	right: 0;
+	background: #657aff;
+	padding: 6px;
 
-  svg {
-    fill: white;
-    margin: 0;
-  }
+	svg {
+		fill: white;
+		margin: 0;
+	}
 }
 
 .alert svg {
-  width: 18px;
-  height: 18px;
-  fill: white;
+	width: 18px;
+	height: 18px;
+	fill: white;
 }
 
 .sm svg {
-  width: 18px;
-  height: 18px;
-  margin-right: 6px
+	width: 18px;
+	height: 18px;
+	margin-right: 6px;
 }
 
 .content-label svg {
-  width: 14px;
-  height: 14px;
-  margin-right: 6px;
+	width: 14px;
+	height: 14px;
+	margin-right: 6px;
 }
 
 /***** Form Error ******/
 .inline_error {
-  color: $error-clr;
-  padding: 12px 0;
+	color: $error-clr;
+	padding: 12px 0;
 }
 
 @media (max-width: 768px) {
-  .first-row {
-    flex-direction: column;
-  }
+	.first-row {
+		flex-direction: column;
+	}
 
-  .second-row {
-    flex-direction: column;
-    margin-right: 24px;
-  }
+	.second-row {
+		flex-direction: column;
+		margin-right: 24px;
+	}
 }
